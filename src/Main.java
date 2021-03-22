@@ -12,12 +12,21 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) {
-		Button btn = new Button("Play");
+		Button PlayBtn = new Button("Play");
+		
+		
 		StackPane root = new StackPane();
-		root.getChildren().add(btn);
-		Scene scene = new Scene(root, 400, 600);
+		root.getChildren().add(PlayBtn);
+		
+		Scene MenuScene = new Scene(root, 400, 600);
+		
+		StackPane root1 = new StackPane();
+		Scene PlayScene = new Scene(root1);
+		
+		PlayBtn.setOnAction(e -> primaryStage.setScene(PlayScene));
+		
 		primaryStage.setTitle("Sushi Mania");
-		primaryStage.setScene(scene);
+		primaryStage.setScene(MenuScene);
 		primaryStage.show();
 	}
 
