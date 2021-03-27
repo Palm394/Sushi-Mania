@@ -1,3 +1,4 @@
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -12,21 +13,12 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) {
-		Button PlayBtn = new Button("Play");
-		
-		
 		StackPane root = new StackPane();
-		root.getChildren().add(PlayBtn);
 		
-		Scene MenuScene = new Scene(root, 400, 600);
-		
-		StackPane root1 = new StackPane();
-		Scene PlayScene = new Scene(root1);
-		
-		PlayBtn.setOnAction(e -> primaryStage.setScene(PlayScene));
+		Scene scene = new Scene(root, 1000, 600);
 		
 		primaryStage.setTitle("Sushi Mania");
-		primaryStage.setScene(MenuScene);
+		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
 
