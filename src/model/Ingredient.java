@@ -1,9 +1,9 @@
 package model;
 
-public class ingredient {
+public class Ingredient {
 	private String name;
 	
-	public ingredient(String name) {
+	public Ingredient(String name) {
 		this.name = name;
 	}
 }

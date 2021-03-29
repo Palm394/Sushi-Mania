@@ -19,6 +19,18 @@ public class gamePane  {
 		root = new VBox();
 		gameScene = new Scene(root,WIDTH_SIZE,HEIGHT_SIZE);
 		
+		//--- Status Bar ---
+		
+		
+		//--- Customer Zone ---
+		
+		
+		//--- Table Zone ---
+		
+		
+		//--- Chef Zone ---
+		
+		
 		gameStage = new Stage();
 		gameStage.setTitle("Sushi Mania - Game");
 		gameStage.setScene(gameScene);
