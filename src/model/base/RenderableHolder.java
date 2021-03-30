@@ -3,20 +3,20 @@ package model.base;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UpdatableHolder {
-	private static final UpdatableHolder instance = new UpdatableHolder();
+public class RenderableHolder {
+	private static final RenderableHolder instance = new RenderableHolder();
 	
-	private List<Updatable> entities;
+	private List<Renderable> entities;
 	
 	static {
 		loadResource();
 	}
 	
-	public UpdatableHolder() {
-		entities = new ArrayList<Updatable>();
+	public RenderableHolder() {
+		entities = new ArrayList<Renderable>();
 	}
 
-	public static UpdatableHolder getInstance() {
+	public static RenderableHolder getInstance() {
 		return instance;
 	}
 

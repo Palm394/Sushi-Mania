@@ -2,7 +2,7 @@ package model.base;
 
 import javafx.scene.canvas.GraphicsContext;
 
-public interface Updatable {
+public interface Renderable {
 	
     public void update();
     public void draw(GraphicsContext gc);
