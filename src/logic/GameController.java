@@ -5,8 +5,14 @@ public class GameController {
 	private static int Score;
 	private static int Level;
 	private static int Target;
-	private static boolean isGameOver = false;
+	private static boolean isGameOver;
 	
+	public GameController() {
+		Score = 0;
+		Level = 1;
+		//Target = ;
+		isGameOver = false;
+	}
 
 	
 	//Getter & Setter methods

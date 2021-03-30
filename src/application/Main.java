@@ -1,8 +1,11 @@
 package application;
 
 import gui.GUIController;
+import gui.gamePane;
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import logic.GameController;
 
 public class Main extends Application {
 	
@@ -16,6 +19,8 @@ public class Main extends Application {
 
 		primaryStage = manager.getMenuStage();
 		primaryStage.show();
+		
+		GameController logic = new GameController();
 	}
 
 	
