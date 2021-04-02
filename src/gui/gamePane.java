@@ -1,6 +1,5 @@
 package gui;
 
-import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.VBox;
@@ -20,7 +19,7 @@ public class gamePane extends Canvas  {
 	public gamePane() {
 		root = new VBox();
 		gameScene = new Scene(root,WIDTH_SIZE,HEIGHT_SIZE);
-		
+
 		//--- Status Bar ---
 		
 		
@@ -33,20 +32,13 @@ public class gamePane extends Canvas  {
 		//--- Chef Zone ---
 		
 		
+		//--- End ---
+		
 		gameStage = new Stage();
 		gameStage.setTitle("Sushi Mania - Game");
 		gameStage.setScene(gameScene);
 		gameStage.setResizable(false);
 		
-		AnimationTimer animation = new AnimationTimer() {
-			public void handle(long now) {
-				gamePane.paintComponent();
-//				logic.logicUpdate();
-//				RenderableHolder.getInstance().update();
-//				InputUtility.updateInputState();
-			}
-		};
-		animation.start();
 	}
 	
 	public void createNewGame(Stage menuStage) {
