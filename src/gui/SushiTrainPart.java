@@ -5,6 +5,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import model.SushiTrain;
 
 public class SushiTrainPart {
 	private static HBox root;
@@ -30,6 +31,10 @@ public class SushiTrainPart {
 	private void drawSushiTrain(GraphicsContext gc) {
 		gc.setFill(Color.BLACK);
 		gc.fillRect(100, 0, 900, 100);
+	}
+	
+	public static void drawNewDish(GraphicsContext gc) {
+		
 	}
 	
 	public static Parent getRoot() {

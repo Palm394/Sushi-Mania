@@ -30,7 +30,6 @@ public class gamePane extends Canvas  {
 		
 		SushiTrainPart sushiTrain = new SushiTrainPart();
 		root.getChildren().add(sushiTrain.getRoot());
-//		root.setStyle("-fx-background-color: red;");
 		
 		//--- Chef Zone ---
 		

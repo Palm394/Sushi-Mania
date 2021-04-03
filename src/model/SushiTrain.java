@@ -2,17 +2,20 @@ package model;
 
 import java.util.ArrayList;
 
+import gui.SushiTrainPart;
+
 public class SushiTrain {
 	private final int maxDish = 10;
-	private static ArrayList<Food> List;
+	private static ArrayList<Food> TrainList;
 	
 	public SushiTrain() {
-		List = new ArrayList<Food>(maxDish);
+		TrainList = new ArrayList<Food>(maxDish);
 	}
 	
-	public static void addNewDish(Food food) {
+	public static void addNewDish(Food newFood) {
 		try {
-			List.add(food);
+			TrainList.add(newFood);
+			SushiTrainPart.drawNewDish(null);
 		}catch(ArrayIndexOutOfBoundsException e)
 		{
 			//Implement!

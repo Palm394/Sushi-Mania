@@ -1,6 +1,5 @@
 package logic;
 
-import gui.gamePane;
 import javafx.animation.AnimationTimer;
 
 public class GameController {
@@ -18,10 +17,7 @@ public class GameController {
 		
 		AnimationTimer animation = new AnimationTimer() {
 			public void handle(long now) {
-				gamePane.paintComponent();
-//				logic.logicUpdate();
-//				RenderableHolder.getInstance().update();
-//				InputUtility.updateInputState();
+
 			}
 		};
 		animation.start();
