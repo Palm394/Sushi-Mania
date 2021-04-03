@@ -1,5 +1,8 @@
 package logic;
 
+import gui.gamePane;
+import javafx.animation.AnimationTimer;
+
 public class GameController {
 	
 	private static int Score;
@@ -7,13 +10,26 @@ public class GameController {
 	private static int Target;
 	private static boolean isGameOver;
 	
-	public GameController() {
+	public static void initialize() {
 		Score = 0;
 		Level = 1;
 		//Target = ;
 		isGameOver = false;
+		
+		AnimationTimer animation = new AnimationTimer() {
+			public void handle(long now) {
+				gamePane.paintComponent();
+//				logic.logicUpdate();
+//				RenderableHolder.getInstance().update();
+//				InputUtility.updateInputState();
+			}
+		};
+		animation.start();
 	}
-
+	
+	
+	
+	
 	
 	//Getter & Setter methods
 	public static int getScore() {
