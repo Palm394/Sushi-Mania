@@ -28,8 +28,8 @@ public class gamePane extends Canvas  {
 		
 		//--- Train Zone ---
 		
-		SushiTrainPart sushiTrain = new SushiTrainPart();
-		root.getChildren().add(sushiTrain.getRoot());
+		SushiTrainGUI.initialize();
+		root.getChildren().add(SushiTrainGUI.getRoot());
 		
 		//--- Chef Zone ---
 		

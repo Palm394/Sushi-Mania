@@ -9,25 +9,30 @@ import javafx.scene.paint.Color;
 import model.Food;
 import model.SushiTrain;
 
-public class SushiTrainPart {
+public class SushiTrainGUI {
 	private static HBox root;
 	private static GraphicsContext gc;
 	
-	private final double WIDTH = 1000;
-	private final double HEIGHT = 100;
+	private final static double WIDTH = 1000;
+	private final static double HEIGHT = 100;
 	
-	public SushiTrainPart() {
+	public static void initialize() {
 		root = new HBox();
+		SushiTrain.initialize();
 		
 		Canvas canvas = new Canvas(WIDTH,HEIGHT);
 		gc = canvas.getGraphicsContext2D();
 		
 		drawSushiTrain(gc);
 		
+		//Test
+		Food a = new Food("Salmon",10);
+		SushiTrain.addNewDish(a);
+		
 		root.getChildren().add(canvas);
 	}
 	
-	private void drawSushiTrain(GraphicsContext gc) {
+	private static void drawSushiTrain(GraphicsContext gc) {
 		gc.setFill(Color.BLACK);
 		gc.fillRect(0, 0, WIDTH, HEIGHT);
 	}
@@ -36,7 +41,7 @@ public class SushiTrainPart {
 		String image_path = "file:res/dish.png";
 		Image image = new Image(image_path);
 		
-		gc.drawImage(image, 0, 0);
+		gc.drawImage(image, dish.getPosX(), dish.getPosY());
 	}
 	
 	public static Parent getRoot() {

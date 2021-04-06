@@ -19,14 +19,42 @@ public class Food {//implement Updatable
 		this.isEat = false;
 		
 		//Initialize for find position of food after serving 
-		PosX = 0;
-		PosY = 0;
+		setPosX(0);
+		setPosY(0);
 	}
 	
 	public void addIngredients(ArrayList<Ingredient> ingredients) {
 		for(Ingredient i : ingredients) {
 			ingredients.add(i);
 		}
+	}
+
+	/**
+	 * @return the posX
+	 */
+	public double getPosX() {
+		return PosX;
+	}
+
+	/**
+	 * @param posX the posX to set
+	 */
+	public void setPosX(double posX) {
+		PosX = posX;
+	}
+
+	/**
+	 * @return the posY
+	 */
+	public double getPosY() {
+		return PosY;
+	}
+
+	/**
+	 * @param posY the posY to set
+	 */
+	public void setPosY(double posY) {
+		PosY = posY;
 	}
 	
 }
