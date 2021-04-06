@@ -3,6 +3,7 @@ package gui;
 import javafx.scene.Parent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import model.SushiTrain;
@@ -16,21 +17,18 @@ public class SushiTrainPart {
 		Canvas canvas = new Canvas(1000,100);
 		GraphicsContext gc = canvas.getGraphicsContext2D();
 		
-		drawReleaseZone(gc);
-		drawSushiTrain(gc);
+		String image_path = "file:res/dish.png";
+		Image image = new Image(image_path);
 		
+		drawSushiTrain(gc);
+		gc.drawImage(image, 0, 0);
 		root.getChildren().add(canvas);
 
-	}
-
-	private void drawReleaseZone(GraphicsContext gc) {
-		gc.setFill(Color.WHITE);
-		gc.fillRect(0, 0, 100, 100);
 	}
 	
 	private void drawSushiTrain(GraphicsContext gc) {
 		gc.setFill(Color.BLACK);
-		gc.fillRect(100, 0, 900, 100);
+		gc.fillRect(0, 0, 1000, 100);
 	}
 	
 	public static void drawNewDish(GraphicsContext gc) {
