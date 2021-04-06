@@ -1,5 +1,9 @@
 package gui;
 
+import java.io.IOException;
+
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.VBox;
@@ -32,7 +36,16 @@ public class gamePane extends Canvas  {
 		root.getChildren().add(SushiTrainGUI.getRoot());
 		
 		//--- Chef Zone ---
-		
+		Parent bottom;
+		try {
+			bottom = FXMLLoader.load(getClass().getResource("chefZone.fxml"));
+		// add components
+		root.getChildren().add(bottom);		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//--- End ---
 		
 		//--- End ---
 		
