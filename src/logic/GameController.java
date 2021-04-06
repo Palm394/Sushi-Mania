@@ -24,7 +24,6 @@ public class GameController {
 			public void handle(long now) {
 				for(Food i : SushiTrain.getTrainList()) {
 					i.update();
-					SushiTrainGUI.drawDish(i);
 				}
 			}
 		};

@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
+import gui.SushiTrainGUI;
 import gui.gamePane;
 import model.base.Updatable;
 
@@ -39,6 +40,7 @@ public class Food implements Updatable {
 			PosX = -15;
 		}
 		this.setPosX(PosX+1);
+		SushiTrainGUI.drawDish(this);
 	}
 
 	public double getPosX() {
