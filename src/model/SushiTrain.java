@@ -15,7 +15,7 @@ public class SushiTrain {
 	public static void addNewDish(Food newFood) {
 		try {
 			TrainList.add(newFood);
-			SushiTrainPart.drawNewDish(null);
+			SushiTrainPart.drawNewDish(newFood);
 		}catch(ArrayIndexOutOfBoundsException e)
 		{
 			//Implement!
