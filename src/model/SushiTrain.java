@@ -15,11 +15,15 @@ public class SushiTrain {
 	public static void addNewDish(Food newFood) {
 		try {
 			TrainList.add(newFood);
-			SushiTrainGUI.drawNewDish(newFood);
+			SushiTrainGUI.drawDish(newFood);
 		}catch(ArrayIndexOutOfBoundsException e)
 		{
 			//Implement!
 		}
+	}
+
+	public static ArrayList<Food> getTrainList() {
+		return TrainList;
 	}
 
 }

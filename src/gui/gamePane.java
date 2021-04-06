@@ -11,14 +11,14 @@ public class gamePane extends Canvas  {
 	private Scene gameScene;
 	private Stage gameStage;
 	
-	private final int WIDTH_SIZE = 1000;
-	private final int HEIGHT_SIZE = 600;
+	public static final int WIDTH_SCREEN = 1000;
+	public static final int HEIGHT_SCREEN = 600;
 	
 	private Stage menuStage;
 	
 	public gamePane() {
 		root = new VBox();
-		gameScene = new Scene(root,WIDTH_SIZE,HEIGHT_SIZE);
+		gameScene = new Scene(root,WIDTH_SCREEN,HEIGHT_SCREEN);
 
 		//--- Status Bar ---
 		

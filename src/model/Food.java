@@ -2,7 +2,10 @@ package model;
 
 import java.util.ArrayList;
 
-public class Food {//implement Updatable
+import gui.gamePane;
+import model.base.Updatable;
+
+public class Food implements Updatable {
 	private String name;
 	private double timeToCook;
 	private boolean isEat;
@@ -14,7 +17,7 @@ public class Food {//implement Updatable
 	private ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
 	
 	public Food(String name,double time) {
-		this.name = name ;
+		this.setName(name) ;
 		this.timeToCook = time ;
 		this.isEat = false;
 		
@@ -29,32 +32,36 @@ public class Food {//implement Updatable
 		}
 	}
 
-	/**
-	 * @return the posX
-	 */
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		if(PosX > gamePane.WIDTH_SCREEN) {
+			PosX = -15;
+		}
+		this.setPosX(PosX+1);
+	}
+
 	public double getPosX() {
 		return PosX;
 	}
 
-	/**
-	 * @param posX the posX to set
-	 */
 	public void setPosX(double posX) {
 		PosX = posX;
 	}
 
-	/**
-	 * @return the posY
-	 */
 	public double getPosY() {
 		return PosY;
 	}
 
-	/**
-	 * @param posY the posY to set
-	 */
 	public void setPosY(double posY) {
 		PosY = posY;
 	}
-	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 }
