@@ -27,6 +27,7 @@ public class gamePane extends VBox  {
 		
 		//--- Customer Zone ---
 		
+		this.getChildren().add(new CustomerGUI());
 		
 		//--- Train Zone ---
 		

@@ -22,6 +22,10 @@ public class SushiTrain {
 		}
 	}
 
+	public static void removeDish(Food food) {
+		//TrainList.remove(food);
+	}
+	
 	public static ArrayList<Food> getTrainList() {
 		return TrainList;
 	}
