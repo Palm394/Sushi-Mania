@@ -8,7 +8,6 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import model.Customer;
-import model.Food;
 
 public class CustomerGUI extends HBox {
 	private static GraphicsContext gc;
@@ -19,23 +18,24 @@ public class CustomerGUI extends HBox {
 	public CustomerGUI() {
 		Canvas canvas = new Canvas(gamePane.WIDTH_SCREEN,HEIGHT);
 		gc = canvas.getGraphicsContext2D();
+		
 		CustomerList = new ArrayList<Customer>();
 		
 		drawBG(gc);
 		
 		for(int i=0;i<7;i++) {
-			Customer a = new Customer(i);
-			CustomerList.add(a);
-			drawCustomer(gc,a);
+			Customer customer = new Customer(i);
+			CustomerList.add(customer);
+			drawCustomer(gc,customer);
 		}
 		this.getChildren().add(canvas);
 	}
 	
-	private void drawCustomer(GraphicsContext gc,Customer a) {
+	private void drawCustomer(GraphicsContext gc,Customer customer) {
 		String image_path = "file:res/customer.png";
 		Image image = new Image(image_path);
 
-		gc.drawImage( image, a.getPosX(), HEIGHT / 2);
+		gc.drawImage( image, customer.getPosX(), HEIGHT / 2);
 	}
 
 	private void drawBG(GraphicsContext gc) {

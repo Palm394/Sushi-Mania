@@ -1,10 +1,7 @@
 package logic;
 
-import gui.CustomerGUI;
 import gui.SushiTrainGUI;
 import javafx.animation.AnimationTimer;
-import model.Customer;
-import model.Food;
 import model.SushiTrain;
 
 public class GameController {
@@ -20,20 +17,14 @@ public class GameController {
 		//Target = ;
 		isGameOver = false;
 		
-		SushiTrain.initialize();
-		
 		AnimationTimer animation = new AnimationTimer() {
 			public void handle(long now) {
-				for(Food i : SushiTrain.getTrainList()) {
-					i.update();
-				}
+				SushiTrain.update();
+				SushiTrainGUI.paintComponent();
 			}
 		};
 		animation.start();
 	}
-	
-	
-	
 	
 	
 	//Getter & Setter methods

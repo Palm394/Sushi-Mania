@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import logic.GameController;
 
 public class gamePane extends VBox  {
 	
@@ -20,7 +21,8 @@ public class gamePane extends VBox  {
 	
 	public gamePane() {
 		gameScene = new Scene(this,WIDTH_SCREEN,HEIGHT_SCREEN);
-
+		GameController.initialize();
+		
 		//--- Status Bar ---
 		
 		
