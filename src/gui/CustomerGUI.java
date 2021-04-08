@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import model.Customer;
+import model.Food;
 
 public class CustomerGUI extends HBox {
 	private static GraphicsContext gc;
@@ -40,5 +41,9 @@ public class CustomerGUI extends HBox {
 	private void drawBG(GraphicsContext gc) {
 		gc.setFill(Color.WHITE.darker());
 		gc.fillRect(0, 0, gamePane.WIDTH_SCREEN, HEIGHT);
+	}
+
+	public static ArrayList<Customer> getCustomerList() {
+		return CustomerList;
 	}
 }

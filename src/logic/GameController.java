@@ -1,7 +1,9 @@
 package logic;
 
+import gui.CustomerGUI;
 import gui.SushiTrainGUI;
 import javafx.animation.AnimationTimer;
+import model.Customer;
 import model.Food;
 import model.SushiTrain;
 

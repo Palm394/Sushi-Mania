@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
+import gui.CustomerGUI;
 import gui.gamePane;
 import model.base.Updatable;
 
@@ -35,10 +36,17 @@ public class Food implements Updatable {
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
+		
 		if(PosX > gamePane.WIDTH_SCREEN) {
 			PosX = -15;
 		}
 		this.setPosX(PosX+1);
+		
+		for(Customer i : CustomerGUI.getCustomerList()) {
+			if(i.isDetect(this) != -1) {
+				System.out.println("Palm's Debug : Detect with Customer" + i.getNumber());
+			}
+		}
 	}
 
 	public double getPosX() {
