@@ -14,7 +14,6 @@ public class CustomerGUI extends HBox {
 	private static ArrayList<Customer> CustomerList;
 	
 	private final double HEIGHT = 150;
-	private final double PADDING = 100;
 	
 	public CustomerGUI() {
 		Canvas canvas = new Canvas(gamePane.WIDTH_SCREEN,HEIGHT);
@@ -26,16 +25,16 @@ public class CustomerGUI extends HBox {
 		for(int i=0;i<7;i++) {
 			Customer a = new Customer(i);
 			CustomerList.add(a);
-			drawCustomer(gc,i);
+			drawCustomer(gc,a);
 		}
 		this.getChildren().add(canvas);
 	}
 	
-	private void drawCustomer(GraphicsContext gc,int number) {
+	private void drawCustomer(GraphicsContext gc,Customer a) {
 		String image_path = "file:res/customer.png";
 		Image image = new Image(image_path);
 
-		gc.drawImage(image, PADDING + number*125 , HEIGHT / 2);
+		gc.drawImage( image, a.getPosX(), HEIGHT / 2);
 	}
 
 	private void drawBG(GraphicsContext gc) {
