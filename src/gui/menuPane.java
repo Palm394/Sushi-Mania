@@ -7,9 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class menuPane {
+public class menuPane extends StackPane {
 	
-	private StackPane root;
 	private Scene menuScene;
 	private Stage menuStage;
 	
@@ -17,10 +16,9 @@ public class menuPane {
 	private final int HEIGHT_SIZE = 600;
 	
 	public menuPane() {
-		root = new StackPane();
 		createStartButton();
 		
-		menuScene = new Scene(root,WIDTH_SIZE,HEIGHT_SIZE);
+		menuScene = new Scene(this,WIDTH_SIZE,HEIGHT_SIZE);
 		menuStage = new Stage();
 		menuStage.setScene(menuScene);
 		menuStage.setTitle("Sushi Mania - Menu");
@@ -39,7 +37,7 @@ public class menuPane {
 			}
 			
 		});
-		root.getChildren().add(startButton);
+		this.getChildren().add(startButton);
 	}
 	
 	public Stage getMenuStage() {
