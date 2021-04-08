@@ -25,8 +25,7 @@ public class gamePane extends Canvas  {
 		
 		//--- Customer Zone ---
 		
-		CustomerGUI.initialize();
-		root.getChildren().add(CustomerGUI.getRoot());
+		root.getChildren().add(new CustomerGUI());
 		
 		//--- Train Zone ---
 		

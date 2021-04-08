@@ -5,7 +5,7 @@ public class Customer {
 	//order integer is sorting customer to check food to detect.
 	private int number;
 	
-	public Customer(int order) {
-		this.number = order;
+	public Customer(int number) {
+		this.number = number;
 	}
 }
