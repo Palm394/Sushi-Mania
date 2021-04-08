@@ -30,8 +30,7 @@ public class gamePane extends VBox  {
 		
 		//--- Train Zone ---
 		
-		SushiTrainGUI.initialize();
-		this.getChildren().add(SushiTrainGUI.getRoot());
+		this.getChildren().add(new SushiTrainGUI());
 		
 		//--- Chef Zone ---
 		Parent bottom;
