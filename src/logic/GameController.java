@@ -20,20 +20,14 @@ public class GameController {
 		//Target = ;
 		isGameOver = false;
 		
-		SushiTrain.initialize();
-		
 		AnimationTimer animation = new AnimationTimer() {
 			public void handle(long now) {
-				for(Food i : SushiTrain.getTrainList()) {
-					i.update();
-				}
+				SushiTrain.update();
+				SushiTrainGUI.paintComponent();
 			}
 		};
 		animation.start();
 	}
-	
-	
-	
 	
 	
 	//Getter & Setter methods

@@ -15,19 +15,21 @@ public class SushiTrain {
 	public static void addNewDish(Food newFood) {
 		try {
 			TrainList.add(newFood);
-			SushiTrainGUI.drawDish(newFood);
+			SushiTrainGUI.getTrainGUI().add(newFood);
 		}catch(ArrayIndexOutOfBoundsException e)
 		{
 			//Implement!
 		}
 	}
-
-	public static void removeDish(Food food) {
-		//TrainList.remove(food);
+	
+	public static void update() {
+		for(Food e : TrainList) {
+			e.update();
+		}
 	}
 	
 	public static ArrayList<Food> getTrainList() {
-		return TrainList;
+			return TrainList;
 	}
 
 }

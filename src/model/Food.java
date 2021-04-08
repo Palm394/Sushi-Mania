@@ -10,7 +10,7 @@ import model.base.Updatable;
 public class Food implements Updatable {
 	private String name;
 	private double timeToCook;
-	private boolean isEat;
+	private boolean isEat = false;
 	
 	//position of food after serving
 	private double PosX;
@@ -21,7 +21,6 @@ public class Food implements Updatable {
 	public Food(String name,double time) {
 		this.setName(name) ;
 		this.timeToCook = time ;
-		this.isEat = false;
 		
 		//Initialize for find position of food after serving 
 		setPosX(0);
@@ -36,8 +35,6 @@ public class Food implements Updatable {
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
-		
 		if(PosX > gamePane.WIDTH_SCREEN) {
 			PosX = -15;
 		}
@@ -46,9 +43,9 @@ public class Food implements Updatable {
 		for(Customer i : CustomerGUI.getCustomerList()) {
 			if(i.isDetect(this) != -1) {
 				System.out.println("Palm's Debug : Detect with Customer" + i.getNumber());
+				isEat = true;
 			}
 		}
-		SushiTrainGUI.drawDish(this);
 	}
 
 	public double getPosX() {
@@ -73,5 +70,9 @@ public class Food implements Updatable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public boolean isEat() {
+		return isEat;
 	}
 }

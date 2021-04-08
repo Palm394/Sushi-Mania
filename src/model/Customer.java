@@ -26,7 +26,6 @@ public class Customer {
 	
 	public int isDetect(Food food) {
 		if(Math.abs(food.getPosX() - PosX) == 0 ) {//&& food.getName() == want
-			SushiTrain.removeDish(food);
 			return number;
 		}else {
 			return -1;
