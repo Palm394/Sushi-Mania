@@ -38,7 +38,7 @@ public class Food implements Updatable {
 		if(PosX > gamePane.WIDTH_SCREEN) {
 			PosX = -15;
 		}
-		this.setPosX(PosX+1);
+		this.setPosX(PosX + 1);
 		
 		for(Customer i : CustomerGUI.getCustomerList()) {
 			if(i.isDetect(this) != -1) {

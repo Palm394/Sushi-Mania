@@ -5,21 +5,15 @@ import java.util.ArrayList;
 import gui.SushiTrainGUI;
 
 public class SushiTrain {
-	private final static int maxDish = 10;
 	private static ArrayList<Food> TrainList;
 	
 	public static void initialize() {
-		TrainList = new ArrayList<Food>(maxDish);
+		TrainList = new ArrayList<Food>();
 	}
 	
 	public static void addNewDish(Food newFood) {
-		try {
 			TrainList.add(newFood);
-			SushiTrainGUI.getTrainGUI().add(newFood);
-		}catch(ArrayIndexOutOfBoundsException e)
-		{
-			//Implement!
-		}
+			SushiTrainGUI.getTrainDraw().add(newFood);
 	}
 	
 	public static void update() {

@@ -12,7 +12,7 @@ import model.SushiTrain;
 public class SushiTrainGUI extends Canvas {
 
 	private static GraphicsContext gc;
-	private static ArrayList<Food> TrainGUI;
+	private static ArrayList<Food> TrainDraw;
 	
 	private final static double HEIGHT = 100;
 	
@@ -23,7 +23,7 @@ public class SushiTrainGUI extends Canvas {
 		gc = this.getGraphicsContext2D();
 		
 		SushiTrain.initialize();
-		TrainGUI = new ArrayList<Food>();
+		TrainDraw = new ArrayList<Food>();
 		
 		//Test
 		Food a = new Food("Salmon",10);
@@ -39,7 +39,7 @@ public class SushiTrainGUI extends Canvas {
 		gc.clearRect(0, 0, gamePane.WIDTH_SCREEN, HEIGHT);
 		drawSushiTrain(gc);
 		
-		for(Food dish : TrainGUI) {
+		for(Food dish : TrainDraw) {
 			//if(!dish.isEat()) {
 				String image_path = "file:res/dish.png";
 				Image image = new Image(image_path);
@@ -49,8 +49,8 @@ public class SushiTrainGUI extends Canvas {
 		}
 	}
 	
-	public static ArrayList<Food> getTrainGUI() {
-		return TrainGUI;
+	public static ArrayList<Food> getTrainDraw() {
+		return TrainDraw;
 	}
 
 	
