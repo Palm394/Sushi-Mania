@@ -7,7 +7,7 @@ import model.base.Updatable;
 
 public abstract class LabelStatus extends Label implements Updatable {
 	
-	public LabelStatus(String name) {
+	public LabelStatus() {
 		this.setFont(new Font(20));
 		this.setPadding(new Insets(10));
 		setSentence();

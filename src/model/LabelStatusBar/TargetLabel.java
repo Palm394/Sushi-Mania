@@ -4,11 +4,7 @@ import logic.GameController;
 import model.LabelStatus;
 
 public class TargetLabel extends LabelStatus {
-
-	public TargetLabel() {
-		super("Target");
-	}
-
+	
 	@Override
 	protected void setSentence() {
 		this.textProperty().setValue("Target : " + GameController.getTarget());

@@ -6,10 +6,6 @@ import model.base.Updatable;
 
 public class ScoreLabel extends LabelStatus {
 
-	public ScoreLabel() {
-		super("Score");
-	}
-
 	@Override
 	protected void setSentence() {
 		this.textProperty().setValue("Score : " + GameController.getScore());
