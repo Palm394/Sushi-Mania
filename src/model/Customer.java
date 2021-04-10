@@ -1,5 +1,7 @@
 package model;
 
+import gui.CustomerGUI;
+
 public class Customer {
 	
 	//order integer is sorting customer to check food to detect.
@@ -30,5 +32,21 @@ public class Customer {
 		}else {
 			return -1;
 		}
+	}
+
+	public String getWant() {
+		return want;
+	}
+
+	public void setWant(String want) {
+		this.want = want;
+	}
+
+	public void drawWant() {
+		//Test
+		//Must Random menu from database
+		want = "Salmon";
+		
+		CustomerGUI.drawWant(number,want,PosX);
 	}
 }

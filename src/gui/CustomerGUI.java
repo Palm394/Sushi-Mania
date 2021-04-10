@@ -13,7 +13,7 @@ public class CustomerGUI extends HBox {
 	private static GraphicsContext gc;
 	private static ArrayList<Customer> CustomerList;
 	
-	private final double HEIGHT = 150;
+	private final static double HEIGHT = 150;
 	
 	public CustomerGUI() {
 		Canvas canvas = new Canvas(gamePane.WIDTH_SCREEN,HEIGHT);
@@ -41,6 +41,10 @@ public class CustomerGUI extends HBox {
 	private void drawBG(GraphicsContext gc) {
 		gc.setFill(Color.WHITE.darker());
 		gc.fillRect(0, 0, gamePane.WIDTH_SCREEN, HEIGHT);
+	}
+	
+	public static void drawWant(int number,String want,double PosX) {
+		gc.clearRect(0, 0, gamePane.WIDTH_SCREEN, HEIGHT / 2);
 	}
 
 	public static ArrayList<Customer> getCustomerList() {
