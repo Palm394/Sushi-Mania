@@ -10,11 +10,9 @@ public class GameController {
 	private static int Score;
 	private static int Level;
 	private static int Target;
-	private static boolean isGameOver;
 	private static AnimationTimer animation;
 	
 	private static int timer;
-	
 	//second unit
 	private final static int timeEachRound = 60;
 	
@@ -22,10 +20,6 @@ public class GameController {
 		Score = 0;
 		Level = 1;
 		Target = 100;
-		isGameOver = false;
-		
-		DurationTime.initialize();
-		OrderController.initialize();
 		
 		animation = new AnimationTimer() {
 			public void handle(long now) {
@@ -33,12 +27,12 @@ public class GameController {
 				SushiTrainGUI.paintComponent();
 				
 				if(timer == 0) {
-					animation.stop();
+					pauseGame();
 					//GameOver
 				}
 			}
 		};
-		animation.start();
+		continueGame();
 	}
 	
 	public static void addScore(int number) {
@@ -55,13 +49,23 @@ public class GameController {
 		StatusBar.getTargetLabel().update();
 		StatusBar.getLevelLabel().update();
 		
-//		DurationTime.stop();
-//		OrderController.stop();
-//		animation.stop();
+		pauseGame();
 		
 		//Should have ALERT to User
 		//New Menu ~~Yummy!
 		//and Clock.initialize again
+	}
+	
+	private static void pauseGame() {
+		DurationTime.stop();
+		OrderController.stop();
+		animation.stop();
+	}
+	
+	private static void continueGame() {
+		DurationTime.initialize();
+		OrderController.initialize();
+		animation.start();
 	}
 	
 	//Getter & Setter methods
@@ -77,12 +81,7 @@ public class GameController {
 	public static void setLevel(int level) {
 		Level = level;
 	}
-	public static boolean isGameOver() {
-		return isGameOver;
-	}
-	public static void setGameOver(boolean isGameOver) {
-		GameController.isGameOver = isGameOver;
-	}
+
 	public static int getTarget() {
 		return Target;
 	}
