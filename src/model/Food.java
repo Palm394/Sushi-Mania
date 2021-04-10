@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import gui.CustomerGUI;
 import gui.SushiTrainGUI;
 import gui.gamePane;
+import logic.GameController;
 import model.base.Updatable;
 
 public class Food implements Updatable {
@@ -44,6 +45,7 @@ public class Food implements Updatable {
 			if(i.isDetect(this) != -1) {
 				System.out.println("Palm's Debug : Detect with Customer" + i.getNumber());
 				isEat = true;
+				GameController.addScore(1);
 			}
 		}
 	}

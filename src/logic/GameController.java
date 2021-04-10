@@ -1,5 +1,6 @@
 package logic;
 
+import gui.StatusBar;
 import gui.SushiTrainGUI;
 import javafx.animation.AnimationTimer;
 import model.SushiTrain;
@@ -24,6 +25,11 @@ public class GameController {
 			}
 		};
 		animation.start();
+	}
+	
+	public static void addScore(int number) {
+		Score += number;
+		StatusBar.getScoreLabel().update();
 	}
 	
 	
