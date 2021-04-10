@@ -11,6 +11,7 @@ public class GameController {
 	private static int Level;
 	private static int Target;
 	private static boolean isGameOver;
+	private static AnimationTimer animation;
 	
 	public static void initialize() {
 		Score = 0;
@@ -18,7 +19,7 @@ public class GameController {
 		Target = 100;
 		isGameOver = false;
 		
-		AnimationTimer animation = new AnimationTimer() {
+		animation = new AnimationTimer() {
 			public void handle(long now) {
 				SushiTrain.update();
 				SushiTrainGUI.paintComponent();
@@ -41,6 +42,7 @@ public class GameController {
 		StatusBar.getTargetLabel().update();
 		StatusBar.getLevelLabel().update();
 		
+		animation.stop();
 		//Should have ALERT to User
 		//New Menu ~~Yummy!
 	}
