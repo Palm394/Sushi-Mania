@@ -45,6 +45,16 @@ public class CustomerGUI extends HBox {
 	
 	public static void drawWant(int number,String want,double PosX) {
 		gc.clearRect(0, 0, gamePane.WIDTH_SCREEN, HEIGHT / 2);
+		gc.fillRect(0, 0, gamePane.WIDTH_SCREEN, HEIGHT / 2);
+		
+		for(Customer i : CustomerList) {
+			if(i.getWant() != null) {
+				String image_path = "file:res/dish.png";
+				Image image = new Image(image_path);
+				
+				gc.drawImage(image, i.getPosX() - 25, -10);
+			}
+		}
 	}
 
 	public static ArrayList<Customer> getCustomerList() {

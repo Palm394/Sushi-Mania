@@ -54,7 +54,9 @@ public class GameController {
 		Target = Level * 100;
 		StatusBar.getTargetLabel().update();
 		StatusBar.getLevelLabel().update();
+		
 		DurationTime.stop();
+		OrderController.stop();
 		animation.stop();
 		
 		//Should have ALERT to User
