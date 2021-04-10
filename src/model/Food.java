@@ -12,6 +12,7 @@ public class Food implements Updatable {
 	private String name;
 	private double timeToCook;
 	private boolean isEat = false;
+	private int score;
 	
 	//position of food after serving
 	private double PosX;
