@@ -25,6 +25,7 @@ public class gamePane extends VBox  {
 		
 		//--- Status Bar ---
 		
+		this.getChildren().add(new StatusBar());
 		
 		//--- Customer Zone ---
 		
