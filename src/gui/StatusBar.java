@@ -16,8 +16,8 @@ public class StatusBar extends HBox {
 	
 	private final double HEIGHT = 50;
 	private static ScoreLabel score_label;
-	private static Label target_label;
-	private static Label level_label;
+	private static TargetLabel target_label;
+	private static LevelLabel level_label;
 	
 	public StatusBar() {
 		this.setPrefHeight(HEIGHT);
@@ -42,11 +42,11 @@ public class StatusBar extends HBox {
 		return score_label;
 	}
 
-	public static Label getTarget() {
+	public static TargetLabel getTargetLabel() {
 		return target_label;
 	}
 
-	public static Label getLevel() {
+	public static LevelLabel getLevelLabel() {
 		return level_label;
 	}
 	

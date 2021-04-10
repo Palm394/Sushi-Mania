@@ -45,7 +45,7 @@ public class Food implements Updatable {
 			if(i.isDetect(this) != -1) {
 				System.out.println("Palm's Debug : Detect with Customer" + i.getNumber());
 				isEat = true;
-				GameController.addScore(1);
+				GameController.addScore(30);
 			}
 		}
 	}

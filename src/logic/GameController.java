@@ -15,7 +15,7 @@ public class GameController {
 	public static void initialize() {
 		Score = 0;
 		Level = 1;
-		//Target = ;
+		Target = 100;
 		isGameOver = false;
 		
 		AnimationTimer animation = new AnimationTimer() {
@@ -29,9 +29,21 @@ public class GameController {
 	
 	public static void addScore(int number) {
 		Score += number;
+		if(Score >= Target) {
+			newLevel();
+		}
 		StatusBar.getScoreLabel().update();
 	}
 	
+	private static void newLevel() {
+		Level += 1;
+		Target = Level * 100;
+		StatusBar.getTargetLabel().update();
+		StatusBar.getLevelLabel().update();
+		
+		//Should have ALERT to User
+		//New Menu ~~Yummy!
+	}
 	
 	//Getter & Setter methods
 	public static int getScore() {
