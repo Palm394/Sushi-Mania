@@ -24,8 +24,9 @@ public class GameController {
 		Target = 100;
 		isGameOver = false;
 		
-		Clock.initialize();
-			
+		DurationTime.initialize();
+		OrderController.initialize();
+		
 		animation = new AnimationTimer() {
 			public void handle(long now) {
 				SushiTrain.update();
@@ -53,8 +54,10 @@ public class GameController {
 		Target = Level * 100;
 		StatusBar.getTargetLabel().update();
 		StatusBar.getLevelLabel().update();
-		Clock.stop();
-		animation.stop();
+		
+//		DurationTime.stop();
+//		OrderController.stop();
+//		animation.stop();
 		
 		//Should have ALERT to User
 		//New Menu ~~Yummy!

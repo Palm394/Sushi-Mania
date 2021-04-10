@@ -5,7 +5,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
 
-public class Clock {
+public abstract class DurationTime {
 
 	private static Timeline timeline;
 	
@@ -24,6 +24,8 @@ public class Clock {
 		timeline.setCycleCount(GameController.getTimeeachround());
 		timeline.play();
 	}
+	
+	protected abstract void show();
 
 	public Timeline getTimeline() {
 		return timeline;
