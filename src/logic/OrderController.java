@@ -22,7 +22,14 @@ public class OrderController {
 				        	Random rand = new Random();
 				        	for(Customer i : CustomerGUI.getCustomerList()) {
 				        		if(i.getWant() == null) {
+				        			//15 second to serve
+				        			i.setWaitTime(3);
 				        			CustomerBlankList.add(i);
+				        		}else {
+				        			i.setWaitTime(i.getWaitTime() - 1);
+				        			if(i.getWaitTime() == 0) {
+				        				i.setWant(null);
+				        			}
 				        		}
 				        	}
 				        	Customer isSelected = CustomerBlankList.get(rand.nextInt(CustomerBlankList.size()));

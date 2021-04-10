@@ -55,9 +55,9 @@ public class GameController {
 		StatusBar.getTargetLabel().update();
 		StatusBar.getLevelLabel().update();
 		
-		DurationTime.stop();
-		OrderController.stop();
-		animation.stop();
+//		DurationTime.stop();
+//		OrderController.stop();
+//		animation.stop();
 		
 		//Should have ALERT to User
 		//New Menu ~~Yummy!

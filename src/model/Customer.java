@@ -8,6 +8,7 @@ public class Customer {
 	private int number;
 	
 	private String want;
+	private int waitTime = 0;
 	
 	private final double PosX;
 	
@@ -48,5 +49,13 @@ public class Customer {
 		want = "Salmon";
 		
 		CustomerGUI.drawWant(number,want,PosX);
+	}
+
+	public int getWaitTime() {
+		return waitTime;
+	}
+
+	public void setWaitTime(int waitTime) {
+		this.waitTime = waitTime;
 	}
 }
