@@ -10,19 +10,18 @@ public class Clock {
 	private static Timeline timeline;
 	
 	public static void initialize() {
-		// TODO Auto-generated constructor stub
-		 timeline = new Timeline(
+		GameController.setTimer(GameController.getTimeeachround());
+		timeline = new Timeline(
 			    new KeyFrame(
 			        Duration.millis( 1000 ),
 			        event -> {
-			            GameController.timer-=1;
+			            GameController.setTimer(GameController.getTimer() - 1);
 			            StatusBar.getTimerLabel().update();
-			        	System.out.println("OK");
 			        }
 			    )
 		);
 		
-		timeline.setCycleCount(GameController.timeEachRound);
+		timeline.setCycleCount(GameController.getTimeeachround());
 		timeline.play();
 	}
 

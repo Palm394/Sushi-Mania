@@ -13,17 +13,17 @@ public class GameController {
 	private static boolean isGameOver;
 	private static AnimationTimer animation;
 	
-	public static int timer = 5;
+	private static int timer;
 	
 	//second unit
-	public final static int timeEachRound = 5;
+	private final static int timeEachRound = 60;
 	
 	public static void initialize() {
 		Score = 0;
 		Level = 1;
 		Target = 100;
 		isGameOver = false;
-			
+		
 		Clock.initialize();
 			
 		animation = new AnimationTimer() {
@@ -85,6 +85,18 @@ public class GameController {
 	}
 	public static void setTarget(int target) {
 		Target = target;
+	}
+
+	public static int getTimer() {
+		return timer;
+	}
+
+	public static void setTimer(int timer) {
+		GameController.timer = timer;
+	}
+
+	public static int getTimeeachround() {
+		return timeEachRound;
 	}
 	
 }
