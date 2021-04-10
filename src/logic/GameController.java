@@ -13,16 +13,28 @@ public class GameController {
 	private static boolean isGameOver;
 	private static AnimationTimer animation;
 	
+	public static int timer = 5;
+	
+	//second unit
+	public final static int timeEachRound = 5;
+	
 	public static void initialize() {
 		Score = 0;
 		Level = 1;
 		Target = 100;
 		isGameOver = false;
-		
+			
+		Clock.initialize();
+			
 		animation = new AnimationTimer() {
 			public void handle(long now) {
 				SushiTrain.update();
 				SushiTrainGUI.paintComponent();
+				
+				if(timer == 0) {
+					animation.stop();
+					//GameOver
+				}
 			}
 		};
 		animation.start();
@@ -41,10 +53,12 @@ public class GameController {
 		Target = Level * 100;
 		StatusBar.getTargetLabel().update();
 		StatusBar.getLevelLabel().update();
-		
+		Clock.stop();
 		animation.stop();
+		
 		//Should have ALERT to User
 		//New Menu ~~Yummy!
+		//and Clock.initialize again
 	}
 	
 	//Getter & Setter methods

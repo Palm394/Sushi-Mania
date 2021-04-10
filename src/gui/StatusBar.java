@@ -51,5 +51,9 @@ public class StatusBar extends HBox {
 	public static LevelLabel getLevelLabel() {
 		return level_label;
 	}
-	
+
+	public static TimerLabel getTimerLabel() {
+		return timer_label;
+	}
+
 }
