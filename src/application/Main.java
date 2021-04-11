@@ -1,7 +1,6 @@
 package application;
 
-import gui.GUIController;
-
+import gui.menuPane;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -13,9 +12,9 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) {
-		GUIController manager = new GUIController();
+		menuPane menu = new menuPane();
 		
-		primaryStage = manager.getMenuStage();
+		primaryStage = menu.getMenuStage();
 		primaryStage.show();
 	}
 
