@@ -5,11 +5,9 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
 
-public abstract class DurationTime {
+public class DurationTime extends SetTime{
 
-	private static Timeline timeline;
-	
-	public static void initialize() {
+	public DurationTime() {
 		GameController.setTimer(GameController.getTimeeachround());
 		timeline = new Timeline(
 			    new KeyFrame(
@@ -23,16 +21,6 @@ public abstract class DurationTime {
 		
 		timeline.setCycleCount(GameController.getTimeeachround());
 		timeline.play();
-	}
-	
-	protected abstract void show();
-
-	public Timeline getTimeline() {
-		return timeline;
-	}
-	
-	public static void stop() {
-		timeline.stop();
 	}
 
 }

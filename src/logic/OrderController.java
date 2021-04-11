@@ -9,11 +9,9 @@ import javafx.animation.Timeline;
 import javafx.util.Duration;
 import model.Customer;
 
-public class OrderController {
-
-	private static Timeline timeline;
-		
-		public static void initialize() {
+public class OrderController extends SetTime {
+	
+		public OrderController() {
 			timeline = new Timeline(
 				    new KeyFrame(
 				        Duration.millis( 5000 ),
@@ -41,13 +39,4 @@ public class OrderController {
 			timeline.setCycleCount( 12 );
 			timeline.play();
 		}
-	
-		public Timeline getTimeline() {
-			return timeline;
-		}
-		
-		public static void stop() {
-			timeline.stop();
-		}
-
 }

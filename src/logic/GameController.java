@@ -10,11 +10,13 @@ public class GameController {
 	private static int Score;
 	private static int Level;
 	private static int Target;
-	private static AnimationTimer animation;
-	
 	private static int timer;
 	//second unit
 	private final static int timeEachRound = 60;
+	
+	private static AnimationTimer animation;
+	private static DurationTime time_left;
+	private static OrderController order_time;
 	
 	public static void initialize() {
 		Score = 0;
@@ -32,7 +34,7 @@ public class GameController {
 				}
 			}
 		};
-		continueGame();
+		startGame();
 	}
 	
 	public static void addScore(int number) {
@@ -53,18 +55,23 @@ public class GameController {
 		
 		//Should have ALERT to User
 		//New Menu ~~Yummy!
-		//and Clock.initialize again
+	}
+	
+	private static void startGame() {
+		time_left = new DurationTime();
+		order_time = new OrderController();
+		animation.start();
 	}
 	
 	private static void pauseGame() {
-		DurationTime.stop();
-		OrderController.stop();
+		time_left.stop();
+		order_time.stop();
 		animation.stop();
 	}
 	
 	private static void continueGame() {
-		DurationTime.initialize();
-		OrderController.initialize();
+		time_left = new DurationTime();
+		order_time = new OrderController();
 		animation.start();
 	}
 	
