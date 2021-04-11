@@ -70,8 +70,8 @@ public class GameController {
 	}
 	
 	private static void continueGame() {
-		time_left = new DurationTime();
-		order_time = new OrderController();
+		time_left.getTimeline().play();;
+		order_time.getTimeline().play();;
 		animation.start();
 	}
 	
