@@ -63,15 +63,15 @@ public class GameController {
 		animation.start();
 	}
 	
-	private static void pauseGame() {
+	public static void pauseGame() {
 		time_left.stop();
 		order_time.stop();
 		animation.stop();
 	}
 	
 	private static void continueGame() {
-		time_left = new DurationTime();
-		order_time = new OrderController();
+		time_left.getTimeline().play();;
+		order_time.getTimeline().play();;
 		animation.start();
 	}
 	

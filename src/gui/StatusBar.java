@@ -1,13 +1,17 @@
 package gui;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import logic.GameController;
 import model.LabelStatusBar.LevelLabel;
 import model.LabelStatusBar.ScoreLabel;
 import model.LabelStatusBar.TargetLabel;
@@ -20,6 +24,7 @@ public class StatusBar extends HBox {
 	private static TargetLabel target_label;
 	private static LevelLabel level_label;
 	private static TimerLabel timer_label;
+	private static Button menu_button;
 	
 	public StatusBar() {
 		this.setPrefHeight(HEIGHT);
@@ -37,6 +42,17 @@ public class StatusBar extends HBox {
 		
 		level_label = new LevelLabel();
 		this.getChildren().add(level_label);
+		
+		menu_button = new Button("Menu");
+		menu_button.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				GameController.pauseGame();
+			}
+			
+		});
+		this.getChildren().add(menu_button);
 		
 	}
 
