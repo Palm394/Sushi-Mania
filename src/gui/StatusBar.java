@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
@@ -49,6 +50,8 @@ public class StatusBar extends HBox {
 			@Override
 			public void handle(ActionEvent event) {
 				GameController.pauseGame();
+				Alert choice = new Alert(gamePane.getWidthScreen(),gamePane.getHeightScreen());
+				gamePane.getGameStage().setScene(choice.getScene());
 			}
 			
 		});

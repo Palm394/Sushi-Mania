@@ -69,7 +69,7 @@ public class GameController {
 		animation.stop();
 	}
 	
-	private static void continueGame() {
+	public static void continueGame() {
 		time_left.getTimeline().play();;
 		order_time.getTimeline().play();;
 		animation.start();

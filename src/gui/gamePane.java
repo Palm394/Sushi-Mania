@@ -11,8 +11,8 @@ import logic.GameController;
 
 public class gamePane extends VBox  {
 	
-	private Scene gameScene;
-	private Stage gameStage;
+	private static Scene gameScene;
+	private static Stage gameStage;
 	private StatusBar status;
 	
 	public static final int WIDTH_SCREEN = 1000;
@@ -61,8 +61,25 @@ public class gamePane extends VBox  {
 		this.menuStage.close();
 		gameStage.show();
 	}
+	
+	public static void backToGame() {
+		gameStage.setScene(gameScene);
+		GameController.continueGame();
+	}
 
 	public StatusBar getStatus() {
 		return status;
+	}
+
+	public static Stage getGameStage() {
+		return gameStage;
+	}
+
+	public static int getWidthScreen() {
+		return WIDTH_SCREEN;
+	}
+
+	public static int getHeightScreen() {
+		return HEIGHT_SCREEN;
 	}
 }
