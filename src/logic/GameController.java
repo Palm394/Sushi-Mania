@@ -63,7 +63,7 @@ public class GameController {
 		animation.start();
 	}
 	
-	private static void pauseGame() {
+	public static void pauseGame() {
 		time_left.stop();
 		order_time.stop();
 		animation.stop();

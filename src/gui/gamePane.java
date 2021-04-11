@@ -13,6 +13,7 @@ public class gamePane extends VBox  {
 	
 	private Scene gameScene;
 	private Stage gameStage;
+	private StatusBar status;
 	
 	public static final int WIDTH_SCREEN = 1000;
 	public static final int HEIGHT_SCREEN = 600;
@@ -25,7 +26,8 @@ public class gamePane extends VBox  {
 		
 		//--- Status Bar ---
 		
-		this.getChildren().add(new StatusBar());
+		status = new StatusBar();
+		this.getChildren().add(status);
 		
 		//--- Customer Zone ---
 		
@@ -60,4 +62,7 @@ public class gamePane extends VBox  {
 		gameStage.show();
 	}
 
+	public StatusBar getStatus() {
+		return status;
+	}
 }
