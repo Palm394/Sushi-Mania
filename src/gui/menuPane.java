@@ -40,7 +40,7 @@ public class menuPane extends StackPane {
 		this.getChildren().add(startButton);
 	}
 	
-	public Stage getMenuStage() {
+	public static Stage getMenuStage() {
 		return menuStage;
 	}
 

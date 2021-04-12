@@ -1,6 +1,7 @@
 package model;
 
 import gui.gamePane;
+import gui.menuPane;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -10,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import logic.GameController;
 
 public abstract class AlertPane {
@@ -38,6 +40,7 @@ public abstract class AlertPane {
 		 center = new VBox();
 		 
 		 Label title = new Label(name);
+		 title.setFont(new Font(50));
 		 
 		 center.getChildren().add(title);
 		 center.setAlignment(Pos.CENTER);
@@ -84,6 +87,21 @@ public abstract class AlertPane {
 		});
 		cont.setAlignment(Pos.CENTER);
 		return cont;
+	}
+	
+	protected Button backToMenu() {
+		Button button = new Button("BACK TO MENU");
+		button.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				gamePane.getGameStage().close();
+				menuPane.getMenuStage().show();
+			}
+			
+		});
+		button.setAlignment(Pos.CENTER);
+		return button;
 	}
 	
 	public Scene getScene() {

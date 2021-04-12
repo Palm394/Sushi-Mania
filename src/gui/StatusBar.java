@@ -48,7 +48,7 @@ public class StatusBar extends HBox {
 
 			@Override
 			public void handle(ActionEvent event) {
-				AlertPane choice = new ConfigPane("Menu",gamePane.getWidthScreen(),gamePane.getHeightScreen());
+				AlertPane choice = new SettingPane("Menu",gamePane.getWidthScreen(),gamePane.getHeightScreen());
 				gamePane.getGameStage().setScene(choice.getScene());
 			}
 			
