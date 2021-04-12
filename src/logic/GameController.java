@@ -1,8 +1,12 @@
 package logic;
 
+import gui.GameOverPane;
+import gui.LevelUpPane;
 import gui.StatusBar;
 import gui.SushiTrainGUI;
+import gui.gamePane;
 import javafx.animation.AnimationTimer;
+import model.AlertPane;
 import model.SushiTrain;
 
 public class GameController {
@@ -29,8 +33,9 @@ public class GameController {
 				SushiTrainGUI.paintComponent();
 				
 				if(timer == 0) {
-					pauseGame();
 					//GameOver
+					AlertPane gameOver = new GameOverPane("Game Over",gamePane.getWidthScreen(),gamePane.getHeightScreen());
+					gamePane.getGameStage().setScene(gameOver.getScene());
 				}
 			}
 		};
@@ -51,9 +56,9 @@ public class GameController {
 		StatusBar.getTargetLabel().update();
 		StatusBar.getLevelLabel().update();
 		
-		pauseGame();
-		
 		//Should have ALERT to User
+		LevelUpPane levelup = new LevelUpPane("Level UP!",gamePane.WIDTH_SCREEN,gamePane.HEIGHT_SCREEN);
+		gamePane.getGameStage().setScene(levelup.getScene());
 		//New Menu ~~Yummy!
 	}
 	
@@ -69,7 +74,7 @@ public class GameController {
 		animation.stop();
 	}
 	
-	private static void continueGame() {
+	public static void continueGame() {
 		time_left.getTimeline().play();;
 		order_time.getTimeline().play();;
 		animation.start();

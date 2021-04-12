@@ -5,13 +5,13 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import logic.GameController;
+import model.AlertPane;
 import model.LabelStatusBar.LevelLabel;
 import model.LabelStatusBar.ScoreLabel;
 import model.LabelStatusBar.TargetLabel;
@@ -48,7 +48,8 @@ public class StatusBar extends HBox {
 
 			@Override
 			public void handle(ActionEvent event) {
-				GameController.pauseGame();
+				AlertPane choice = new SettingPane("Menu",gamePane.getWidthScreen(),gamePane.getHeightScreen());
+				gamePane.getGameStage().setScene(choice.getScene());
 			}
 			
 		});

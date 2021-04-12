@@ -10,10 +10,10 @@ import javafx.stage.Stage;
 public class menuPane extends StackPane {
 	
 	private Scene menuScene;
-	private Stage menuStage;
+	private static Stage menuStage;
 	
-	private final int WIDTH_SIZE = 400;
-	private final int HEIGHT_SIZE = 600;
+	private final static int WIDTH_SIZE = 400;
+	private final static int HEIGHT_SIZE = 600;
 	
 	public menuPane() {
 		createStartButton();
@@ -40,8 +40,16 @@ public class menuPane extends StackPane {
 		this.getChildren().add(startButton);
 	}
 	
-	public Stage getMenuStage() {
+	public static Stage getMenuStage() {
 		return menuStage;
+	}
+
+	public static int getWIDTH_SIZE() {
+		return WIDTH_SIZE;
+	}
+
+	public static int getHEIGHT_SIZE() {
+		return HEIGHT_SIZE;
 	}
 	
 	
