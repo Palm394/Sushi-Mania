@@ -51,8 +51,8 @@ public class StatusBar extends HBox {
 			@Override
 			public void handle(ActionEvent event) {
 				GameController.pauseGame();
-//				AlertPane choice = new GameOverPane("Game Over",gamePane.getWidthScreen(),gamePane.getHeightScreen());
-//				gamePane.getGameStage().setScene(choice.getScene());
+				AlertPane choice = new MenuAlert("Menu",gamePane.getWidthScreen(),gamePane.getHeightScreen());
+				gamePane.getGameStage().setScene(choice.getScene());
 			}
 			
 		});
