@@ -10,7 +10,6 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
-import logic.GameController;
 import model.AlertPane;
 import model.LabelStatusBar.LevelLabel;
 import model.LabelStatusBar.ScoreLabel;
@@ -24,7 +23,7 @@ public class StatusBar extends HBox {
 	private static TargetLabel target_label;
 	private static LevelLabel level_label;
 	private static TimerLabel timer_label;
-	private static Button menu_button;
+	private static Button setting_button;
 	
 	public StatusBar() {
 		this.setPrefHeight(HEIGHT);
@@ -43,17 +42,17 @@ public class StatusBar extends HBox {
 		level_label = new LevelLabel();
 		this.getChildren().add(level_label);
 		
-		menu_button = new Button("Menu");
-		menu_button.setOnAction(new EventHandler<ActionEvent>() {
+		setting_button = new Button("Settings");
+		setting_button.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent event) {
-				AlertPane choice = new SettingPane("Menu",gamePane.getWidthScreen(),gamePane.getHeightScreen());
-				gamePane.getGameStage().setScene(choice.getScene());
+				AlertPane settings = new SettingPane("Settings",gamePane.getWidthScreen(),gamePane.getHeightScreen());
+				gamePane.getGameStage().setScene(settings.getScene());
 			}
 			
 		});
-		this.getChildren().add(menu_button);
+		this.getChildren().add(setting_button);
 		
 	}
 

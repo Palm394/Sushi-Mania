@@ -19,7 +19,7 @@ public class GameController {
 	private final static int timeEachRound = 60;
 	
 	private static AnimationTimer animation;
-	private static DurationTime time_left;
+	private static TimerController time_left;
 	private static OrderController order_time;
 	
 	public static void initialize() {
@@ -63,7 +63,7 @@ public class GameController {
 	}
 	
 	private static void startGame() {
-		time_left = new DurationTime();
+		time_left = new TimerController();
 		order_time = new OrderController();
 		animation.start();
 	}

@@ -5,9 +5,9 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
 
-public class DurationTime extends SetTime{
+public class TimerController extends SetTime{
 
-	public DurationTime() {
+	public TimerController() {
 		GameController.setTimer(GameController.getTimeeachround());
 		timeline = new Timeline(
 			    new KeyFrame(
