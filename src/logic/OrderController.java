@@ -8,6 +8,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
 import model.Customer;
+import model.SetTime;
 
 public class OrderController extends SetTime {
 		private final int waitTime = 5;
