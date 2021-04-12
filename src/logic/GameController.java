@@ -1,5 +1,6 @@
 package logic;
 
+import application.Utility;
 import gui.GameOverPane;
 import gui.LevelUpPane;
 import gui.StatusBar;
@@ -48,6 +49,8 @@ public class GameController {
 			newLevel();
 		}
 		StatusBar.getScoreLabel().update();
+		Utility.addScoreSound.play();
+		
 	}
 	
 	private static void newLevel() {
