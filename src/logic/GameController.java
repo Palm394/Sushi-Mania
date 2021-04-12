@@ -60,9 +60,10 @@ public class GameController {
 		StatusBar.getLevelLabel().update();
 		
 		//Should have ALERT to User
+		//New Menu ~~Yummy!
 		LevelUpPane levelup = new LevelUpPane("Level UP!",gamePane.WIDTH_SCREEN,gamePane.HEIGHT_SCREEN);
 		gamePane.getGameStage().setScene(levelup.getScene());
-		//New Menu ~~Yummy!
+
 	}
 	
 	private static void startGame() {

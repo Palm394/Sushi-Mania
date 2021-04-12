@@ -21,4 +21,8 @@ public class Utility {
 		CustomerImage = new Image(ClassLoader.getSystemResource("customer.png").toString());
 	}
 	
+	public static void setAllVolume(double new_volume) {
+		addScoreSound.setVolume(new_volume);
+	}
+	
 }
