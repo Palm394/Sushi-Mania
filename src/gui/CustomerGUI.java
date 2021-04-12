@@ -2,6 +2,7 @@ package gui;
 
 import java.util.ArrayList;
 
+import application.Utility;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
@@ -32,10 +33,7 @@ public class CustomerGUI extends HBox {
 	}
 	
 	private void drawCustomer(GraphicsContext gc,Customer customer) {
-		String image_path = "file:res/customer.png";
-		Image image = new Image(image_path);
-
-		gc.drawImage( image, customer.getPosX(), HEIGHT / 2);
+		gc.drawImage(Utility.toImage("customer.png"), customer.getPosX(), HEIGHT / 2);
 	}
 
 	private void drawBG(GraphicsContext gc) {
@@ -49,10 +47,7 @@ public class CustomerGUI extends HBox {
 		
 		for(Customer i : CustomerList) {
 			if(i.getWant() != null) {
-				String image_path = "file:res/dish.png";
-				Image image = new Image(image_path);
-				
-				gc.drawImage(image, i.getPosX() - 25, -10);
+				gc.drawImage(Utility.toImage("dish.png"), i.getPosX() - 25, -10);
 			}
 		}
 	}

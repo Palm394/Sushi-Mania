@@ -2,6 +2,7 @@ package gui;
 
 import java.util.ArrayList;
 
+import application.Utility;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
@@ -41,10 +42,7 @@ public class SushiTrainGUI extends Canvas {
 		
 		for(Food dish : TrainDraw) {
 			//if(!dish.isEat()) {
-				String image_path = "file:res/dish.png";
-				Image image = new Image(image_path);
-			
-				gc.drawImage(image, dish.getPosX(), dish.getPosY());
+				gc.drawImage(Utility.toImage("dish.png"), dish.getPosX(), dish.getPosY());
 			//}
 		}
 	}
