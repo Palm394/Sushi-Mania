@@ -1,8 +1,11 @@
 package logic;
 
+import gui.GameOverPane;
 import gui.StatusBar;
 import gui.SushiTrainGUI;
+import gui.gamePane;
 import javafx.animation.AnimationTimer;
+import model.AlertPane;
 import model.SushiTrain;
 
 public class GameController {
@@ -31,6 +34,8 @@ public class GameController {
 				if(timer == 0) {
 					pauseGame();
 					//GameOver
+					AlertPane gameOver = new GameOverPane("Game Over",gamePane.getWidthScreen(),gamePane.getHeightScreen());
+					gamePane.getGameStage().setScene(gameOver.getScene());
 				}
 			}
 		};
