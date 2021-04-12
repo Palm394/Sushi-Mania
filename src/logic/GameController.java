@@ -56,8 +56,6 @@ public class GameController {
 		StatusBar.getTargetLabel().update();
 		StatusBar.getLevelLabel().update();
 		
-		pauseGame();
-		
 		//Should have ALERT to User
 		LevelUpPane levelup = new LevelUpPane("Level UP!",gamePane.WIDTH_SCREEN,gamePane.HEIGHT_SCREEN);
 		gamePane.getGameStage().setScene(levelup.getScene());

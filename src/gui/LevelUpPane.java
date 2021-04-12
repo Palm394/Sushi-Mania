@@ -6,13 +6,15 @@ public class LevelUpPane extends AlertPane{
 
 	public LevelUpPane(String title, double W, double H) {
 		super(title, W, H);
-		// TODO Auto-generated constructor stub
+		top.getChildren().remove(0);
 	}
 
 	@Override
 	protected void addCenter() {
-		// TODO Auto-generated method stub
-		
+		center.getChildren().add(continueButton());
 	}
 
+	private void newMenu() {
+		
+	}
 }

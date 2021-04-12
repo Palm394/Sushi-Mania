@@ -17,7 +17,8 @@ public abstract class AlertPane {
 	private BorderPane root;
 	private String name;
 	
-	private VBox center;
+	protected HBox top;
+	protected VBox center;
 
 	public AlertPane(String title,double W,double H) {
 		GameController.pauseGame();
@@ -48,7 +49,7 @@ public abstract class AlertPane {
 	protected abstract void addCenter();
 	
 	private void top() {
-		HBox top = new HBox();
+		top = new HBox();
 		
 		top.getChildren().add(closeButton());
 		top.setAlignment(Pos.CENTER_RIGHT);
@@ -56,7 +57,7 @@ public abstract class AlertPane {
 		root.setTop(top);
 	}
 	
-	private Button closeButton() {
+	protected Button closeButton() {
 		Button cont = new Button("X");
 		
 		cont.setOnAction(new EventHandler<ActionEvent>() {
@@ -71,7 +72,7 @@ public abstract class AlertPane {
 		return cont;
 	}
 	
-	private Button continueGame() {
+	protected Button continueButton() {
 		Button cont = new Button("CONTINUE");
 		cont.setOnAction(new EventHandler<ActionEvent>() {
 
