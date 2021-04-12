@@ -10,23 +10,26 @@ import javafx.util.Duration;
 import model.Customer;
 
 public class OrderController extends SetTime {
-	
+		private final int waitTime = 5;
+		
+		private Random rand = new Random();
+
 		public OrderController() {
 			timeline = new Timeline(
 				    new KeyFrame(
-				        Duration.millis( 5000 ),
+				        Duration.millis( rand.nextInt(3000) + 1000 ),
 				        event -> {
 				        	ArrayList<Customer> CustomerBlankList = new ArrayList<Customer>();
 				        	Random rand = new Random();
-				        	for(Customer i : CustomerGUI.getCustomerList()) {
-				        		if(i.getWant() == null) {
-				        			//15 second to serve
-				        			i.setWaitTime(3);
-				        			CustomerBlankList.add(i);
+				        	
+				        	for(Customer customer : CustomerGUI.getCustomerList()) {
+				        		if(customer.getWant() == null) {
+				        			customer.setWaitTime(waitTime);
+				        			CustomerBlankList.add(customer);
 				        		}else {
-				        			i.setWaitTime(i.getWaitTime() - 1);
-				        			if(i.getWaitTime() == 0) {
-				        				i.setWant(null);
+				        			customer.setWaitTime(customer.getWaitTime() - 1);
+				        			if(customer.getWaitTime() == 0) {
+				        				customer.setWant(null);
 				        			}
 				        		}
 				        	}
