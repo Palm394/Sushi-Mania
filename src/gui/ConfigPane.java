@@ -2,11 +2,10 @@ package gui;
 
 import model.AlertPane;
 
-public class GameOverPane extends AlertPane{
+public class ConfigPane extends AlertPane{
 
-	public GameOverPane(String title,double W, double H) {
-		super(title,W, H);
-		
+	public ConfigPane(String title, double W, double H) {
+		super(title, W, H);
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 package logic;
 
 import gui.GameOverPane;
+import gui.LevelUpPane;
 import gui.StatusBar;
 import gui.SushiTrainGUI;
 import gui.gamePane;
@@ -32,7 +33,6 @@ public class GameController {
 				SushiTrainGUI.paintComponent();
 				
 				if(timer == 0) {
-					pauseGame();
 					//GameOver
 					AlertPane gameOver = new GameOverPane("Game Over",gamePane.getWidthScreen(),gamePane.getHeightScreen());
 					gamePane.getGameStage().setScene(gameOver.getScene());
@@ -59,6 +59,8 @@ public class GameController {
 		pauseGame();
 		
 		//Should have ALERT to User
+		LevelUpPane levelup = new LevelUpPane("Level UP!",gamePane.WIDTH_SCREEN,gamePane.HEIGHT_SCREEN);
+		gamePane.getGameStage().setScene(levelup.getScene());
 		//New Menu ~~Yummy!
 	}
 	
