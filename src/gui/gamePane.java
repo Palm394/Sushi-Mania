@@ -64,6 +64,7 @@ public class gamePane extends VBox  {
 	
 	public static void backToGame() {
 		gameStage.setScene(gameScene);
+		gameStage.setTitle("Sushi Mania - Game");
 		GameController.continueGame();
 	}
 
