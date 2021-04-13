@@ -43,7 +43,7 @@ public abstract class AlertPane {
 		 title.setFont(new Font(50));
 		 
 		 center.getChildren().add(title);
-		 center.setAlignment(Pos.CENTER);
+		 center.setAlignment(Pos.TOP_CENTER);
 		 addCenter();
 		 
 		 root.setCenter(center);
