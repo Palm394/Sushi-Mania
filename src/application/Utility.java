@@ -26,9 +26,9 @@ public class Utility {
 		addScoreSound = new AudioClip(ClassLoader.getSystemResource("addScore.wav").toString());
 	}
 	
-	public static void setAllVolume(double new_volume) {
+	public static void setAllVolume(double newValue) {
 		SoundList.forEach(e -> {
-			e.setVolume(new_volume);
+			e.setVolume(newValue);
 		});
 	}
 	
