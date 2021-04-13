@@ -42,10 +42,10 @@ public abstract class AlertPane {
 		 
 		 Label title = new Label(name);
 		 title.setFont(new Font(50));
-		 VBox.setMargin(title, new Insets(50, 0, 30, 0));
+		 VBox.setMargin(title, new Insets(0, 0, 30, 0));
 		 
 		 center.getChildren().add(title);
-		 center.setAlignment(Pos.TOP_CENTER);
+		 center.setAlignment(Pos.CENTER);
 		 addCenter();
 		 
 		 root.setCenter(center);
@@ -87,6 +87,7 @@ public abstract class AlertPane {
 			}
 			
 		});
+		VBox.setMargin(cont, new Insets(50, 0, 0, 0));
 		cont.setAlignment(Pos.CENTER);
 		return cont;
 	}
