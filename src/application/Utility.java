@@ -31,11 +31,11 @@ public class Utility {
 		NewLevelSound = new AudioClip(ClassLoader.getSystemResource("NewLevel.wav").toString());
 		EatSound = new AudioClip(ClassLoader.getSystemResource("EatSound.mp3").toString());
 	}
-	
-	public static void setAllVolume(double new_volume) {
-		volume = new_volume;
+
+	public static void setAllVolume(double newValue) {
+		volume = newValue;
 		SoundList.forEach(e -> {
-			e.setVolume(new_volume);
+			e.setVolume(newValue);
 		});
 	}
 	
