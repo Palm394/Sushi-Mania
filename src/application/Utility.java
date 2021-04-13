@@ -15,6 +15,8 @@ public class Utility {
 	
 	private static ArrayList<AudioClip> SoundList = new ArrayList<AudioClip>();
 	
+	public static double volume;
+	
 	static {
 		loadResource();
 		
@@ -31,6 +33,7 @@ public class Utility {
 	}
 	
 	public static void setAllVolume(double new_volume) {
+		volume = new_volume;
 		SoundList.forEach(e -> {
 			e.setVolume(new_volume);
 		});
