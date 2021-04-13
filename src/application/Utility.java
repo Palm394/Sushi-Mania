@@ -10,23 +10,30 @@ public class Utility {
 	public static Image CustomerImage;
 	public static Image DishImage;
 	
-	public static AudioClip addScoreSound;
+	public static AudioClip NewLevelSound;
+	public static AudioClip EatSound;
 	
 	private static ArrayList<AudioClip> SoundList = new ArrayList<AudioClip>();
 	
+	public static double volume;
+	
 	static {
 		loadResource();
-		SoundList.add(addScoreSound);
+		
+		SoundList.add(NewLevelSound);
+		SoundList.add(EatSound);
 	}
 	
 	public static void loadResource() {
 		DishImage = new Image(ClassLoader.getSystemResource("dish.png").toString());
 		CustomerImage = new Image(ClassLoader.getSystemResource("customer.png").toString());
 		
-		addScoreSound = new AudioClip(ClassLoader.getSystemResource("addScore.wav").toString());
+		NewLevelSound = new AudioClip(ClassLoader.getSystemResource("NewLevel.wav").toString());
+		EatSound = new AudioClip(ClassLoader.getSystemResource("EatSound.mp3").toString());
 	}
 	
 	public static void setAllVolume(double new_volume) {
+		volume = new_volume;
 		SoundList.forEach(e -> {
 			e.setVolume(new_volume);
 		});
