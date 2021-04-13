@@ -38,15 +38,9 @@ public class gamePane extends VBox  {
 		this.getChildren().add(new SushiTrainGUI());
 		
 		//--- Chef Zone ---
-		Parent bottom;
-		try {
-			bottom = FXMLLoader.load(getClass().getResource("chefZone.fxml"));
-		// add components
-		this.getChildren().add(bottom);		
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+		this.getChildren().add(new ChefZoneGUI());
+		
 		//--- End ---
 		
 		gameStage = new Stage();
