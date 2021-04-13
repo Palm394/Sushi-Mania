@@ -10,11 +10,6 @@ public class rollPane extends GridPane{
 		this.setPadding(new Insets(20,20,20,20));
 		this.setPrefHeight(200);
 		this.setPrefWidth(300);
-		for(int i=0;i<Math.min(ChefZoneController.getWrapper().size(), 12);i++)
-		{
-			ImageView image = new ImageView(ChefZoneController.getWrapper().get(i).getUrl());
-			this.add(image, i/4, i-(i/4));
-		}
 	}
 	
 	public void updateIngredient() {

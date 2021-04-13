@@ -26,15 +26,11 @@ public class ingredientPane extends GridPane{
 			supply.get(i).setOnAction(new EventHandler<ActionEvent>(){
 				public void handle(ActionEvent event) {
 						if(supply.get(j).ingredient.getRemain()>0 && ChefZoneController.getWrapper().size() < 12) {
-							supply.get(j).ingredient.setRemain(supply.get(j).ingredient.getRemain()-1);
-							supply.get(j).setText(supply.get(j).ingredient.getRemain()+"");
-							System.out.println(supply.get(j).ingredient.getName());
-							ChefZoneController.addIngredient(supply.get(j).ingredient);
-							ChefZoneController.updateIngredient();
+							ChefZoneController.addIngredient(supply.get(j));
 						}
 					}
 				}
-		);
+			);
 		}
 	}
 }
