@@ -3,6 +3,8 @@ package gui;
 import application.Utility;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.geometry.Pos;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import model.AlertPane;
 
@@ -12,10 +14,19 @@ public class SettingPane extends AlertPane {
 		super(title, W, H);
 		setSliderVol();
 	}
+	
+	@Override
+	protected void addCenter() {
+		Label Sound_Label = new Label("Sound Volume");
+		center.getChildren().add(Sound_Label);
+		
+		center.getChildren().add(setSliderVol());
+		center.getChildren().add(backToMenu());
+	}
 
 	private Slider setSliderVol() {
 		Slider slider = new Slider(0, 1, Utility.addScoreSound.getVolume());
-		slider.setMaxWidth(500);
+		slider.setMaxWidth(300);
 		
 		slider.valueProperty().addListener(new ChangeListener<Number>() {
 
@@ -26,12 +37,6 @@ public class SettingPane extends AlertPane {
 
 		});
 		return slider;
-	}
-
-	@Override
-	protected void addCenter() {
-		center.getChildren().add(setSliderVol());
-		center.getChildren().add(backToMenu());
 	}
 
 }

@@ -4,6 +4,7 @@ import gui.gamePane;
 import gui.menuPane;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -41,6 +42,7 @@ public abstract class AlertPane {
 		 
 		 Label title = new Label(name);
 		 title.setFont(new Font(50));
+		 VBox.setMargin(title, new Insets(50, 0, 30, 0));
 		 
 		 center.getChildren().add(title);
 		 center.setAlignment(Pos.TOP_CENTER);
@@ -101,6 +103,7 @@ public abstract class AlertPane {
 			}
 			
 		});
+		VBox.setMargin(button, new Insets(50, 0, 0, 0));
 		button.setAlignment(Pos.CENTER);
 		return button;
 	}
