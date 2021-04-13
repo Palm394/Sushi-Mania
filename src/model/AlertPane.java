@@ -96,7 +96,8 @@ public abstract class AlertPane {
 			@Override
 			public void handle(ActionEvent event) {
 				gamePane.getGameStage().close();
-				menuPane.getMenuStage().show();
+				menuPane new_menu = new menuPane();
+				new_menu.getMenuStage().show();
 			}
 			
 		});

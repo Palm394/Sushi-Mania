@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import application.Utility;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import model.Food;
 import model.SushiTrain;
@@ -42,7 +41,7 @@ public class SushiTrainGUI extends Canvas {
 		
 		for(Food dish : TrainDraw) {
 			//if(!dish.isEat()) {
-				gc.drawImage(Utility.toImage("dish.png"), dish.getPosX(), dish.getPosY());
+				gc.drawImage(Utility.DishImage, dish.getPosX(), dish.getPosY());
 			//}
 		}
 	}
