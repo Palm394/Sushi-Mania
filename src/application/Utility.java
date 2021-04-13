@@ -11,12 +11,15 @@ public class Utility {
 	public static Image DishImage;
 	
 	public static AudioClip NewLevelSound;
+	public static AudioClip EatSound;
 	
 	private static ArrayList<AudioClip> SoundList = new ArrayList<AudioClip>();
 	
 	static {
 		loadResource();
+		
 		SoundList.add(NewLevelSound);
+		SoundList.add(EatSound);
 	}
 	
 	public static void loadResource() {
@@ -24,6 +27,7 @@ public class Utility {
 		CustomerImage = new Image(ClassLoader.getSystemResource("customer.png").toString());
 		
 		NewLevelSound = new AudioClip(ClassLoader.getSystemResource("NewLevel.wav").toString());
+		EatSound = new AudioClip(ClassLoader.getSystemResource("EatSound.mp3").toString());
 	}
 	
 	public static void setAllVolume(double new_volume) {

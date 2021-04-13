@@ -45,11 +45,10 @@ public class GameController {
 	
 	public static void addScore(int number) {
 		Score += number;
+		Utility.EatSound.play();
 		if(Score >= Target) {
 			Utility.NewLevelSound.play();
 			newLevel();
-		}else {
-			
 		}
 		StatusBar.getScoreLabel().update();
 	}
