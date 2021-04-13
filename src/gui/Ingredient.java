@@ -3,32 +3,41 @@ package gui;
 public class Ingredient {
 	String name;
 	String url;
+	int id;
 	int price;
 	int remain;
 	
-	Ingredient(String name){
-		this.name = name;
-		switch(name){
-			case "Cucumber":	url="Blueberry.png";	price=0; remain=10; break;
-			case "Seaweed":		url="Blueberry.png";	price=0; remain=10;	break;
-			case "Shrimp":		url="Blueberry.png";	price=0; remain=10; break;
-			case "SweetEgg":	url="Blueberry.png";	price=0; remain=10; break;
-			case "CrabStick":	url="Blueberry.png";	price=0; remain=10; break;
-			case "Ikura":		url="Blueberry.png";	price=0; remain=10; break;
-			case "Avocado":		url="Blueberry.png";	price=0; remain=10; break;
-			case "Tuna":		url="Blueberry.png";	price=0; remain=10; break;
-			case "Saba":		url="Blueberry.png";	price=0; remain=10; break;
-			case "Salmon":		url="Blueberry.png";	price=0; remain=10; break;
-			case "Squid":		url="Blueberry.png";	price=0; remain=10; break;
-			case "Scallop":		url="Blueberry.png";	price=0; remain=10; break;
-			case "Hamachi":		url="Blueberry.png";	price=0; remain=10; break;
-			case "Fuaga":		url="Blueberry.png";	price=0; remain=10; break;
-			case "ShrimpEgg":	url="Blueberry.png";	price=0; remain=10; break;
-			case "Unangi":		url="Blueberry.png";	price=0; remain=10; break;
-			case "Uni":			url="Blueberry.png";	price=0; remain=10; break;
-			case "Rice":		url="Blueberry.png"; price=0; remain=10; break;
-			default: url="coffee.png"; price=0; remain=0;
+	Ingredient(int id){
+		this.id=id;
+		switch(id){
+			case 0:  name="Cucumber";	url="Blueberry.png";	price=0; remain=10; break;
+			case 1:  name="Seaweed";	url="Blueberry.png";	price=0; remain=10;	break;
+			case 2:  name="Shrimp";		url="Blueberry.png";	price=0; remain=10; break;
+			case 3:  name="SweetEgg";	url="Blueberry.png";	price=0; remain=10; break;
+			case 4:  name="CrabStick";	url="Blueberry.png";	price=0; remain=10; break;
+			case 5:  name="Ikura";		url="Blueberry.png";	price=0; remain=10; break;
+			case 6:  name="Avocado";	url="Blueberry.png";	price=0; remain=10; break;
+			case 7:  name="Tuna";		url="Blueberry.png";	price=0; remain=10; break;
+			case 8:  name="Saba";		url="Blueberry.png";	price=0; remain=10; break;
+			case 9:  name="Salmon";		url="Blueberry.png";	price=0; remain=10; break;
+			case 10: name="Squid";		url="Blueberry.png";	price=0; remain=10; break;
+			case 11: name="Scallop";	url="Blueberry.png";	price=0; remain=10; break;
+			case 12: name="Hamachi";	url="Blueberry.png";	price=0; remain=10; break;
+			case 13: name="Fuaga";		url="Blueberry.png";	price=0; remain=10; break;
+			case 14: name="ShrimpEgg";	url="Blueberry.png";	price=0; remain=10; break;
+			case 15: name="Unangi";		url="Blueberry.png";	price=0; remain=10; break;
+			case 16: name="Uni";		url="Blueberry.png";	price=0; remain=10; break;
+			case 17: name="Rice";		url="Blueberry.png"; 	price=0; remain=10; break;
+			default: name="wut"; url="coffee.png"; price=0; remain=0;
 		}
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {

@@ -6,8 +6,8 @@ import javafx.scene.image.ImageView;
 public class IngredientButton extends Button{
 	Ingredient ingredient;
 	
-	IngredientButton(String name){
-		ingredient = new Ingredient(name);
+	IngredientButton(int id){
+		ingredient = new Ingredient(id);
 		
 		ImageView image = new ImageView(this.ingredient.getUrl());
 		this.setGraphic(image);
