@@ -18,6 +18,7 @@ public class ChefZoneGUI extends HBox {
 			ingredientpane = new ingredientPane();
 			this.getChildren().add(ingredientpane);
 			
+			
 			//center zone
 			VBox centerZone = new VBox();
 			centerZone.setPadding(new Insets(10,10,10,10));
@@ -39,6 +40,7 @@ public class ChefZoneGUI extends HBox {
 			riceAndRoll.getChildren().add(rollButton);
 			centerZone.getChildren().add(riceAndRoll);
 			this.getChildren().add(centerZone);
+			
 			
 			//right zone
 			VBox rightZone = new VBox();
