@@ -22,15 +22,6 @@ public class ingredientPane extends GridPane{
 		this.prefWidth(400);
 		for(int i=0;i<=15;i++) {
 			this.add(supply.get(i), i-((i/4)*4), i/4);
-			int j = i;
-			supply.get(i).setOnAction(new EventHandler<ActionEvent>(){
-				public void handle(ActionEvent event) {
-						if(supply.get(j).ingredient.getRemain()>0 && ChefZoneController.getWrapper().size() < 12) {
-							ChefZoneController.addIngredient(supply.get(j));
-						}
-					}
-				}
-			);
 		}
 	}
 }

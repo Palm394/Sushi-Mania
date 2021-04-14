@@ -1,7 +1,5 @@
 package gui;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -27,14 +25,6 @@ public class ChefZoneGUI extends HBox {
 			IngredientButton rice = new IngredientButton(17);
 			rice.setPrefHeight(75);
 			rice.setPrefWidth(150);
-			rice.setOnAction(new EventHandler<ActionEvent>(){
-				public void handle(ActionEvent event) {
-						if(rice.ingredient.getRemain()>0 && ChefZoneController.getWrapper().size() < 12) {
-							ChefZoneController.addIngredient(rice);
-						}
-					}
-				}
-			);
 			//Roll button
 			RollButton rollButton = new RollButton(); 
 			
