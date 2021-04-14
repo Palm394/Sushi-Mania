@@ -1,5 +1,6 @@
 package logic;
 
+import application.Utility;
 import gui.GameOverPane;
 import gui.LevelUpPane;
 import gui.StatusBar;
@@ -44,7 +45,9 @@ public class GameController {
 	
 	public static void addScore(int number) {
 		Score += number;
+		Utility.EatSound.play();
 		if(Score >= Target) {
+			Utility.NewLevelSound.play();
 			newLevel();
 		}
 		StatusBar.getScoreLabel().update();
@@ -57,9 +60,10 @@ public class GameController {
 		StatusBar.getLevelLabel().update();
 		
 		//Should have ALERT to User
+		//New Menu ~~Yummy!
 		LevelUpPane levelup = new LevelUpPane("Level UP!",gamePane.WIDTH_SCREEN,gamePane.HEIGHT_SCREEN);
 		gamePane.getGameStage().setScene(levelup.getScene());
-		//New Menu ~~Yummy!
+
 	}
 	
 	private static void startGame() {

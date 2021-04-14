@@ -4,6 +4,7 @@ import gui.StatusBar;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
+import model.SetTime;
 
 public class TimerController extends SetTime{
 

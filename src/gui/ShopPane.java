@@ -1,7 +1,9 @@
 package gui;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -11,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import logic.GameController;
 
 public class ShopPane extends VBox{
 	int selectedIngredientID = 0;
@@ -67,6 +70,19 @@ public class ShopPane extends VBox{
 			}
 		});		
 		
+		//set action for normalBuy
+		normalPrice.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				new Thread(waitDelivery).start();
+			}
+		});	
+		
+		speedPrice.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				buySpeed();
+			}
+		});	
+		
 		this.getChildren().add(shopTitle);
 		this.getChildren().add(selectPane);
 		this.getChildren().add(ingredientImage);
@@ -81,12 +97,33 @@ public class ShopPane extends VBox{
 		return false;
 	}
 	
-	public void buyNormal() {
-		
-	}
+	private Runnable waitDelivery = new Runnable() {
+		public void run() {
+			int timer = 3;
+			while(timer > 0)
+			{
+				try {
+					TimeUnit.SECONDS.sleep(1);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				timer -= 1;
+				System.out.println(timer);
+			}
+			buySpeed();
+		}
+	};
 	
 	public void buySpeed() {
-		
+		if(GameController.getScore() >= ingredientList.get(selectedIngredientID).getPrice()) {
+			if(selectedIngredientID<16) {
+				//set remaining number
+				ChefZoneGUI.ingredientpane.supply.get(selectedIngredientID).buyIngredient();
+				//set new score
+				//GameController.addScore(-ingredientList.get(selectedIngredientID).getPrice()-10);
+			}
+		}
 	}
 	
 	public void lock() {

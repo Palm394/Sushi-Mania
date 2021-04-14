@@ -26,12 +26,14 @@ public class IngredientButton extends Button{
 			public void handle(ActionEvent event) {
 				if(ingredient.getRemain()>0 && ChefZoneController.getWrapper().size() < 12) {
 					ChefZoneController.addIngredient(button);
+					}
 				}
 			}
-		}
-	);
-		
-		
-		
+		);	
+	}
+	
+	public void buyIngredient() {
+		this.ingredient.setRemain(this.ingredient.getRemain() + 10);
+		this.setText(this.ingredient.getRemain()+"");
 	}
 }
