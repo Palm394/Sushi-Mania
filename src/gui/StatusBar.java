@@ -35,6 +35,12 @@ public class StatusBar extends HBox {
 		score_label = new ScoreLabel();
 		this.getChildren().add(score_label);
 		
+		Image goal_img = new Image(ClassLoader.getSystemResource("goal_icon.png").toString());
+	    ImageView goal_view = new ImageView(goal_img);
+	    goal_view.setFitHeight(50);
+	    goal_view.setFitWidth(50);
+	    this.getChildren().add(goal_view);
+	    
 		target_label = new TargetLabel();
 		this.getChildren().add(target_label);
 		
