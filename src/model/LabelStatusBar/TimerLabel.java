@@ -15,7 +15,7 @@ public class TimerLabel extends LabelStatus implements Updatable {
 	@Override
 	protected void setSentence() {
 		// TODO Auto-generated method stub
-		this.textProperty().setValue("เร่งมือหน่อยครับเชฟ : " + GameController.getTimer() + " s");
+		this.textProperty().setValue(": " + GameController.getTimer() + " s");
 	}
 
 }

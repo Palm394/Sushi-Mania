@@ -44,6 +44,12 @@ public class StatusBar extends HBox {
 		target_label = new TargetLabel();
 		this.getChildren().add(target_label);
 		
+		Image timer_img = new Image(ClassLoader.getSystemResource("timer.png").toString());
+	    ImageView timer_view = new ImageView(timer_img);
+	    timer_view.setFitHeight(45);
+	    timer_view.setFitWidth(45);
+	    this.getChildren().add(timer_view);
+		
 		timer_label = new TimerLabel();
 		this.getChildren().add(timer_label);
 		
