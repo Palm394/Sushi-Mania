@@ -2,8 +2,9 @@ package model.LabelStatusBar;
 
 import logic.GameController;
 import model.LabelStatus;
+import model.base.Updatable;
 
-public class TimerLabel extends LabelStatus {
+public class TimerLabel extends LabelStatus implements Updatable {
 
 	@Override
 	public void update() {
