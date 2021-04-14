@@ -9,6 +9,8 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -57,15 +59,20 @@ public abstract class AlertPane {
 		top = new HBox();
 		
 		top.getChildren().add(closeButton());
-		top.setAlignment(Pos.CENTER_RIGHT);
+		top.setAlignment(Pos.BASELINE_RIGHT);
 		
 		root.setTop(top);
 	}
 	
 	protected Button closeButton() {
-		Button cont = new Button("X");
+		Image img = new Image(ClassLoader.getSystemResource("closeButton.png").toString());
+	    ImageView view = new ImageView(img);
+	    view.setFitHeight(50);
+	    view.setFitWidth(50);
+	    
+		Button button = new Button();
 		
-		cont.setOnAction(new EventHandler<ActionEvent>() {
+		button.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent event) {
@@ -73,8 +80,11 @@ public abstract class AlertPane {
 			}
 			
 		});
-		cont.setAlignment(Pos.CENTER_RIGHT);
-		return cont;
+		
+		button.setGraphic(view);
+		button.setStyle("-fx-background-color: transparent;");
+
+		return button;
 	}
 	
 	protected Button continueButton() {
