@@ -29,7 +29,7 @@ public class StatusBar extends HBox {
 	
 	public StatusBar() {
 		this.setPrefHeight(HEIGHT);
-		this.setBackground(new Background(new BackgroundFill(Color.ORANGE.brighter(), CornerRadii.EMPTY, Insets.EMPTY)));
+		this.setBackground(new Background(new BackgroundFill(Color.web("#c2e39c"), CornerRadii.EMPTY, Insets.EMPTY)));
 		this.setAlignment(Pos.CENTER);
 		
 		score_label = new ScoreLabel();
@@ -37,8 +37,8 @@ public class StatusBar extends HBox {
 		
 		Image goal_img = new Image(ClassLoader.getSystemResource("goal_icon.png").toString());
 	    ImageView goal_view = new ImageView(goal_img);
-	    goal_view.setFitHeight(50);
-	    goal_view.setFitWidth(50);
+	    goal_view.setFitHeight(48);
+	    goal_view.setFitWidth(48);
 	    this.getChildren().add(goal_view);
 	    
 		target_label = new TargetLabel();
