@@ -87,8 +87,8 @@ public abstract class AlertPane {
 		return button;
 	}
 	
-	protected Button continueButton() {
-		Button cont = new Button("CONTINUE");
+	protected NavButton continueButton() {
+		NavButton cont = new NavButton("CONTINUE");
 		cont.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -98,12 +98,11 @@ public abstract class AlertPane {
 			
 		});
 		VBox.setMargin(cont, new Insets(50, 0, 0, 0));
-		cont.setAlignment(Pos.CENTER);
 		return cont;
 	}
 	
-	protected Button backToMenu() {
-		Button button = new Button("BACK TO MENU");
+	protected NavButton backToMenu() {
+		NavButton button = new NavButton("BACK TO MENU");
 		button.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -115,7 +114,6 @@ public abstract class AlertPane {
 			
 		});
 		VBox.setMargin(button, new Insets(50, 0, 0, 0));
-		button.setAlignment(Pos.CENTER);
 		return button;
 	}
 	
