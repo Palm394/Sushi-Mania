@@ -31,22 +31,26 @@ public class ChefZoneController {
 	}
 	
 	public static int wrap(ArrayList<Ingredient> wrapper) {
-		int hcode = 0;
+		if(wrapper.size()>0) {
+			int hcode = 0;
 		
-		for(int i=0 ;i<wrapper.size() ;i++) {
-			hcode += Math.pow(4, wrapper.get(i).getId());
+			for(int i=0 ;i<wrapper.size() ;i++) {
+				hcode += Math.pow(4, wrapper.get(i).getId());
+			}
+		
+			// details of sushi is in recipe
+			menuRecipe recipe = new menuRecipe(hcode);
+			System.out.println(recipe.getName());
+		
+			//function to send sushi to the road
+			///////////////////////////////////
+		
+			ChefZoneGUI.rollpane.removeIngredient();
+			wrapper.clear();
+		
+			return hcode;
+		} else {
+			return -1;
 		}
-		
-		// details of sushi is in recipe
-		menuRecipe recipe = new menuRecipe(hcode);
-		System.out.println(recipe.getName());
-		
-		//function to send sushi to the road
-		///////////////////////////////////
-		
-		ChefZoneGUI.rollpane.removeIngredient();
-		wrapper.clear();
-		
-		return hcode;
 	}
 }

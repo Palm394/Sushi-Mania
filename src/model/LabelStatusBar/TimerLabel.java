@@ -14,7 +14,7 @@ public class TimerLabel extends LabelStatus {
 	@Override
 	protected void setSentence() {
 		// TODO Auto-generated method stub
-		this.textProperty().setValue("เร่งมือหน่อยครับเชฟ : " + GameController.getTimer() + " s");
+		this.textProperty().setValue("Time Remaining : " + GameController.getTimer() + " s");
 	}
 
 }
