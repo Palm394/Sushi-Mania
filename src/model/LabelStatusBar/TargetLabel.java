@@ -8,7 +8,7 @@ public class TargetLabel extends LabelStatus implements Updatable {
 	
 	@Override
 	protected void setSentence() {
-		this.textProperty().setValue(": " + GameController.getTarget());
+		this.textProperty().setValue(" : " + GameController.getTarget());
 	}
 
 	@Override

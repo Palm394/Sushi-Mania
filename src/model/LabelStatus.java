@@ -9,7 +9,7 @@ public abstract class LabelStatus extends Label implements Updatable {
 	
 	public LabelStatus() {
 		this.setFont(new Font(20));
-		this.setPadding(new Insets(10));
+		this.setPadding(new Insets(0,145,0,0));
 		setSentence();
 	}
 	
