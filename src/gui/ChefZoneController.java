@@ -34,7 +34,7 @@ public class ChefZoneController {
 		int hcode = 0;
 		
 		for(int i=0 ;i<wrapper.size() ;i++) {
-			hcode += Math.pow(3, wrapper.get(i).getId());
+			hcode += Math.pow(4, wrapper.get(i).getId());
 		}
 		
 		// details of sushi is in recipe

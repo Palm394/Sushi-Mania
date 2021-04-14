@@ -10,25 +10,24 @@ public class Ingredient {
 	Ingredient(int id){
 		this.id=id;
 		switch(id){
-			case 0:  name="Cucumber";	url="Blueberry.png";	price=0; remain=10; break;
-			case 1:  name="Seaweed";	url="Blueberry.png";	price=0; remain=10;	break;
-			case 2:  name="Shrimp";		url="Blueberry.png";	price=0; remain=10; break;
-			case 3:  name="SweetEgg";	url="Blueberry.png";	price=0; remain=10; break;
-			case 4:  name="CrabStick";	url="Blueberry.png";	price=0; remain=10; break;
-			case 5:  name="Ikura";		url="Blueberry.png";	price=0; remain=10; break;
-			case 6:  name="Avocado";	url="Blueberry.png";	price=0; remain=10; break;
-			case 7:  name="Tuna";		url="Blueberry.png";	price=0; remain=10; break;
-			case 8:  name="Saba";		url="Blueberry.png";	price=0; remain=10; break;
-			case 9:  name="Salmon";		url="Blueberry.png";	price=0; remain=10; break;
-			case 10: name="Squid";		url="Blueberry.png";	price=0; remain=10; break;
-			case 11: name="Scallop";	url="Blueberry.png";	price=0; remain=10; break;
-			case 12: name="Hamachi";	url="Blueberry.png";	price=0; remain=10; break;
-			case 13: name="Fuaga";		url="Blueberry.png";	price=0; remain=10; break;
-			case 14: name="ShrimpEgg";	url="Blueberry.png";	price=0; remain=10; break;
-			case 15: name="Unangi";		url="Blueberry.png";	price=0; remain=10; break;
-			case 16: name="Uni";		url="Blueberry.png";	price=0; remain=10; break;
-			case 17: name="Rice";		url="Blueberry.png"; 	price=0; remain=10; break;
-			default: name="wut"; url="coffee.png"; price=0; remain=0;
+			case 0:  name="Cucumber";	url="cucumber.png";	price=0; remain=10; break;
+			case 1:  name="Seaweed";	url="seaweed.png";	price=0; remain=10;	break;
+			case 2:  name="SweetEgg";	url="sweetegg.png";	price=0; remain=10; break;
+			case 3:  name="CrabStick";	url="crabstick.png";	price=0; remain=10; break;
+			case 4:  name="ShrimpEgg";	url="shrimpegg.png";	price=0; remain=10; break;
+			case 5:  name="Shrimp";		url="shrimp.png";	price=0; remain=10; break;
+			case 6:  name="Saba";		url="saba.png";	price=0; remain=10; break;
+			case 7:  name="Tuna";		url="tuna.png";	price=0; remain=10; break;
+			case 8:  name="Squid";		url="squid.png";	price=0; remain=10; break;
+			case 9:  name="Salmon";		url="salmon.png";	price=0; remain=10; break;
+			case 10: name="Ikura";		url="ikura.png";	price=0; remain=10; break;
+			case 11: name="Avocado";	url="avocado.png";	price=0; remain=10; break;
+			case 12: name="Scallop";	url="scallop.png";	price=0; remain=10; break;
+			case 13: name="Unangi";		url="unangi.png";	price=0; remain=10; break;
+			case 14: name="Fuaga";		url="Fuaga.png";	price=0; remain=10; break;
+			case 15: name="Uni";		url="uni.png";	price=0; remain=10; break;
+			case 17: name="Rice";		url="rice.png"; 	price=0; remain=10; break;
+			default: name="WTF"; 	url="coffee.png"; price=0; remain=0;
 		}
 	}
 

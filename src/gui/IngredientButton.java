@@ -11,11 +11,15 @@ public class IngredientButton extends Button{
 	IngredientButton(int id){
 		ingredient = new Ingredient(id);
 		
-		ImageView image = new ImageView(this.ingredient.getUrl());
-		this.setGraphic(image);
-		this.setText(this.ingredient.getRemain()+"");
 		this.setPrefHeight(60);
 		this.setPrefWidth(85);
+		ImageView image = new ImageView(this.ingredient.getUrl());
+		image.setPreserveRatio(true);
+		image.setFitHeight(50);
+		image.setFitWidth(50);
+		this.setGraphic(image);
+		this.setText(this.ingredient.getRemain()+"");
+
 		IngredientButton button = this;
 		
 		this.setOnAction(new EventHandler<ActionEvent>(){
