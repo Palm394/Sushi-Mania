@@ -5,6 +5,8 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -42,7 +44,17 @@ public class StatusBar extends HBox {
 		level_label = new LevelLabel();
 		this.getChildren().add(level_label);
 		
-		setting_button = new Button("Settings");
+		setting_button = new Button();
+		
+		
+		Image setting_img = new Image(ClassLoader.getSystemResource("settingIcon.png").toString());
+	    ImageView setting_view = new ImageView(setting_img);
+	    setting_view.setFitHeight(50);
+	    setting_view.setFitWidth(50);
+	    
+	    setting_button.setStyle("-fx-background-color: transparent;");
+	    setting_button.setGraphic(setting_view);
+	    
 		setting_button.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
