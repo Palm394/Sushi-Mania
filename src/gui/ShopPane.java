@@ -73,7 +73,7 @@ public class ShopPane extends VBox{
 		//set action for normalBuy
 		normalPrice.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				new Thread(waitDelivery).start();
+				buyNormal();
 			}
 		});	
 		
@@ -111,9 +111,13 @@ public class ShopPane extends VBox{
 				timer -= 1;
 				System.out.println(timer);
 			}
-			buySpeed();
 		}
 	};
+	
+	public void buyNormal() {
+		new Thread(waitDelivery).start();
+		buySpeed(); 
+	}
 	
 	public void buySpeed() {
 		if(GameController.getScore() >= ingredientList.get(selectedIngredientID).getPrice()) {
@@ -121,7 +125,7 @@ public class ShopPane extends VBox{
 				//set remaining number
 				ChefZoneGUI.ingredientpane.supply.get(selectedIngredientID).buyIngredient();
 				//set new score
-				//GameController.addScore(-ingredientList.get(selectedIngredientID).getPrice()-10);
+				GameController.addScore(-ingredientList.get(selectedIngredientID).getPrice());
 			}
 		}
 	}
