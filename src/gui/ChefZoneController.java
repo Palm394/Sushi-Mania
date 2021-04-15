@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import model.Ingredient;
 
 public class ChefZoneController {
 	private static ArrayList<Ingredient> wrapper = new ArrayList<Ingredient>();
