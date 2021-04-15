@@ -20,7 +20,7 @@ public class GameOverPane extends AlertPane{
 	
 	@Override
 	protected void addCenter() {
-		Label score = new Label("Your Score is "+GameController.getScore()+" points");
+		Label score = new Label("Your Level is "+GameController.getLevel() + " !");
 		score.setFont(new Font(30));
 		
 		center.getChildren().add(score);
