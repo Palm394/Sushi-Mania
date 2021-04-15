@@ -22,14 +22,16 @@ public class ShopPane extends VBox{
 	Button chooseLeft;
 	Label ingredientName;
 	Button chooseRight;
-	Button normalPrice;
-	Button speedPrice;
+	Button normalPriceBut;
+	Button speedPriceBut;
 	ImageView ingredientImage;
 	ArrayList<Ingredient> ingredientList = new ArrayList<Ingredient>();
+	Boolean[] buyStatus = new Boolean[20];
 	
 	ShopPane(){
 		for(int i=0;i<=16;i++) {
 			ingredientList.add(new Ingredient(i));
+			buyStatus[i] = false;
 		}
 		shopTitle = new Label();
 		
@@ -50,9 +52,9 @@ public class ShopPane extends VBox{
 		
 		//zone which contain order button
 		HBox showPricePane = new HBox();
-		normalPrice = new Button("price : " + ingredientList.get(selectedIngredientID).getPrice());
-		speedPrice = new Button("price : " + (ingredientList.get(selectedIngredientID).getPrice()+10));
-		showPricePane.getChildren().addAll(normalPrice,speedPrice);
+		normalPriceBut = new Button("price : " + ingredientList.get(selectedIngredientID).getPrice());
+		speedPriceBut = new Button("price : " + (ingredientList.get(selectedIngredientID).getPrice()+10));
+		showPricePane.getChildren().addAll(normalPriceBut,speedPriceBut);
 		
 		//set action for "<"
 		chooseLeft.setOnAction(new EventHandler<ActionEvent>() {
@@ -71,15 +73,15 @@ public class ShopPane extends VBox{
 		});		
 		
 		//set action for normalBuy
-		normalPrice.setOnAction(new EventHandler<ActionEvent>() {
+		normalPriceBut.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				new Thread(buyNormal).start();
+				buyNormalTo(selectedIngredientID);
 			}
 		});	
-		
-		speedPrice.setOnAction(new EventHandler<ActionEvent>() {
+		//set action for speedBuy
+		speedPriceBut.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				buySpeed(selectedIngredientID);
+				buySpeed(selectedIngredientID,ingredientList.get(selectedIngredientID).getPrice()+10);
 			}
 		});	
 		
@@ -89,14 +91,11 @@ public class ShopPane extends VBox{
 		this.getChildren().add(showPricePane);
 	}
 	
-	public boolean isNormalOrder() {
-		return false;
+	public boolean isOrdered() {
+		return buyStatus[selectedIngredientID];
 	}
 	
-	public boolean isSpeedOrder() {
-		return false;
-	}
-	
+	//buy normal has to wait for time to delivery
 	private Runnable buyNormal = new Runnable() {
 		public void run() {
 			int timer = 5;
@@ -112,38 +111,56 @@ public class ShopPane extends VBox{
 				timer -= 1;
 				System.out.println(timer);
 			}
-			Platform.runLater(()->{buySpeed(ID);});
+			Platform.runLater(()->{buySpeed(ID,ingredientList.get(ID).getPrice());});
+			Platform.runLater(()->{unlockBuy();});
+			buyStatus[ID] = false;
 		}
 	};
 	
 	public void buyNormalTo(int ID) {
-		new Thread(buyNormal).start();
+		if(!isOrdered())
+		{
+			lockBuy();
+			new Thread(buyNormal).start();	
+			buyStatus[ID] = true;
+		}
 	}
 	
-	public void buySpeed(int ID) {
+	//but buy speed doesn't wait
+	public void buySpeed(int ID, int price) {
 		if(GameController.getScore() >= ingredientList.get(ID).getPrice()) {
 			if(selectedIngredientID<16) {
 				//set remaining number
 				ChefZoneGUI.ingredientpane.supply.get(ID).buyIngredient();
-				//set new score
-				GameController.addScore(-ingredientList.get(ID).getPrice());
+			} else {
+				//set remaining number
+				ChefZoneGUI.rice.buyIngredient();
 			}
+				//set new score
+				GameController.addScore(-price);			
 		}
 	}
 	
-	public void lock() {
-		
+	public void lockBuy() {
+		normalPriceBut.setDisable(true);
+		speedPriceBut.setDisable(true);
 	}
 	
-	public void unlock() {
-		
+	public void unlockBuy() {
+		normalPriceBut.setDisable(false);
+		speedPriceBut.setDisable(false);
 	}
 	
 	public void changeIngredientOrder() {
 		ingredientName.setText(ingredientList.get(selectedIngredientID).getName());
-		normalPrice.setText("price : " + ingredientList.get(selectedIngredientID).getPrice());
-		speedPrice.setText("price : " + (ingredientList.get(selectedIngredientID).getPrice()+10));
+		normalPriceBut.setText("price : " + ingredientList.get(selectedIngredientID).getPrice());
+		speedPriceBut.setText("price : " + (ingredientList.get(selectedIngredientID).getPrice()+10));
 		Image image = new Image(ingredientList.get(selectedIngredientID).getUrl()); 
 		ingredientImage.setImage(image);
+		if(buyStatus[selectedIngredientID] == true) {
+			lockBuy();
+		} else {
+			unlockBuy();
+		}
 	}
 }

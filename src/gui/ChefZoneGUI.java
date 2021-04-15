@@ -13,6 +13,7 @@ public class ChefZoneGUI extends HBox {
 		
 	public static rollPane rollpane;
 	public static ingredientPane ingredientpane;
+	public static IngredientButton rice;
 	public static RecipePane recipePane;
 	public static ShopPane shopPane;
 	
@@ -34,7 +35,7 @@ public class ChefZoneGUI extends HBox {
 			centerZone.getChildren().add(pane);
 			HBox riceAndRoll = new HBox(); 
 			// Rice button
-			IngredientButton rice = new IngredientButton(16);
+			rice = new IngredientButton(16);
 			rice.setPrefHeight(75);
 			rice.setPrefWidth(150);
 			//Roll button
