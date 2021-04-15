@@ -31,20 +31,20 @@ public class CustomerGUI extends HBox {
 		this.getChildren().add(canvas);
 	}
 	
-	private void drawCustomer(GraphicsContext gc,Customer customer) {
+	private static void drawCustomer(GraphicsContext gc,Customer customer) {
 		gc.drawImage(Utility.CustomerImage, customer.getPosX(), HEIGHT / 2);
 	}
 
-	private void drawBG(GraphicsContext gc) {
-		gc.setFill(Color.WHITE.darker());
-		gc.fillRect(0, 0, gamePane.WIDTH_SCREEN, HEIGHT);
+	private static void drawBG(GraphicsContext gc) {
+		gc.drawImage(Utility.BackgroundImage, 0, 0);
 	}
 	
 	public static void drawWant(int number,String want,double PosX) {
 		gc.clearRect(0, 0, gamePane.WIDTH_SCREEN, HEIGHT / 2);
-		gc.fillRect(0, 0, gamePane.WIDTH_SCREEN, HEIGHT / 2);
+		drawBG(gc);
 		
 		for(Customer i : CustomerList) {
+			drawCustomer(gc,i);
 			if(i.getWant() != null) {
 				gc.drawImage(Utility.DishImage, i.getPosX() - 25, -10);
 			}
