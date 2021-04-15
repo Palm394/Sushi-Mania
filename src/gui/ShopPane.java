@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import logic.GameController;
+import model.Ingredient;
 
 public class ShopPane extends VBox{
 	int selectedIngredientID = 0;

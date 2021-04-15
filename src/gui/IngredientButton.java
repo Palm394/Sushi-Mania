@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import model.Ingredient;
 
 public class IngredientButton extends Button{
 	Ingredient ingredient;
