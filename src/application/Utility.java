@@ -7,6 +7,7 @@ import javafx.scene.media.AudioClip;
 
 public class Utility {
 	
+	public static Image SushiTrainBG;
 	public static Image BackgroundImage;
 	public static Image CustomerImage;
 	public static Image DishImage;
@@ -26,6 +27,7 @@ public class Utility {
 	}
 	
 	public static void loadResource() {
+		SushiTrainBG = new Image(ClassLoader.getSystemResource("SushiTrain.png").toString());
 		BackgroundImage = new Image(ClassLoader.getSystemResource("customerBackground.png").toString());
 		DishImage = new Image(ClassLoader.getSystemResource("dish.png").toString());
 		CustomerImage = new Image(ClassLoader.getSystemResource("customer.png").toString());

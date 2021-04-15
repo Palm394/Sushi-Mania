@@ -31,8 +31,7 @@ public class SushiTrainGUI extends Canvas {
 	}
 
 	private static void drawSushiTrain(GraphicsContext gc) {
-		gc.setFill(Color.BLACK);
-		gc.fillRect(0, 0, gamePane.WIDTH_SCREEN, HEIGHT);
+		gc.drawImage(Utility.SushiTrainBG, 0, 0);
 	}
 
 	public static void paintComponent() {
