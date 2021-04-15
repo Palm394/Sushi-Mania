@@ -1,7 +1,5 @@
 package gui;
 
-import java.text.DecimalFormat;
-
 import application.Utility;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -21,7 +19,7 @@ public class SettingPane extends AlertPane {
 	
 	@Override
 	protected void addCenter() {
-		Sound_Label = new Label("Sound Volume : " + 50);
+		Sound_Label = new Label("Sound Volume : " + (int)Math.round(Utility.volume * 100));
 		Sound_Label.setFont(new Font(20));
 		center.getChildren().add(Sound_Label);
 		
@@ -38,7 +36,7 @@ public class SettingPane extends AlertPane {
 			@Override
 			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
 				Utility.setAllVolume((double) newValue);
-				Sound_Label.setText("Sound Volume : " + ((int)(Utility.volume *100)));
+				Sound_Label.setText("Sound Volume : " + (int)Math.round(Utility.volume * 100));
 			}
 
 		});
