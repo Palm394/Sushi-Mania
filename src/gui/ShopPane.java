@@ -73,13 +73,13 @@ public class ShopPane extends VBox{
 		//set action for normalBuy
 		normalPrice.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				buyNormal();
+				new Thread(buyNormal).start();
 			}
 		});	
 		
 		speedPrice.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				buySpeed();
+				buySpeed(selectedIngredientID);
 			}
 		});	
 		
@@ -97,9 +97,10 @@ public class ShopPane extends VBox{
 		return false;
 	}
 	
-	private Runnable waitDelivery = new Runnable() {
+	private Runnable buyNormal = new Runnable() {
 		public void run() {
-			int timer = 3;
+			int timer = 5;
+			int ID = selectedIngredientID;
 			while(timer > 0)
 			{
 				try {
@@ -111,21 +112,21 @@ public class ShopPane extends VBox{
 				timer -= 1;
 				System.out.println(timer);
 			}
+			Platform.runLater(()->{buySpeed(ID);});
 		}
 	};
 	
-	public void buyNormal() {
-		new Thread(waitDelivery).start();
-		buySpeed(); 
+	public void buyNormalTo(int ID) {
+		new Thread(buyNormal).start();
 	}
 	
-	public void buySpeed() {
-		if(GameController.getScore() >= ingredientList.get(selectedIngredientID).getPrice()) {
+	public void buySpeed(int ID) {
+		if(GameController.getScore() >= ingredientList.get(ID).getPrice()) {
 			if(selectedIngredientID<16) {
 				//set remaining number
-				ChefZoneGUI.ingredientpane.supply.get(selectedIngredientID).buyIngredient();
+				ChefZoneGUI.ingredientpane.supply.get(ID).buyIngredient();
 				//set new score
-				GameController.addScore(-ingredientList.get(selectedIngredientID).getPrice());
+				GameController.addScore(-ingredientList.get(ID).getPrice());
 			}
 		}
 	}
