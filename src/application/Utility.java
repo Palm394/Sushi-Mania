@@ -28,8 +28,8 @@ public class Utility {
 		DishImage = new Image(ClassLoader.getSystemResource("dish.png").toString());
 		CustomerImage = new Image(ClassLoader.getSystemResource("customer.png").toString());
 		
-		NewLevelSound = new AudioClip(ClassLoader.getSystemResource("NewLevel.wav").toString());
-		EatSound = new AudioClip(ClassLoader.getSystemResource("EatSound.mp3").toString());
+		NewLevelSound = new AudioClip(ClassLoader.getSystemResource("sound/NewLevel.wav").toString());
+		EatSound = new AudioClip(ClassLoader.getSystemResource("sound/EatSound.mp3").toString());
 	}
 
 	public static void setAllVolume(double newValue) {

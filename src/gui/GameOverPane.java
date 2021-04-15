@@ -13,7 +13,7 @@ public class GameOverPane extends AlertPane{
 		super(title,W, H);
 		top.getChildren().remove(0);
 		
-		AudioClip sound = new AudioClip(ClassLoader.getSystemResource("GameOver.mp3").toString());
+		AudioClip sound = new AudioClip(ClassLoader.getSystemResource("sound/GameOver.mp3").toString());
 		sound.setVolume(Utility.volume);
 		sound.play();
 	}
