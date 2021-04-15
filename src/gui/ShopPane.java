@@ -75,7 +75,7 @@ public class ShopPane extends VBox{
 		//set action for normalBuy
 		normalPriceBut.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				buyNormalTo(selectedIngredientID);
+				buyNormalTo(selectedIngredientID,ingredientList.get(selectedIngredientID).getPrice());
 			}
 		});	
 		//set action for speedBuy
@@ -100,6 +100,7 @@ public class ShopPane extends VBox{
 		public void run() {
 			int timer = 5;
 			int ID = selectedIngredientID;
+			//then delivery
 			while(timer > 0)
 			{
 				try {
@@ -111,24 +112,36 @@ public class ShopPane extends VBox{
 				timer -= 1;
 				System.out.println(timer);
 			}
-			Platform.runLater(()->{buySpeed(ID,ingredientList.get(ID).getPrice());});
-			Platform.runLater(()->{unlockBuy();});
+			Platform.runLater(()->{if(selectedIngredientID<16) {
+				//set remaining number
+				ChefZoneGUI.ingredientpane.supply.get(ID).buyIngredient();
+			} else {
+				//set remaining number
+				ChefZoneGUI.rice.buyIngredient();
+			}});
+			Platform.runLater(()->{unlockBuy();unblockIngredient(ID);});
 			buyStatus[ID] = false;
 		}
 	};
 	
-	public void buyNormalTo(int ID) {
-		if(!isOrdered())
-		{
-			lockBuy();
-			new Thread(buyNormal).start();	
-			buyStatus[ID] = true;
+	public void buyNormalTo(int ID, int price) {
+		if(GameController.getScore() >= price) {	
+			if(!isOrdered())
+			{
+				//decrease score first
+				GameController.addScore(-price);
+				lockBuy();
+				blockIngredient(ID);
+				//then delivery
+				new Thread(buyNormal).start();	
+				buyStatus[ID] = true;
+			}
 		}
 	}
 	
 	//but buy speed doesn't wait
 	public void buySpeed(int ID, int price) {
-		if(GameController.getScore() >= ingredientList.get(ID).getPrice()) {
+		if(GameController.getScore() >= price) {
 			if(selectedIngredientID<16) {
 				//set remaining number
 				ChefZoneGUI.ingredientpane.supply.get(ID).buyIngredient();
@@ -149,6 +162,22 @@ public class ShopPane extends VBox{
 	public void unlockBuy() {
 		normalPriceBut.setDisable(false);
 		speedPriceBut.setDisable(false);
+	}
+	
+	public void blockIngredient(int ID){
+		if(ID<16) {
+			ChefZoneGUI.ingredientpane.supply.get(ID).setDisable(true);
+		} else {
+			ChefZoneGUI.rice.setDisable(true);
+		}
+	}
+	
+	public void unblockIngredient(int ID){
+		if(ID<16) {
+			ChefZoneGUI.ingredientpane.supply.get(ID).setDisable(false);
+		} else {
+			ChefZoneGUI.rice.setDisable(false);
+		}
 	}
 	
 	public void changeIngredientOrder() {
