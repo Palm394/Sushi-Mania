@@ -33,17 +33,15 @@ public class ChefZoneGUI extends HBox {
 			pane.setPrefWidth(300);
 			pane.getChildren().add(rollpane);
 			centerZone.getChildren().add(pane);
-			HBox riceAndRoll = new HBox(); 
-			// Rice button
-			rice = new IngredientButton(16);
-			rice.setPrefHeight(75);
-			rice.setPrefWidth(150);
+			HBox rollAndClear = new HBox();
 			//Roll button
 			RollButton rollButton = new RollButton(); 
+			//Clear button
+			ClearButton clearButton = new ClearButton();
 			
-			riceAndRoll.getChildren().add(rice);
-			riceAndRoll.getChildren().add(rollButton);
-			centerZone.getChildren().add(riceAndRoll);
+			rollAndClear.getChildren().add(rollButton);
+			rollAndClear.getChildren().add(clearButton);
+			centerZone.getChildren().add(rollAndClear);
 			this.getChildren().add(centerZone);
 			
 			

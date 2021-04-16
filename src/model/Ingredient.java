@@ -24,9 +24,8 @@ public class Ingredient {
 			case 11: name="Avocado";	url="Ingredient/avocado.png";	price=48; remain=10; break;
 			case 12: name="Scallop";	url="Ingredient/scallop.png";	price=50; remain=10; break;
 			case 13: name="Unangi";		url="Ingredient/unangi.png";	price=60; remain=10; break;
-			case 14: name="Fuaga";		url="Ingredient/Fuaga.png";		price=75; remain=10; break;
-			case 15: name="Uni";		url="Ingredient/uni.png";		price=90; remain=10; break;
-			case 16: name="Rice";		url="Ingredient/rice.png"; 		price=25; remain=10; break;
+			case 14: name="Uni";		url="Ingredient/uni.png";		price=90; remain=10; break;
+			case 15: name="Rice";		url="Ingredient/rice.png"; 		price=25; remain=10; break;
 			default: name="WTF"; 	url="coffee.png"; price=0; remain=0;
 		}
 	}

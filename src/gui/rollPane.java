@@ -4,6 +4,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import logic.ChefZoneController;
 
 public class rollPane extends GridPane{
 	rollPane(){

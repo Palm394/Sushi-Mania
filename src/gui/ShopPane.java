@@ -60,7 +60,7 @@ public class ShopPane extends VBox{
 		//set action for "<"
 		chooseLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				selectedIngredientID = (selectedIngredientID + 16) % 17;
+				selectedIngredientID = (selectedIngredientID + 15) % 16;
 				changeIngredientOrder();
 			}
 		});		
@@ -68,7 +68,7 @@ public class ShopPane extends VBox{
 		//set action for ">"
 		chooseRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				selectedIngredientID = (selectedIngredientID + 1) % 17;
+				selectedIngredientID = (selectedIngredientID + 1) % 16;
 				changeIngredientOrder();
 			}
 		});		

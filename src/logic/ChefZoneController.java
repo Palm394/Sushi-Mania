@@ -1,12 +1,15 @@
-package gui;
+package logic;
 
 import java.util.ArrayList;
 
+import gui.ChefZoneGUI;
+import gui.IngredientButton;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import model.Ingredient;
+import model.FoodList;
 
 public class ChefZoneController {
 	private static ArrayList<Ingredient> wrapper = new ArrayList<Ingredient>();
@@ -36,12 +39,15 @@ public class ChefZoneController {
 			int hcode = 0;
 		
 			for(int i=0 ;i<wrapper.size() ;i++) {
-				hcode += Math.pow(4, wrapper.get(i).getId());
+				hcode += Math.pow(3, wrapper.get(i).getId());
 			}
-		
+			
+			//checkout hash result
+			System.out.println("hcode : " + hcode);
+			
 			// details of sushi is in recipe
-			menuRecipe recipe = new menuRecipe(hcode);
-			System.out.println(recipe.getName());
+			FoodList dish = new FoodList(hcode);
+			System.out.println("food found : " + dish.getName());
 		
 			//function to send sushi to the road
 			///////////////////////////////////
