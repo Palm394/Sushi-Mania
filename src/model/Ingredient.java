@@ -3,6 +3,7 @@ package model;
 public class Ingredient {
 	String name;
 	String url;
+	String urlBut;
 	int id;
 	int price;
 	int remain;
