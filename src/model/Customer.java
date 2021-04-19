@@ -1,7 +1,5 @@
 package model;
 
-import gui.CustomerGUI;
-
 public class Customer {
 	
 	//order integer is sorting customer to check food to detect.

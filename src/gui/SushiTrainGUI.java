@@ -6,8 +6,6 @@ import application.Utility;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import model.Food;
 import model.FoodList;
 import model.SushiTrain;
 
