@@ -39,14 +39,14 @@ public class CustomerGUI extends HBox {
 		gc.drawImage(Utility.BackgroundImage, 0, 0);
 	}
 	
-	public static void drawWant(int number,String want,double PosX) {
+	public static void drawWant() {
 		gc.clearRect(0, 0, gamePane.WIDTH_SCREEN, HEIGHT / 2);
 		drawBG(gc);
 		
 		for(Customer i : CustomerList) {
 			drawCustomer(gc,i);
 			if(i.getWant() != null) {
-				Image drawing = new Image(ClassLoader.getSystemResource(want).toString(),60,60, false, false);
+				Image drawing = new Image(ClassLoader.getSystemResource(i.getWantURL()).toString(),60,60, false, false);
 				gc.drawImage(drawing, i.getPosX(), 20);
 			}
 		}

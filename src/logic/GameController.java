@@ -2,6 +2,7 @@ package logic;
 
 import application.Database;
 import application.Utility;
+import gui.CustomerGUI;
 import gui.GameOverPane;
 import gui.LevelUpPane;
 import gui.StatusBar;
@@ -33,6 +34,7 @@ public class GameController {
 			public void handle(long now) {
 				SushiTrain.update();
 				SushiTrainGUI.paintComponent();
+				CustomerGUI.drawWant();
 				
 				if(timer == 0) {
 					timer = timeEachRound;
