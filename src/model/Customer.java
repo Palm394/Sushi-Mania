@@ -1,13 +1,12 @@
 package model;
 
-import gui.CustomerGUI;
-
 public class Customer {
 	
 	//order integer is sorting customer to check food to detect.
 	private int number;
 	
 	private String want;
+	private String wantURL;
 	private int waitTime = 0;
 	
 	private final double PosX;
@@ -46,9 +45,7 @@ public class Customer {
 	public void drawWant() {
 		//Test
 		//Must Random menu from database
-		want = "Salmon";
-		
-		CustomerGUI.drawWant(number,want,PosX);
+		//CustomerGUI.drawWant(number,wantURL,PosX);
 	}
 
 	public int getWaitTime() {
@@ -57,5 +54,13 @@ public class Customer {
 
 	public void setWaitTime(int waitTime) {
 		this.waitTime = waitTime;
+	}
+
+	public String getWantURL() {
+		return wantURL;
+	}
+
+	public void setWantURL(String wantURL) {
+		this.wantURL = wantURL;
 	}
 }

@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import application.Utility;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
 import model.Customer;
 
 public class CustomerGUI extends HBox {
@@ -21,7 +21,7 @@ public class CustomerGUI extends HBox {
 		
 		CustomerList = new ArrayList<Customer>();
 		
-		drawBG(gc);
+		gc.drawImage(Utility.BackgroundImage, 0, 0);
 		
 		for(int i=0;i<7;i++) {
 			Customer customer = new Customer(i);
@@ -39,14 +39,15 @@ public class CustomerGUI extends HBox {
 		gc.drawImage(Utility.BackgroundImage, 0, 0);
 	}
 	
-	public static void drawWant(int number,String want,double PosX) {
+	public static void drawWant() {
 		gc.clearRect(0, 0, gamePane.WIDTH_SCREEN, HEIGHT / 2);
 		drawBG(gc);
 		
 		for(Customer i : CustomerList) {
 			drawCustomer(gc,i);
 			if(i.getWant() != null) {
-				gc.drawImage(Utility.DishImage, i.getPosX() - 25, -10);
+				Image drawing = new Image(ClassLoader.getSystemResource(i.getWantURL()).toString(),60,60, false, false);
+				gc.drawImage(drawing, i.getPosX(), 20);
 			}
 		}
 	}

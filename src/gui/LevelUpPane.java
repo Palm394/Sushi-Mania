@@ -20,8 +20,4 @@ public class LevelUpPane extends AlertPane{
 		center.getChildren().add(level);
 		center.getChildren().add(continueButton());
 	}
-
-	private void newReceipt() {
-		
-	}
 }
