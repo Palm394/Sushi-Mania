@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import application.Utility;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import model.Customer;
@@ -46,7 +47,8 @@ public class CustomerGUI extends HBox {
 		for(Customer i : CustomerList) {
 			drawCustomer(gc,i);
 			if(i.getWant() != null) {
-				gc.drawImage(Utility.DishImage, i.getPosX() - 25, -10);
+				Image drawing = new Image(ClassLoader.getSystemResource(want).toString(),60,60, false, false);
+				gc.drawImage(drawing, i.getPosX(), 20);
 			}
 		}
 	}

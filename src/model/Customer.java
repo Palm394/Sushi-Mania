@@ -46,9 +46,7 @@ public class Customer {
 	public void drawWant() {
 		//Test
 		//Must Random menu from database
-		want = "Salmon";
-		
-		CustomerGUI.drawWant(number,want,PosX);
+		CustomerGUI.drawWant(number,this.want,PosX);
 	}
 
 	public int getWaitTime() {
