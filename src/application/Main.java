@@ -14,6 +14,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		menuPane menu = new menuPane();
 		
+		Database.initialize();
 		Utility.setAllVolume(0.5);
 		
 		primaryStage = menu.getMenuStage();

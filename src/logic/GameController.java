@@ -1,5 +1,6 @@
 package logic;
 
+import application.Database;
 import application.Utility;
 import gui.GameOverPane;
 import gui.LevelUpPane;
@@ -62,8 +63,7 @@ public class GameController {
 		StatusBar.getTargetLabel().update();
 		StatusBar.getLevelLabel().update();
 		
-		//Should have ALERT to User
-		//New Menu ~~Yummy!
+		Database.newLV(Level);
 		LevelUpPane levelup = new LevelUpPane("Level UP!",gamePane.WIDTH_SCREEN,gamePane.HEIGHT_SCREEN);
 		gamePane.getGameStage().setScene(levelup.getScene());
 
