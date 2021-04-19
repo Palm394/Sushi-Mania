@@ -28,7 +28,7 @@ public class SushiTrain {
 	
 	public static boolean canPlaceDish() {
 		for(Food i : TrainList) {
-			if(100 >= i.getPosX() && i.getPosX() >= 0 ) {
+			if(60 >= i.getPosX() && i.getPosX() >= 0 ) {
 				return false;
 			}
 		}
