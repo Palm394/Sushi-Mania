@@ -44,7 +44,6 @@ public class FoodList extends Food {
 		}
 	}
 
-
 	public int getHcode() {
 		return hcode;
 	}
