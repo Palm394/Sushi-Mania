@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import model.Ingredient;
+import model.Food;
 import model.FoodList;
 
 public class ChefZoneController {
@@ -46,8 +47,8 @@ public class ChefZoneController {
 			System.out.println("hcode : " + hcode);
 			
 			// details of sushi is in recipe
-			FoodList dish = new FoodList(hcode);
-			System.out.println("food found : " + dish.getName());
+			FoodList sushi = new FoodList(hcode);
+			System.out.println("food found : " + sushi.getName() + " price=" + sushi.getPrice());
 		
 			//function to send sushi to the road
 			///////////////////////////////////
