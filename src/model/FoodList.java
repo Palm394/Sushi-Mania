@@ -1,6 +1,6 @@
 package model;
 
-public class FoodList {
+public class FoodList extends Food {
 	private int hcode;
 	private int price;
 	private String name;

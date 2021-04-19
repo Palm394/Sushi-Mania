@@ -6,6 +6,7 @@ import application.Utility;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import model.Food;
+import model.FoodList;
 import model.SushiTrain;
 
 public class SushiTrainGUI extends Canvas {
@@ -27,7 +28,7 @@ public class SushiTrainGUI extends Canvas {
 		TrainDraw = new ArrayList<Food>();
 		
 		//Test
-		Food a = new Food("Salmon",10);
+		Food a = new FoodList(28700092);
 		SushiTrain.addNewDish(a);
 	}
 
