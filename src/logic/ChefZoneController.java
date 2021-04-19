@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import model.Ingredient;
+import model.SushiTrain;
 import model.Food;
 import model.FoodList;
 
@@ -36,7 +37,7 @@ public class ChefZoneController {
 	}
 	
 	public static int wrap(ArrayList<Ingredient> wrapper) {
-		if(wrapper.size()>0) {
+		if(wrapper.size()>0 && SushiTrain.canPlaceDish()==true) {
 			int hcode = 0;
 		
 			for(int i=0 ;i<wrapper.size() ;i++) {
