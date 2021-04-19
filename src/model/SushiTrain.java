@@ -11,7 +11,7 @@ public class SushiTrain {
 		TrainList = new ArrayList<Food>();
 	}
 	
-	public static void addNewDish(Food newFood) {
+	public static void addNewDish(FoodList newFood) {
 			TrainList.add(newFood);
 			SushiTrainGUI.getTrainDraw().add(newFood);
 	}

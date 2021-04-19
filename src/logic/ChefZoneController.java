@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import model.Ingredient;
+import model.SushiTrain;
 import model.FoodList;
 
 public class ChefZoneController {
@@ -50,6 +51,7 @@ public class ChefZoneController {
 			System.out.println("food found : " + dish.getName());
 		
 			//function to send sushi to the road
+			SushiTrain.addNewDish(dish);
 			///////////////////////////////////
 		
 			ChefZoneGUI.rollpane.removeIngredient();
