@@ -5,13 +5,16 @@ import java.util.ArrayList;
 import application.Utility;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import model.Food;
+import model.FoodList;
 import model.SushiTrain;
 
 public class SushiTrainGUI extends Canvas {
 
 	private static GraphicsContext gc;
-	private static ArrayList<Food> TrainDraw;
+	private static ArrayList<FoodList> TrainDraw;
 	
 	private static int PosX = 0;
 	
@@ -24,10 +27,10 @@ public class SushiTrainGUI extends Canvas {
 		gc = this.getGraphicsContext2D();
 		
 		SushiTrain.initialize();
-		TrainDraw = new ArrayList<Food>();
+		TrainDraw = new ArrayList<FoodList>();
 		
 		//Test
-		Food a = new Food("Salmon",10);
+		FoodList a = new FoodList(28700092);
 		SushiTrain.addNewDish(a);
 	}
 
@@ -44,14 +47,15 @@ public class SushiTrainGUI extends Canvas {
 		gc.clearRect(0, 0, gamePane.WIDTH_SCREEN, HEIGHT);
 		drawSushiTrain(gc);
 		
-		for(Food dish : TrainDraw) {
+		for(FoodList dish : TrainDraw) {
 			//if(!dish.isEat()) {
-				gc.drawImage(Utility.DishImage, dish.getPosX(), dish.getPosY());
+				Image drawing = new Image(ClassLoader.getSystemResource(dish.getUrl()).toString(),60,60, false, false);
+				gc.drawImage(drawing, dish.getPosX(), dish.getPosY() + 20);
 			//}
 		}
 	}
 	
-	public static ArrayList<Food> getTrainDraw() {
+	public static ArrayList<FoodList> getTrainDraw() {
 		return TrainDraw;
 	}
 

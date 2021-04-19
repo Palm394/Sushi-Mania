@@ -8,7 +8,7 @@ public class ScoreLabel extends LabelStatus implements Updatable {
 
 	@Override
 	protected void setSentence() {
-		this.textProperty().setValue("Score : " + GameController.getScore());
+		this.textProperty().setValue(" : " + GameController.getScore());
 	}
 
 	@Override

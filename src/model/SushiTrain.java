@@ -11,7 +11,7 @@ public class SushiTrain {
 		TrainList = new ArrayList<Food>();
 	}
 	
-	public static void addNewDish(Food newFood) {
+	public static void addNewDish(FoodList newFood) {
 			TrainList.add(newFood);
 			SushiTrainGUI.getTrainDraw().add(newFood);
 	}
@@ -28,7 +28,7 @@ public class SushiTrain {
 	
 	public static boolean canPlaceDish() {
 		for(Food i : TrainList) {
-			if(100 >= i.getPosX() && i.getPosX() >= 0 ) {
+			if(60 >= i.getPosX() && i.getPosX() >= 0 ) {
 				return false;
 			}
 		}

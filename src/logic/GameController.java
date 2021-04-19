@@ -34,9 +34,16 @@ public class GameController {
 				SushiTrainGUI.paintComponent();
 				
 				if(timer == 0) {
-					//GameOver
-					AlertPane gameOver = new GameOverPane("Game Over",gamePane.getWidthScreen(),gamePane.getHeightScreen());
-					gamePane.getGameStage().setScene(gameOver.getScene());
+					timer = timeEachRound;
+					if(Score >= Target) {
+						Utility.NewLevelSound.play();
+						newLevel();
+					}else {
+						//GameOver
+						AlertPane gameOver = new GameOverPane("Game Over",gamePane.getWidthScreen(),gamePane.getHeightScreen());
+						gamePane.getGameStage().setScene(gameOver.getScene());
+					}
+					
 				}
 			}
 		};
@@ -46,10 +53,6 @@ public class GameController {
 	public static void addScore(int number) {
 		Score += number;
 		Utility.EatSound.play();
-		if(Score >= Target) {
-			Utility.NewLevelSound.play();
-			newLevel();
-		}
 		StatusBar.getScoreLabel().update();
 	}
 	

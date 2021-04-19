@@ -32,6 +32,12 @@ public class StatusBar extends HBox {
 		this.setBackground(new Background(new BackgroundFill(Color.web("#c2e39c"), CornerRadii.EMPTY, Insets.EMPTY)));
 		this.setAlignment(Pos.CENTER);
 		
+		Image money_img = new Image(ClassLoader.getSystemResource("money.png").toString());
+	    ImageView money_view = new ImageView(money_img);
+	    money_view.setFitHeight(48);
+	    money_view.setFitWidth(48);
+	    this.getChildren().add(money_view);
+		
 		score_label = new ScoreLabel();
 		this.getChildren().add(score_label);
 		
