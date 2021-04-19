@@ -38,7 +38,8 @@ public class OrderController extends SetTime {
 				        	}
 				        	Customer isSelected = CustomerBlankList.get(rand.nextInt(CustomerBlankList.size()));
 				            FoodList isWant = Database.getHasMenu().get(rand.nextInt(Database.getHasMenu().size()));
-				        	isSelected.setWant(isWant.getUrl());
+				        	isSelected.setWantURL(isWant.getUrl());
+				        	isSelected.setWant(isWant.getName());
 				            isSelected.drawWant();
 				        }
 				    )

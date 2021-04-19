@@ -7,7 +7,6 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
 import model.Customer;
 
 public class CustomerGUI extends HBox {
@@ -22,7 +21,7 @@ public class CustomerGUI extends HBox {
 		
 		CustomerList = new ArrayList<Customer>();
 		
-		drawBG(gc);
+		gc.drawImage(Utility.BackgroundImage, 0, 0);
 		
 		for(int i=0;i<7;i++) {
 			Customer customer = new Customer(i);
