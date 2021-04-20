@@ -21,18 +21,19 @@ public class CustomerGUI extends HBox {
 		
 		CustomerList = new ArrayList<Customer>();
 		
-		gc.drawImage(Utility.BackgroundImage, 0, 0);
+		drawBG(gc);
+		drawCustomer(gc);
 		
 		for(int i=0;i<7;i++) {
 			Customer customer = new Customer(i);
 			CustomerList.add(customer);
-			drawCustomer(gc,customer);
 		}
+		
 		this.getChildren().add(canvas);
 	}
 	
-	private static void drawCustomer(GraphicsContext gc,Customer customer) {
-		gc.drawImage(Utility.CustomerImage, customer.getPosX(), HEIGHT / 2);
+	private static void drawCustomer(GraphicsContext gc) {
+		gc.drawImage(Utility.CustomerImage,0, HEIGHT / 2);
 	}
 
 	private static void drawBG(GraphicsContext gc) {
@@ -44,10 +45,9 @@ public class CustomerGUI extends HBox {
 		drawBG(gc);
 		
 		for(Customer i : CustomerList) {
-			drawCustomer(gc,i);
 			if(i.getWant() != null) {
 				Image drawing = new Image(ClassLoader.getSystemResource(i.getWantURL()).toString(),60,60, false, false);
-				gc.drawImage(drawing, i.getPosX(), 20);
+				gc.drawImage(drawing, i.getPosX(), 15);
 			}
 		}
 	}
