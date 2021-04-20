@@ -2,7 +2,13 @@
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
 import logic.ChefZoneController;
 
@@ -10,10 +16,14 @@ public class rollPane extends GridPane{
 	rollPane(){
 		
 		this.setPadding(new Insets(20,20,20,20));
-		this.setMaxHeight(200);
-		this.setMaxWidth(300);
+		this.setPrefHeight(180);
+		this.setPrefWidth(280);
 		this.setHgap(5);
 		this.setVgap(5);
+		this.setAlignment(Pos.CENTER);
+		Image bambooMat = new Image("bambooMat.jpg");
+		this.setBackground(new Background(new BackgroundImage(bambooMat,BackgroundRepeat.NO_REPEAT,
+				BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER,BackgroundSize.DEFAULT)));
 	}
 	
 	public void updateIngredient() {

@@ -3,6 +3,9 @@ package gui;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
 import logic.ChefZoneController;
 import logic.GameController;
 
@@ -12,6 +15,9 @@ public class ClearButton extends Button{
 		this.setPrefHeight(75);
 		this.setPrefWidth(75);
 		this.setText("Clear");
+		Image image = new Image("clearButton.jpg",75,73,false,false);
+		BackgroundImage clearBut = new BackgroundImage(image,null,null,null,null);
+		this.setBackground(new Background(clearBut));
 		this.setOnAction(new EventHandler<ActionEvent>(){
 			public void handle(ActionEvent event) {
 				if(GameController.getScore() >= 30 && ChefZoneController.getWrapper().size()>0)

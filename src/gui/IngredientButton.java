@@ -15,6 +15,7 @@ public class IngredientButton extends Button{
 		
 		this.setPrefHeight(60);
 		this.setPrefWidth(85);
+		this.setStyle("-fx-background-color: rgba(245,222,179,0.7);");
 		ImageView image = new ImageView(this.ingredient.getUrl());
 		image.setPreserveRatio(true);
 		image.setFitHeight(50);
