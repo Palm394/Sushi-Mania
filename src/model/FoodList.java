@@ -5,7 +5,6 @@ public class FoodList extends Food {
 
 	private int hcode;
 	private int price;
-	private String name;
 	private String url;
 	
 	public FoodList(int hcode){
@@ -46,7 +45,6 @@ public class FoodList extends Food {
 		}
 	}
 
-
 	public int getHcode() {
 		return hcode;
 	}
@@ -64,16 +62,6 @@ public class FoodList extends Food {
 
 	public void setPrice(int price) {
 		this.price = price;
-	}
-
-
-	public String getName() {
-		return name;
-	}
-
-
-	public void setName(String name) {
-		this.name = name;
 	}
 	
 		public String getUrl() {

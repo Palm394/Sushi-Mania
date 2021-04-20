@@ -1,5 +1,6 @@
 package logic;
 
+import application.Database;
 import application.Utility;
 import gui.GameOverPane;
 import gui.LevelUpPane;
@@ -17,16 +18,16 @@ public class GameController {
 	private static int Target;
 	private static int timer;
 	//second unit
-	private final static int timeEachRound = 60;
+	private final static int timeEachRound = 120;
 	
 	private static AnimationTimer animation;
 	private static TimerController time_left;
 	private static OrderController order_time;
 	
 	public static void initialize() {
-		Score = 0;
+		Score = 200;
 		Level = 1;
-		Target = 100;
+		Target = 500;
 		
 		animation = new AnimationTimer() {
 			public void handle(long now) {
@@ -58,12 +59,11 @@ public class GameController {
 	
 	private static void newLevel() {
 		Level += 1;
-		Target = Level * 100;
+		Target += 100;
 		StatusBar.getTargetLabel().update();
 		StatusBar.getLevelLabel().update();
 		
-		//Should have ALERT to User
-		//New Menu ~~Yummy!
+		Database.newLV(Level);
 		LevelUpPane levelup = new LevelUpPane("Level UP!",gamePane.WIDTH_SCREEN,gamePane.HEIGHT_SCREEN);
 		gamePane.getGameStage().setScene(levelup.getScene());
 
