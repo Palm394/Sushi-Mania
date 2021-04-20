@@ -3,14 +3,20 @@ package gui;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
 import logic.ChefZoneController;
 
 public class RollButton extends Button{
 	
 	RollButton(){
 		this.setPrefHeight(75);
-		this.setPrefWidth(135);
-		this.setText("ROLL!!!");
+		this.setPrefWidth(200);
+		this.setText("Roll!!");
+		Image image = new Image("rollButton.jpg",200,73,false,false);
+		BackgroundImage rollBut = new BackgroundImage(image,null,null,null,null);
+		this.setBackground(new Background(rollBut));
 		this.setOnAction(new EventHandler<ActionEvent>(){
 			public void handle(ActionEvent event) {
 				ChefZoneController.wrap(ChefZoneController.getWrapper());

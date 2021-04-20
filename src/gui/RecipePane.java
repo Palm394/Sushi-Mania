@@ -34,7 +34,11 @@ public class RecipePane{
 		ImageView recipeImage = new ImageView("Recipe/Recipe1.jpg");
 		recipeImage.setImage(recipeAlbum.get(selectedImage));
 		
+		//add blank on the top
+		root.getChildren().addAll(new Label(),new Label(),new Label());
+		
 		Button toLeft = new Button("<");
+		toLeft.setStyle("-fx-font-size: 25px; -fx-background-color: rgba(245,222,179,0.8);");
 		toLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				selectedImage = ((selectedImage+6) % 7);
@@ -42,6 +46,7 @@ public class RecipePane{
 			}
 		});	
 		Button toRight = new Button(">");
+		toRight.setStyle("-fx-font-size: 25px; -fx-background-color: rgba(245,222,179,0.8);");
 		root.setAlignment(Pos.CENTER);
 		toRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
@@ -70,7 +75,7 @@ public class RecipePane{
 	
 	protected Button closeButton() {
 		Button cont = new Button("Resume");
-		
+		cont.setStyle("-fx-font-size: 30px; -fx-background-color: rgba(245,222,179,0.9);");
 		cont.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override

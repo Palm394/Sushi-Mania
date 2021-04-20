@@ -13,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.TextAlignment;
 import logic.GameController;
 import model.Ingredient;
 
@@ -30,32 +31,49 @@ public class ShopPane extends VBox{
 	Boolean[] buyStatus = new Boolean[20];
 	
 	ShopPane(){
+		this.setPrefHeight(175);
+		this.setStyle("-fx-background-color: rgba(245,222,179,0.9);");
+		this.setSpacing(5);
+		this.setAlignment(Pos.CENTER);
 		for(int i=0;i<=16;i++) {
 			ingredientList.add(new Ingredient(i));
 			buyStatus[i] = false;
 		}
-		shopTitle = new Label();
 		
+		Label shopTitle = new Label("Ingredient Delivery");
+		shopTitle.setStyle("-fx-font-size: 16px;");
 		//zone where we select ingredient to order
 		HBox selectPane = new HBox();
-		select = new Label("Select :");
 		ingredientName = new Label(ingredientList.get(0).getName());
-		ingredientName.setPrefHeight(30);
-		ingredientName.setPrefWidth(80);
+		ingredientName.setPrefHeight(10);
+		ingredientName.setPrefWidth(100);
 		ingredientName.setAlignment(Pos.CENTER);
 		chooseLeft = new Button("<");
+		chooseLeft.setStyle("-fx-background-color: rgba(255,255,255,0.5);");
 		chooseRight = new Button(">");
-		selectPane.getChildren().addAll(select,chooseLeft,ingredientName,chooseRight);
+		chooseRight.setStyle("-fx-background-color: rgba(255,255,255,0.5);");
 		
 		ingredientImage = new ImageView(ingredientList.get(selectedIngredientID).getUrl());
-		ingredientImage.setFitHeight(100);
-		ingredientImage.setFitWidth(100);
+		ingredientImage.setFitHeight(80);
+		ingredientImage.setFitWidth(80);
+		selectPane.getChildren().add(chooseLeft);
+		selectPane.getChildren().add(ingredientImage);
+		selectPane.getChildren().add(chooseRight);
+		selectPane.setAlignment(Pos.CENTER);
+		selectPane.setSpacing(30);
 		
 		//zone which contain order button
 		HBox showPricePane = new HBox();
-		normalPriceBut = new Button("price : " + ingredientList.get(selectedIngredientID).getPrice());
-		speedPriceBut = new Button("price : " + (ingredientList.get(selectedIngredientID).getPrice()+10));
-		showPricePane.getChildren().addAll(normalPriceBut,speedPriceBut);
+		normalPriceBut = new Button("normal\nprice : " + ingredientList.get(selectedIngredientID).getPrice());
+		normalPriceBut.setPrefSize(100, 50); normalPriceBut.setTextAlignment(TextAlignment.CENTER);
+		normalPriceBut.setStyle("-fx-background-color: rgba(88, 214, 141,0.8); -fx-border-color:green;");
+		speedPriceBut = new Button("express\nprice : " + (ingredientList.get(selectedIngredientID).getPrice()+10));
+		speedPriceBut.setPrefSize(100, 50); speedPriceBut.setTextAlignment(TextAlignment.CENTER);
+		speedPriceBut.setStyle("-fx-background-color: rgba(93, 173, 226,0.8); -fx-border-color:blue;");
+		Label blank = new Label("");
+		blank.setPrefWidth(10);
+		showPricePane.getChildren().addAll(normalPriceBut,blank,speedPriceBut);
+		showPricePane.setAlignment(Pos.CENTER);
 		
 		//set action for "<"
 		chooseLeft.setOnAction(new EventHandler<ActionEvent>() {
@@ -88,7 +106,6 @@ public class ShopPane extends VBox{
 		
 		this.getChildren().add(shopTitle);
 		this.getChildren().add(selectPane);
-		this.getChildren().add(ingredientImage);
 		this.getChildren().add(showPricePane);
 	}
 	
@@ -183,8 +200,8 @@ public class ShopPane extends VBox{
 	
 	public void changeIngredientOrder() {
 		ingredientName.setText(ingredientList.get(selectedIngredientID).getName());
-		normalPriceBut.setText("price : " + ingredientList.get(selectedIngredientID).getPrice());
-		speedPriceBut.setText("price : " + (ingredientList.get(selectedIngredientID).getPrice()+10));
+		normalPriceBut.setText("normal\nprice : " + ingredientList.get(selectedIngredientID).getPrice());
+		speedPriceBut.setText("express\nprice : " + (ingredientList.get(selectedIngredientID).getPrice()+10));
 		Image image = new Image(ingredientList.get(selectedIngredientID).getUrl()); 
 		ingredientImage.setImage(image);
 		if(buyStatus[selectedIngredientID] == true) {
