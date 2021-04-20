@@ -52,6 +52,9 @@ public class ChefZoneController {
 			System.out.println("food found : " + sushi.getName() + " price=" + sushi.getPrice());
 		
 			//function to send sushi to the road
+			if(SushiTrain.canPlaceDish()) {
+				SushiTrain.addNewDish(sushi);
+			}
 			///////////////////////////////////
 		
 			ChefZoneGUI.rollpane.removeIngredient();
