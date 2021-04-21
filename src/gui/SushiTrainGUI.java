@@ -26,10 +26,6 @@ public class SushiTrainGUI extends Canvas {
 		
 		SushiTrain.initialize();
 		TrainDraw = new ArrayList<FoodList>();
-		
-		//Test
-		FoodList a = new FoodList(28700092);
-		SushiTrain.addNewDish(a);
 	}
 
 	private static void drawSushiTrain(GraphicsContext gc) {
