@@ -1,12 +1,12 @@
 package model;
 
 import gui.CustomerGUI;
+import gui.SushiTrainGUI;
 import gui.gamePane;
 import logic.GameController;
 import model.base.Updatable;
 
 public class Food implements Updatable {
-	private boolean isEat = false;
 	protected String name;
 	protected int price;
 	//position of food after serving
@@ -15,22 +15,19 @@ public class Food implements Updatable {
 
 	@Override
 	public void update() {
-		if(!isEat) {
-			if(PosX > gamePane.WIDTH_SCREEN) {
-				PosX = -15;
-			}
-			this.setPosX(PosX + 1);
-			
-			for(Customer i : CustomerGUI.getCustomerList()) {
-				if(i.isDetect(this) != -1 && ((i.getWant() == name) || (i.getWant()!=null && name == "unknown"))) {
-					isEat = true;
-					i.setWant(null);
-					GameController.addScore(price);
-					CustomerGUI.drawWant();
-				}
-			}
+		if(PosX > gamePane.WIDTH_SCREEN) {
+			PosX = -15;
 		}
-		
+		this.setPosX(PosX + 1);
+			
+		for(Customer i : CustomerGUI.getCustomerList()) {
+			if(i.isDetect(this) != -1 && ((i.getWant() == name) || (i.getWant()!=null && name == "unknown"))) {
+				i.setWant(null);
+				GameController.addScore(price);
+				CustomerGUI.drawWant();
+				SushiTrainGUI.getTrainDraw().remove(this);
+			}
+		}		
 	}
 
 	public double getPosX() {
@@ -47,10 +44,6 @@ public class Food implements Updatable {
 
 	public void setPosY(double posY) {
 		PosY = posY;
-	}
-
-	public boolean isEat() {
-		return isEat;
 	}
 
 	public String getName() {
