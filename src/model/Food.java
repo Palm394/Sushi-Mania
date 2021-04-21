@@ -22,7 +22,7 @@ public class Food implements Updatable {
 			this.setPosX(PosX + 1);
 			
 			for(Customer i : CustomerGUI.getCustomerList()) {
-				if(i.isDetect(this) != -1 && i.getWant() == name) {
+				if(i.isDetect(this) != -1 && ((i.getWant() == name) || (i.getWant()!=null && name == "unknown"))) {
 					isEat = true;
 					i.setWant(null);
 					GameController.addScore(price);
