@@ -4,7 +4,6 @@ package model;
 public class FoodList extends Food {
 
 	private int hcode;
-	private int price;
 	private String url;
 	
 	public FoodList(int hcode){
@@ -53,18 +52,8 @@ public class FoodList extends Food {
 	public void setHcode(int hcode) {
 		this.hcode = hcode;
 	}
-
-
-	public int getPrice() {
-		return price;
-	}
-
-
-	public void setPrice(int price) {
-		this.price = price;
-	}
 	
-		public String getUrl() {
+	public String getUrl() {
 		return url;
 	}
 

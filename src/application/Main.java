@@ -3,7 +3,6 @@ package application;
 import gui.menuPane;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import logic.ChefZoneController;
 
 public class Main extends Application {
 	

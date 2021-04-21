@@ -2,7 +2,6 @@ package application;
 
 import java.util.ArrayList;
 
-import gui.ChefZoneGUI;
 import logic.ChefZoneController;
 import model.FoodList;
 import model.Ingredient;

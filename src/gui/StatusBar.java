@@ -32,30 +32,15 @@ public class StatusBar extends HBox {
 		this.setBackground(new Background(new BackgroundFill(Color.web("#c2e39c"), CornerRadii.EMPTY, Insets.EMPTY)));
 		this.setAlignment(Pos.CENTER);
 		
-		Image money_img = new Image(ClassLoader.getSystemResource("money.png").toString());
-	    ImageView money_view = new ImageView(money_img);
-	    money_view.setFitHeight(48);
-	    money_view.setFitWidth(48);
-	    this.getChildren().add(money_view);
-		
+	    this.getChildren().add(createIcon("money.png",48,48));
 		score_label = new ScoreLabel();
 		this.getChildren().add(score_label);
-		
-		Image goal_img = new Image(ClassLoader.getSystemResource("goal_icon.png").toString());
-	    ImageView goal_view = new ImageView(goal_img);
-	    goal_view.setFitHeight(48);
-	    goal_view.setFitWidth(48);
-	    this.getChildren().add(goal_view);
-	    
+
+	    this.getChildren().add(createIcon("goal_icon.png",48,48));
 		target_label = new TargetLabel();
 		this.getChildren().add(target_label);
 		
-		Image timer_img = new Image(ClassLoader.getSystemResource("timer.png").toString());
-	    ImageView timer_view = new ImageView(timer_img);
-	    timer_view.setFitHeight(45);
-	    timer_view.setFitWidth(45);
-	    this.getChildren().add(timer_view);
-		
+	    this.getChildren().add(createIcon("timer.png",45,45));
 		timer_label = new TimerLabel();
 		this.getChildren().add(timer_label);
 		
@@ -64,14 +49,8 @@ public class StatusBar extends HBox {
 		
 		setting_button = new Button();
 		
-		
-		Image setting_img = new Image(ClassLoader.getSystemResource("settingIcon.png").toString());
-	    ImageView setting_view = new ImageView(setting_img);
-	    setting_view.setFitHeight(50);
-	    setting_view.setFitWidth(50);
-	    
 	    setting_button.setStyle("-fx-background-color: transparent;");
-	    setting_button.setGraphic(setting_view);
+	    setting_button.setGraphic(createIcon("settingIcon.png",50,50));
 	    
 		setting_button.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -85,7 +64,15 @@ public class StatusBar extends HBox {
 		this.getChildren().add(setting_button);
 		
 	}
-
+	
+	private static ImageView createIcon(String i,int W,int H) {
+		Image img = new Image(ClassLoader.getSystemResource(i).toString());
+	    ImageView view = new ImageView(img);
+	    view.setFitHeight(W);
+	    view.setFitWidth(H);
+		return view;
+	}
+	
 	public static ScoreLabel getScoreLabel() {
 		return score_label;
 	}

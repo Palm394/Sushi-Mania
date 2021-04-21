@@ -8,6 +8,7 @@ import model.base.Updatable;
 public class Food implements Updatable {
 	private boolean isEat = false;
 	protected String name;
+	protected int price;
 	//position of food after serving
 	private double PosX = 0;
 	private double PosY = 0;
@@ -21,10 +22,10 @@ public class Food implements Updatable {
 			this.setPosX(PosX + 1);
 			
 			for(Customer i : CustomerGUI.getCustomerList()) {
-				if(i.isDetect(this) != -1 && i.getWant() == name) {
+				if(i.isDetect(this) != -1 && ((i.getWant() == name) || (i.getWant()!=null && name == "unknown"))) {
 					isEat = true;
 					i.setWant(null);
-					GameController.addScore(1000);
+					GameController.addScore(price);
 					CustomerGUI.drawWant();
 				}
 			}
@@ -58,5 +59,13 @@ public class Food implements Updatable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
 	}
 }
