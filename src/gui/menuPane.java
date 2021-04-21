@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 public class menuPane extends VBox {
 	
-	private Scene menuScene;
+	private static Scene menuScene;
 	private static Stage menuStage;
 	
 	private final static int WIDTH_SIZE = 400;
@@ -20,6 +20,7 @@ public class menuPane extends VBox {
 	public menuPane() {
 		
 		this.setAlignment(Pos.CENTER);
+		this.setSpacing(20);
 		
 		createStartButton();
 		tutorialButton();
@@ -34,7 +35,8 @@ public class menuPane extends VBox {
 	
 	public void createStartButton() {
 		Button startButton = new Button("Start Game");
-		
+		startButton.setPrefWidth(160);
+		startButton.setPrefHeight(40);
 		startButton.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -50,6 +52,8 @@ public class menuPane extends VBox {
 	
 	public void tutorialButton() {
 		Button tutorialButton = new Button("How to play");
+		tutorialButton.setPrefWidth(160);
+		tutorialButton.setPrefHeight(40);		
 		tutorialButton.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -66,6 +70,8 @@ public class menuPane extends VBox {
 	
 	public void creditButton() {
 		Button creditButton = new Button("Credit");
+		creditButton.setPrefWidth(160);
+		creditButton.setPrefHeight(40);		
 		creditButton.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -79,6 +85,10 @@ public class menuPane extends VBox {
 		this.getChildren().add(creditButton);
 	}
 	
+	public static void backToMenu() {
+		menuStage.setScene(menuScene);
+		menuStage.setTitle("Sushi Mania - Menu");
+	}
 	
 	public Stage getMenuStage() {
 		return menuStage;
