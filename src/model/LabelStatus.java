@@ -5,7 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 import model.base.Updatable;
 
-public abstract class LabelStatus extends Label implements Updatable {
+public class LabelStatus extends Label implements Updatable {
 	
 	public LabelStatus() {
 		this.setFont(new Font(20));
@@ -13,5 +13,12 @@ public abstract class LabelStatus extends Label implements Updatable {
 		setSentence();
 	}
 	
-	protected abstract void setSentence();
+	protected void setSentence() {
+		//set sentence
+	}
+
+	@Override
+	public void update() {
+		setSentence();
+	}
 }
