@@ -33,7 +33,7 @@ public class GameController {
 			public void handle(long now) {
 				SushiTrain.update();
 				SushiTrainGUI.paintComponent();
-				
+
 				if(timer == 0) {
 					timer = timeEachRound;
 					if(Score >= Target) {

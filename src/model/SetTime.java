@@ -2,7 +2,7 @@ package model;
 
 import javafx.animation.Timeline;
 
-public abstract class SetTime {
+public class SetTime {
 	protected Timeline timeline;
 	protected int pass_time;
 	
