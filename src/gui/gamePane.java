@@ -3,6 +3,7 @@ package gui;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import logic.ChefZoneController;
 import logic.GameController;
 
 public class gamePane extends VBox  {
@@ -36,6 +37,8 @@ public class gamePane extends VBox  {
 		//--- Chef Zone ---
 
 		this.getChildren().add(new ChefZoneGUI());
+		ChefZoneController.updateIngredientButton();
+		ChefZoneController.updateShopList();
 		
 		//--- End ---
 		

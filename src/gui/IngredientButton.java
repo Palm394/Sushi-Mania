@@ -10,9 +10,8 @@ import model.Ingredient;
 public class IngredientButton extends Button{
 	public Ingredient ingredient;
 	
-	IngredientButton(int id){
-		ingredient = new Ingredient(id);
-		
+	IngredientButton(Ingredient ingredient){
+		this.ingredient = ingredient;
 		this.setPrefHeight(60);
 		this.setPrefWidth(85);
 		this.setStyle("-fx-background-color: rgba(245,222,179,0.7);");
@@ -22,7 +21,9 @@ public class IngredientButton extends Button{
 		image.setFitWidth(50);
 		this.setGraphic(image);
 		this.setText(this.ingredient.getRemain()+"");
-
+		
+		this.lock();
+		
 		IngredientButton button = this;
 		
 		this.setOnAction(new EventHandler<ActionEvent>(){
@@ -38,5 +39,13 @@ public class IngredientButton extends Button{
 	public void buyIngredient() {
 		this.ingredient.setRemain(this.ingredient.getRemain() + 10);
 		this.setText(this.ingredient.getRemain()+"");
+	}
+	
+	public void lock() {
+		this.setDisable(true);
+	}
+	
+	public void unlock() {
+		this.setDisable(false);
 	}
 }

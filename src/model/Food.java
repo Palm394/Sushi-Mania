@@ -24,7 +24,7 @@ public class Food implements Updatable {
 				if(i.isDetect(this) != -1 && i.getWant() == name) {
 					isEat = true;
 					i.setWant(null);
-					GameController.addScore(10);
+					GameController.addScore(1000);
 					CustomerGUI.drawWant();
 				}
 			}

@@ -3,6 +3,7 @@ package gui;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
+import application.Database;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -27,7 +28,8 @@ public class ShopPane extends VBox{
 	Button normalPriceBut;
 	Button speedPriceBut;
 	ImageView ingredientImage;
-	ArrayList<Ingredient> ingredientList = new ArrayList<Ingredient>();
+	private ArrayList<Ingredient> ingredientList = new ArrayList<Ingredient>();
+
 	Boolean[] buyStatus = new Boolean[20];
 	
 	ShopPane(){
@@ -36,9 +38,9 @@ public class ShopPane extends VBox{
 		this.setSpacing(5);
 		this.setAlignment(Pos.CENTER);
 		for(int i=0;i<=16;i++) {
-			ingredientList.add(new Ingredient(i));
 			buyStatus[i] = false;
 		}
+		this.updateShopList();
 		
 		Label shopTitle = new Label("Ingredient Delivery");
 		shopTitle.setStyle("-fx-font-size: 16px;");
@@ -78,7 +80,8 @@ public class ShopPane extends VBox{
 		//set action for "<"
 		chooseLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				selectedIngredientID = (selectedIngredientID + 15) % 16;
+				int ingredientSize = Database.getHasIngredient().size();
+				selectedIngredientID = (selectedIngredientID + ingredientSize - 1) % ingredientSize;
 				changeIngredientOrder();
 			}
 		});		
@@ -86,7 +89,8 @@ public class ShopPane extends VBox{
 		//set action for ">"
 		chooseRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				selectedIngredientID = (selectedIngredientID + 1) % 16;
+				int ingredientSize = Database.getHasIngredient().size();
+				selectedIngredientID = (selectedIngredientID + 1) % ingredientSize;
 				changeIngredientOrder();
 			}
 		});		
@@ -94,13 +98,15 @@ public class ShopPane extends VBox{
 		//set action for normalBuy
 		normalPriceBut.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				buyNormalTo(selectedIngredientID,ingredientList.get(selectedIngredientID).getPrice());
+				int ID = ingredientList.get(selectedIngredientID).getId();
+				buyNormalTo(ID,ingredientList.get(selectedIngredientID).getPrice());
 			}
 		});	
 		//set action for speedBuy
 		speedPriceBut.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				buySpeed(selectedIngredientID,ingredientList.get(selectedIngredientID).getPrice()+10);
+				int ID = ingredientList.get(selectedIngredientID).getId();
+				buySpeed(ID,ingredientList.get(selectedIngredientID).getPrice()+10);
 			}
 		});	
 		
@@ -110,14 +116,15 @@ public class ShopPane extends VBox{
 	}
 	
 	public boolean isOrdered() {
-		return buyStatus[selectedIngredientID];
+		System.out.println("ordered : " + ingredientList.get(selectedIngredientID).getId());
+		return buyStatus[ingredientList.get(selectedIngredientID).getId()];
 	}
 	
 	//buy normal has to wait for time to delivery
 	private Runnable buyNormal = new Runnable() {
 		public void run() {
 			int timer = 5;
-			int ID = selectedIngredientID;
+			int ID = ingredientList.get(selectedIngredientID).getId();
 			//then delivery
 			while(timer > 0)
 			{
@@ -130,9 +137,9 @@ public class ShopPane extends VBox{
 				timer -= 1;
 				System.out.println(timer);
 			}
-			Platform.runLater(()->{if(selectedIngredientID<16) {
+			Platform.runLater(()->{if(ID<16) {
 				//set remaining number
-				ChefZoneGUI.ingredientpane.supply.get(ID).buyIngredient();
+				ChefZoneGUI.ingredientpane.getSupply().get(ID).buyIngredient();
 			} else {
 				//set remaining number
 				ChefZoneGUI.rice.buyIngredient();
@@ -160,16 +167,14 @@ public class ShopPane extends VBox{
 	//but buy speed doesn't wait
 	public void buySpeed(int ID, int price) {
 		if(GameController.getScore() >= price) {
-			if(selectedIngredientID<16) {
 				//set remaining number
-				ChefZoneGUI.ingredientpane.supply.get(ID).buyIngredient();
+				ChefZoneGUI.ingredientpane.getSupply().get(ID).buyIngredient();
 			} else {
 				//set remaining number
 				ChefZoneGUI.rice.buyIngredient();
 			}
 				//set new score
 				GameController.addScore(-price);			
-		}
 	}
 	
 	public void lockBuy() {
@@ -184,7 +189,7 @@ public class ShopPane extends VBox{
 	
 	public void blockIngredient(int ID){
 		if(ID<16) {
-			ChefZoneGUI.ingredientpane.supply.get(ID).setDisable(true);
+			ChefZoneGUI.ingredientpane.getSupply().get(ID).setDisable(true);
 		} else {
 			ChefZoneGUI.rice.setDisable(true);
 		}
@@ -192,7 +197,7 @@ public class ShopPane extends VBox{
 	
 	public void unblockIngredient(int ID){
 		if(ID<16) {
-			ChefZoneGUI.ingredientpane.supply.get(ID).setDisable(false);
+			ChefZoneGUI.ingredientpane.getSupply().get(ID).setDisable(false);
 		} else {
 			ChefZoneGUI.rice.setDisable(false);
 		}
@@ -204,10 +209,26 @@ public class ShopPane extends VBox{
 		speedPriceBut.setText("express\nprice : " + (ingredientList.get(selectedIngredientID).getPrice()+10));
 		Image image = new Image(ingredientList.get(selectedIngredientID).getUrl()); 
 		ingredientImage.setImage(image);
-		if(buyStatus[selectedIngredientID] == true) {
+		if(buyStatus[ingredientList.get(selectedIngredientID).getId()] == true) {
 			lockBuy();
 		} else {
 			unlockBuy();
 		}
+	}
+
+	public ArrayList<Ingredient> getIngredientList() {
+		return ingredientList;
+	}
+
+	public void setIngredientList(ArrayList<Ingredient> ingredientList) {
+		this.ingredientList = ingredientList;
+	}
+	
+	public void updateShopList() {
+		ingredientList.clear();
+		for(int i=0;i<Database.getHasIngredient().size();i++) {
+			ingredientList.add(Database.getHasIngredient().get(i));
+		}
+		ingredientList.sort((Ingredient z1,Ingredient z2) -> (Integer.compare(z1.getId(),z2.getId())));
 	}
 }

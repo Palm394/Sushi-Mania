@@ -2,6 +2,7 @@ package logic;
 
 import java.util.ArrayList;
 
+import application.Database;
 import gui.ChefZoneGUI;
 import gui.IngredientButton;
 import javafx.scene.control.Button;
@@ -34,6 +35,17 @@ public class ChefZoneController {
 	
 	public static void updateIngredient() {
 		ChefZoneGUI.rollpane.updateIngredient();
+	}
+	
+	public static void updateIngredientButton() {
+		for(int i=0;i<Database.getHasIngredient().size();i++) {
+			ChefZoneGUI.ingredientpane.getSupply().get(Database.getHasIngredient().get(i).getId()).unlock();
+			System.out.println(i);
+		}
+	}
+	
+	public static void updateShopList() {
+		ChefZoneGUI.shopPane.updateShopList();
 	}
 	
 	public static int wrap(ArrayList<Ingredient> wrapper) {
