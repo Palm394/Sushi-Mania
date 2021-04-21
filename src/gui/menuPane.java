@@ -2,12 +2,14 @@ package gui;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class menuPane extends StackPane {
+public class menuPane extends VBox {
 	
 	private Scene menuScene;
 	private static Stage menuStage;
@@ -16,7 +18,12 @@ public class menuPane extends StackPane {
 	private final static int HEIGHT_SIZE = 600;
 	
 	public menuPane() {
+		
+		this.setAlignment(Pos.CENTER);
+		
 		createStartButton();
+		tutorialButton();
+		creditButton();
 		
 		menuScene = new Scene(this,WIDTH_SIZE,HEIGHT_SIZE);
 		menuStage = new Stage();
@@ -39,6 +46,39 @@ public class menuPane extends StackPane {
 		});
 		this.getChildren().add(startButton);
 	}
+	
+	
+	public void tutorialButton() {
+		Button tutorialButton = new Button("How to play");
+		tutorialButton.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				tutorialPane tutorial = new tutorialPane();
+				menuStage.setScene(tutorial.scene);
+				menuStage.setTitle("Sushi Mania - Tutorial");
+			}
+			
+		});
+		this.getChildren().add(tutorialButton);
+	}
+	
+	
+	public void creditButton() {
+		Button creditButton = new Button("Credit");
+		creditButton.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				creditPane credit = new creditPane();
+				menuStage.setScene(credit.scene);
+				menuStage.setTitle("Sushi Mania - Credit");
+			}
+			
+		});
+		this.getChildren().add(creditButton);
+	}
+	
 	
 	public Stage getMenuStage() {
 		return menuStage;

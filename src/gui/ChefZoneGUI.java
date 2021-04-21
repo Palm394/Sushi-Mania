@@ -18,7 +18,6 @@ public class ChefZoneGUI extends HBox {
 		
 	public static rollPane rollpane;
 	public static ingredientPane ingredientpane;
-	public static IngredientButton rice;
 	public static RecipePane recipePane;
 	public static ShopPane shopPane;
 	

@@ -137,13 +137,9 @@ public class ShopPane extends VBox{
 				timer -= 1;
 				System.out.println(timer);
 			}
-			Platform.runLater(()->{if(ID<16) {
-				//set remaining number
+			Platform.runLater(()->{
 				ChefZoneGUI.ingredientpane.getSupply().get(ID).buyIngredient();
-			} else {
-				//set remaining number
-				ChefZoneGUI.rice.buyIngredient();
-			}});
+			});
 			Platform.runLater(()->{unlockBuy();unblockIngredient(ID);});
 			buyStatus[ID] = false;
 		}
@@ -169,12 +165,10 @@ public class ShopPane extends VBox{
 		if(GameController.getScore() >= price) {
 				//set remaining number
 				ChefZoneGUI.ingredientpane.getSupply().get(ID).buyIngredient();
-			} else {
-				//set remaining number
-				ChefZoneGUI.rice.buyIngredient();
-			}
 				//set new score
-				GameController.addScore(-price);			
+				GameController.addScore(-price);	
+		} 
+						
 	}
 	
 	public void lockBuy() {
@@ -188,19 +182,11 @@ public class ShopPane extends VBox{
 	}
 	
 	public void blockIngredient(int ID){
-		if(ID<16) {
 			ChefZoneGUI.ingredientpane.getSupply().get(ID).setDisable(true);
-		} else {
-			ChefZoneGUI.rice.setDisable(true);
-		}
 	}
 	
 	public void unblockIngredient(int ID){
-		if(ID<16) {
 			ChefZoneGUI.ingredientpane.getSupply().get(ID).setDisable(false);
-		} else {
-			ChefZoneGUI.rice.setDisable(false);
-		}
 	}
 	
 	public void changeIngredientOrder() {
