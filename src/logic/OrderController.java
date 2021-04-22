@@ -46,7 +46,7 @@ public class OrderController extends SetTime {
 				    )
 			);
 			
-			timeline.setCycleCount( 12 );
+			timeline.setCycleCount( 40 );
 			timeline.play();
 		}
 }
