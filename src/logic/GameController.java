@@ -31,25 +31,20 @@ public class GameController {
 		
 		animation = new AnimationTimer() {
 			
-			private long lastUpdate = 0 ;
-			
 			public void handle(long now) {
-				if(now - lastUpdate >= 30_000_000) {
-					SushiTrain.update();
-					SushiTrainGUI.paintComponent();
+				SushiTrain.update();
+				SushiTrainGUI.paintComponent();
 	
-					if(timer == 0) {
-						timer = timeEachRound;
-						if(Score >= Target) {
-							Utility.NewLevelSound.play();
-							newLevel();
-						}else {
-							//GameOver
-							AlertPane gameOver = new GameOverPane("Game Over",gamePane.getWidthScreen(),gamePane.getHeightScreen());
-							gamePane.getGameStage().setScene(gameOver.getScene());
-						}
+				if(timer == 0) {
+					timer = timeEachRound;
+					if(Score >= Target) {
+						Utility.NewLevelSound.play();
+						newLevel();
+					}else {
+						//GameOver
+						AlertPane gameOver = new GameOverPane("Game Over",gamePane.getWidthScreen(),gamePane.getHeightScreen());
+						gamePane.getGameStage().setScene(gameOver.getScene());
 					}
-					now = 0;
 				}
 			}
 		};
