@@ -21,11 +21,7 @@ public class SushiTrain {
 			e.update();
 		}
 	}
-	
-	public static ArrayList<Food> getTrainList() {
-			return TrainList;
-	}
-	
+
 	public static boolean canPlaceDish() {
 		for(Food i : TrainList) {
 			if(60 >= i.getPosX() && i.getPosX() >= 0 ) {

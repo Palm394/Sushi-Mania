@@ -16,7 +16,7 @@ public class Food implements Updatable {
 
 	@Override
 	public void update() {
-		if(!isEat()) {
+		if(!isEat) {
 			if(PosX > gamePane.WIDTH_SCREEN) {
 				PosX = -15;
 			}
@@ -66,7 +66,4 @@ public class Food implements Updatable {
 		this.price = price;
 	}
 
-	public boolean isEat() {
-		return isEat;
-	}
 }
