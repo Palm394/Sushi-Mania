@@ -10,24 +10,28 @@ public class Food implements Updatable {
 	protected String name;
 	protected int price;
 	//position of food after serving
+	private boolean isEat = false;
 	private double PosX = 0;
 	private double PosY = 0;
 
 	@Override
 	public void update() {
-		if(PosX > gamePane.WIDTH_SCREEN) {
-			PosX = -15;
-		}
-		this.setPosX(PosX + 1);
-			
-		for(Customer i : CustomerGUI.getCustomerList()) {
-			if(i.isDetect(this) != -1 && ((i.getWant() == name) || (i.getWant()!=null && name == "unknown"))) {
-				i.setWant(null);
-				GameController.addScore(price);
-				CustomerGUI.drawWant();
-				SushiTrainGUI.getTrainDraw().remove(this);
+		if(!isEat()) {
+			if(PosX > gamePane.WIDTH_SCREEN) {
+				PosX = -15;
 			}
-		}		
+			this.setPosX(PosX + 1);
+				
+			for(Customer i : CustomerGUI.getCustomerList()) {
+				if(i.isDetect(this) != -1 && ((i.getWant() == name) || (i.getWant()!=null && name == "unknown"))) {
+					i.setWant(null);
+					GameController.addScore(price);
+					isEat = true;
+					CustomerGUI.drawWant();
+					SushiTrainGUI.getTrainDraw().remove(this);
+				}
+			}		
+		}
 	}
 
 	public double getPosX() {
@@ -60,5 +64,9 @@ public class Food implements Updatable {
 
 	public void setPrice(int price) {
 		this.price = price;
+	}
+
+	public boolean isEat() {
+		return isEat;
 	}
 }
