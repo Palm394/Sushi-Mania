@@ -18,7 +18,7 @@ public class GameController {
 	private static int Target;
 	private static int timer;
 	//second unit
-	private final static int timeEachRound = 20;
+	private final static int timeEachRound = 120;
 	
 	private static AnimationTimer animation;
 	private static TimerController time_left;

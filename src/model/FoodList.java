@@ -22,7 +22,7 @@ public class FoodList extends Food {
 			case 14349150: name="shrimp";	  price=25; url="MenuImage/Sushi12.png";  break;
 			case 14355471: name="squid";	  price=35; url="MenuImage/Sushi13.png";  break;
 			case 14349636: name="saba";		  price=25; url="MenuImage/Sushi14.png";  break;
-			case 28697817: name="Onigiri";	  price=500; url="MenuImage/Sushi15.png";  break;
+			case 28697817: name="Onigiri";	  price=35; url="MenuImage/Sushi15.png";  break;
 			case 14368594: name="temaki1";	  price=45; url="MenuImage/Sushi16.png";  break;
 			case 14348937: name="crab roll";  price=35; url="MenuImage/Sushi17.png";  break;
 			case 28717618: name="roll7";	  price=85; url="MenuImage/Sushi18.png";  break;
