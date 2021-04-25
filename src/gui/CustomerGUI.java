@@ -46,7 +46,7 @@ public class CustomerGUI extends HBox {
 		
 		for(Customer i : CustomerList) {
 			if(i.getWant() != null) {
-				Image drawing = new Image(ClassLoader.getSystemResource(i.getWantURL()).toString(),60,60, false, false);
+				Image drawing = new Image(i.getWantURL(),60,60, false, false);
 				gc.drawImage(drawing, i.getPosX(), 15);
 			}
 		}
