@@ -38,9 +38,10 @@ public class ChefZoneController {
 	}
 	
 	public static void updateIngredientButton() {
-		for(int i=0;i<Database.getHasIngredient().size();i++) {
+		int ingredientSize = Database.getHasIngredient().size();
+		System.out.println(ingredientSize);
+		for(int i=0;i<ingredientSize;i++) {
 			ChefZoneGUI.ingredientpane.getSupply().get(Database.getHasIngredient().get(i).getId()).unlock();
-			System.out.println(i);
 		}
 	}
 	

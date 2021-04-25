@@ -18,7 +18,7 @@ public class GameController {
 	private static int Target;
 	private static int timer;
 	//second unit
-	private final static int timeEachRound = 120;
+	private final static int timeEachRound = 20;
 	
 	private static AnimationTimer animation;
 	private static TimerController time_left;
@@ -63,6 +63,7 @@ public class GameController {
 		StatusBar.getTargetLabel().update();
 		StatusBar.getLevelLabel().update();
 		
+		System.out.println("pass : " + Level);
 		Database.newLV(Level);
 		LevelUpPane levelup = new LevelUpPane("Level UP!",gamePane.WIDTH_SCREEN,gamePane.HEIGHT_SCREEN);
 		gamePane.getGameStage().setScene(levelup.getScene());
