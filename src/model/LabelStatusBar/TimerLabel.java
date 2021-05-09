@@ -6,7 +6,7 @@ import model.LabelStatus;
 public class TimerLabel extends LabelStatus {
 
 	@Override
-	protected void setSentence() {
+	public void update() {
 		// TODO Auto-generated method stub
 		this.textProperty().setValue("  : " + GameController.getTimer() + " s");
 	}

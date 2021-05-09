@@ -18,7 +18,7 @@ public class SushiTrain {
 	
 	public static void update() {
 		for(Food e : TrainList) {
-			e.update();
+			e.render();
 		}
 	}
 

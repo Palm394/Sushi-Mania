@@ -4,9 +4,9 @@ import gui.CustomerGUI;
 import gui.SushiTrainGUI;
 import gui.gamePane;
 import logic.GameController;
-import model.base.Updatable;
+import model.base.Renderable;
 
-public class Food implements Updatable {
+public class Food implements Renderable {
 	protected String name;
 	protected int price;
 	//position of food after serving
@@ -15,7 +15,7 @@ public class Food implements Updatable {
 	private double PosY = 0;
 
 	@Override
-	public void update() {
+	public void render() {
 		if(!isEat) {
 			if(PosX > gamePane.WIDTH_SCREEN) {
 				PosX = -15;

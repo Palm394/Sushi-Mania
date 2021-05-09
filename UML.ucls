@@ -316,16 +316,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="36" language="java" name="model.base.Updatable" project="Sushi-Mania" 
-    file="/Sushi-Mania/src/model/base/Updatable.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="504" y="962"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <class id="37" language="java" name="model.LabelStatusBar.ScoreLabel" project="Sushi-Mania" 
+  <class id="36" language="java" name="model.LabelStatusBar.ScoreLabel" project="Sushi-Mania" 
     file="/Sushi-Mania/src/model/LabelStatusBar/ScoreLabel.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="724" y="1014"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -334,7 +325,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="38" language="java" name="model.LabelStatusBar.LevelLabel" project="Sushi-Mania" 
+  <class id="37" language="java" name="model.LabelStatusBar.LevelLabel" project="Sushi-Mania" 
     file="/Sushi-Mania/src/model/LabelStatusBar/LevelLabel.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="891" y="1014"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -343,7 +334,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="39" language="java" name="model.LabelStatusBar.TargetLabel" project="Sushi-Mania" 
+  <class id="38" language="java" name="model.LabelStatusBar.TargetLabel" project="Sushi-Mania" 
     file="/Sushi-Mania/src/model/LabelStatusBar/TargetLabel.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1058" y="1014"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -352,7 +343,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="40" language="java" name="model.LabelStatusBar.TimerLabel" project="Sushi-Mania" 
+  <class id="39" language="java" name="model.LabelStatusBar.TimerLabel" project="Sushi-Mania" 
     file="/Sushi-Mania/src/model/LabelStatusBar/TimerLabel.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1225" y="1014"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -361,51 +352,69 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="41">    
-    <end type="SOURCE" refId="38"/>    
-    <end type="TARGET" refId="32"/>  
-  </generalization>  
+  <interface id="40" language="java" name="model.base.Renderable" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/model/base/Renderable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="472" y="1070"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="41" language="java" name="model.base.Updatable" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/model/base/Updatable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="612" y="868"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
   <generalization id="42">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="27"/>  
-  </generalization>  
-  <generalization id="43">    
-    <end type="SOURCE" refId="39"/>    
-    <end type="TARGET" refId="32"/>  
-  </generalization>  
-  <generalization id="44">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="27"/>  
-  </generalization>  
-  <generalization id="45">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="27"/>  
-  </generalization>  
-  <generalization id="46">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="35"/>  
-  </generalization>  
-  <generalization id="47">    
-    <end type="SOURCE" refId="33"/>    
-    <end type="TARGET" refId="30"/>  
-  </generalization>  
-  <realization id="48">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="36"/>  
-  </realization>  
-  <generalization id="49">    
     <end type="SOURCE" refId="37"/>    
     <end type="TARGET" refId="32"/>  
   </generalization>  
-  <realization id="50">    
+  <generalization id="43">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <generalization id="44">    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="32"/>  
+  </generalization>  
+  <realization id="45">    
     <end type="SOURCE" refId="32"/>    
-    <end type="TARGET" refId="36"/>  
+    <end type="TARGET" refId="41"/>  
+  </realization>  
+  <generalization id="46">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <generalization id="47">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <generalization id="48">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="35"/>  
+  </generalization>  
+  <generalization id="49">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="30"/>  
+  </generalization>  
+  <realization id="50">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="40"/>  
   </realization>  
   <generalization id="51">    
-    <end type="SOURCE" refId="40"/>    
+    <end type="SOURCE" refId="36"/>    
     <end type="TARGET" refId="32"/>  
   </generalization>  
   <generalization id="52">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="32"/>  
+  </generalization>  
+  <generalization id="53">    
     <end type="SOURCE" refId="24"/>    
     <end type="TARGET" refId="35"/>  
   </generalization>  
