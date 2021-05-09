@@ -46,7 +46,7 @@ public class ChefZoneController {
 	}
 	
 	public static void updateShopList() {
-		ChefZoneGUI.shopPane.updateShopList();
+		ChefZoneGUI.shopPane.update();
 	}
 	
 	public static int wrap(ArrayList<Ingredient> wrapper) {

@@ -8,6 +8,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import model.Customer;
+import model.base.Renderable;
 
 public class CustomerGUI extends HBox {
 	private static GraphicsContext gc;

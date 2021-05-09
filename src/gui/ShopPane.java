@@ -17,8 +17,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 import logic.GameController;
 import model.Ingredient;
+import model.base.Updatable;
 
-public class ShopPane extends VBox{
+public class ShopPane extends VBox implements Updatable{
 	int selectedIngredientID = 0;
 	Label shopTitle;
 	Label select;
@@ -40,7 +41,7 @@ public class ShopPane extends VBox{
 		for(int i=0;i<=16;i++) {
 			buyStatus[i] = false;
 		}
-		this.updateShopList();
+		this.update();
 		
 		Label shopTitle = new Label("Ingredient Delivery");
 		shopTitle.setStyle("-fx-font-size: 16px;");
@@ -210,7 +211,7 @@ public class ShopPane extends VBox{
 		this.ingredientList = ingredientList;
 	}
 	
-	public void updateShopList() {
+	public void update() {
 		ingredientList.clear();
 		for(int i=0;i<Database.getHasIngredient().size();i++) {
 			ingredientList.add(Database.getHasIngredient().get(i));

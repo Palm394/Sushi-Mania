@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="gui.ShopPane" project="Sushi-Mania" file="/Sushi-Mania/src/gui/ShopPane.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1885" y="867"/>    
+    <position height="-1" width="-1" x="1857" y="851"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -273,7 +273,7 @@
   </class>  
   <class id="31" language="java" name="model.SushiTrain" project="Sushi-Mania" 
     file="/Sushi-Mania/src/model/SushiTrain.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1218" y="1221"/>    
+    <position height="-1" width="-1" x="3020" y="955"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -363,7 +363,7 @@
   </interface>  
   <interface id="41" language="java" name="model.base.Updatable" project="Sushi-Mania" 
     file="/Sushi-Mania/src/model/base/Updatable.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="612" y="868"/>    
+    <position height="-1" width="-1" x="1430" y="836"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -375,46 +375,50 @@
     <end type="TARGET" refId="32"/>  
   </generalization>  
   <generalization id="43">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="27"/>  
-  </generalization>  
-  <generalization id="44">    
-    <end type="SOURCE" refId="38"/>    
-    <end type="TARGET" refId="32"/>  
-  </generalization>  
-  <realization id="45">    
-    <end type="SOURCE" refId="32"/>    
-    <end type="TARGET" refId="41"/>  
-  </realization>  
-  <generalization id="46">    
     <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="27"/>  
   </generalization>  
-  <generalization id="47">    
+  <generalization id="44">    
     <end type="SOURCE" refId="17"/>    
     <end type="TARGET" refId="27"/>  
   </generalization>  
-  <generalization id="48">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="35"/>  
-  </generalization>  
-  <generalization id="49">    
+  <generalization id="45">    
     <end type="SOURCE" refId="33"/>    
     <end type="TARGET" refId="30"/>  
   </generalization>  
-  <realization id="50">    
+  <realization id="46">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="41"/>  
+  </realization>  
+  <realization id="47">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="41"/>  
+  </realization>  
+  <generalization id="48">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="27"/>  
+  </generalization>  
+  <generalization id="49">    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="32"/>  
+  </generalization>  
+  <generalization id="50">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="35"/>  
+  </generalization>  
+  <realization id="51">    
     <end type="SOURCE" refId="30"/>    
     <end type="TARGET" refId="40"/>  
   </realization>  
-  <generalization id="51">    
+  <generalization id="52">    
     <end type="SOURCE" refId="36"/>    
     <end type="TARGET" refId="32"/>  
   </generalization>  
-  <generalization id="52">    
+  <generalization id="53">    
     <end type="SOURCE" refId="39"/>    
     <end type="TARGET" refId="32"/>  
   </generalization>  
-  <generalization id="53">    
+  <generalization id="54">    
     <end type="SOURCE" refId="24"/>    
     <end type="TARGET" refId="35"/>  
   </generalization>  
