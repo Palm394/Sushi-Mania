@@ -24,26 +24,35 @@ public class GameController {
 	private static TimerController time_left;
 	private static OrderController order_time;
 	
+	private static long lastTimeTriggered;
+	
 	public static void initialize() {
 		Score = 200;
 		Level = 1;
 		Target = 500;
+		lastTimeTriggered = -1;
 		
 		animation = new AnimationTimer() {
 			
 			public void handle(long now) {
-				SushiTrain.update();
-				SushiTrainGUI.paintComponent();
-	
-				if(timer == 0) {
-					timer = timeEachRound;
-					if(Score >= Target) {
-						Utility.NewLevelSound.play();
-						newLevel();
-					}else {
-						//GameOver
-						AlertPane gameOver = new GameOverPane("Game Over",gamePane.getWidthScreen(),gamePane.getHeightScreen());
-						gamePane.getGameStage().setScene(gameOver.getScene());
+				lastTimeTriggered = (lastTimeTriggered < 0 ? now : lastTimeTriggered);
+				if(now - lastTimeTriggered >= 30000000)
+				{
+					SushiTrain.update();
+					SushiTrainGUI.paintComponent();
+		
+					lastTimeTriggered = now;
+					
+					if(timer == 0) {
+						timer = timeEachRound;
+						if(Score >= Target) {
+							Utility.NewLevelSound.play();
+							newLevel();
+						}else {
+							//GameOver
+							AlertPane gameOver = new GameOverPane("Game Over",gamePane.getWidthScreen(),gamePane.getHeightScreen());
+							gamePane.getGameStage().setScene(gameOver.getScene());
+						}
 					}
 				}
 			}
