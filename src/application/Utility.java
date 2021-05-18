@@ -10,7 +10,6 @@ public class Utility {
 	public static Image SushiTrainBG;
 	public static Image BackgroundImage;
 	public static Image CustomerImage;
-	public static Image DishImage;
 	
 	public static AudioClip NewLevelSound;
 	public static AudioClip EatSound;
@@ -28,7 +27,6 @@ public class Utility {
 	
 	public static void loadResource() {
 		SushiTrainBG = new Image(ClassLoader.getSystemResource("SushiTrain.png").toString());
-		DishImage = new Image(ClassLoader.getSystemResource("dish.png").toString());
 		BackgroundImage = new Image(ClassLoader.getSystemResource("customerUP.png").toString());
 		CustomerImage = new Image(ClassLoader.getSystemResource("customerDOWN.png").toString());
 		
