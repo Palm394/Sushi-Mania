@@ -46,5 +46,5 @@ public class IngredientButton extends Button{
 	
 	public void unlock() {
 		this.setDisable(false);
-	}
+	} 
 }
