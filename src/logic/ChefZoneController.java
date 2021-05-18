@@ -4,14 +4,9 @@ import java.util.ArrayList;
 
 import application.Database;
 import gui.ChefZoneGUI;
-import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import model.Ingredient;
 import model.IngredientButton;
 import model.SushiTrain;
-import model.Food;
 import model.FoodList;
 
 public class ChefZoneController {
@@ -57,11 +52,23 @@ public class ChefZoneController {
 				hcode += Math.pow(3, wrapper.get(i).getId());
 			}
 			
-			//checkout hash result
+			//show ingredient code
 			System.out.println("hcode : " + hcode);
 			
-			// details of sushi is in recipe
-			FoodList sushi = new FoodList(hcode);
+			//find menu which can make
+			FoodList sushi = new FoodList(99);
+			boolean check = false;
+			int menuID = 1;
+			while(check == false) {
+				if(new FoodList(menuID).getHcode() == hcode) {
+					sushi = new FoodList(menuID);
+					check = true;
+				} else if(menuID > 32) {
+					break;
+				}
+				menuID += 1;
+			}
+			
 			System.out.println("food found : " + sushi.getName() + " price=" + sushi.getPrice());
 		
 			//function to send sushi to the road
