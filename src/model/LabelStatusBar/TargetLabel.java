@@ -6,7 +6,7 @@ import model.LabelStatus;
 public class TargetLabel extends LabelStatus{
 	
 	@Override
-	protected void setSentence() {
+	public void update() {
 		this.textProperty().setValue(" : " + GameController.getTarget());
 	}
 

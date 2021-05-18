@@ -1,7 +1,5 @@
 package model.base;
 
 public interface Updatable {
-	
-    public void update();
-    
+	public void update();
 }

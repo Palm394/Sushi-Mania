@@ -41,7 +41,9 @@ public class FoodList extends Food {
 			case 553311: name="Mixed Sashimi";price=35; url="MenuImage/Sushi31.png";  break;
 			case 39366: name="Salmon Sashimi";price=25; url="MenuImage/Sushi32.png"; break;  
 			default: name="unknown"; price=-10; url="MenuImage/Unknown.png"; break;
+			
 		}
+		url = ClassLoader.getSystemResource(url).toString();
 	}
 
 	public int getHcode() {

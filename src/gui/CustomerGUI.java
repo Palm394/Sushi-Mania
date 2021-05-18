@@ -8,6 +8,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import model.Customer;
+import model.base.Renderable;
 
 public class CustomerGUI extends HBox {
 	private static GraphicsContext gc;
@@ -46,7 +47,7 @@ public class CustomerGUI extends HBox {
 		
 		for(Customer i : CustomerList) {
 			if(i.getWant() != null) {
-				Image drawing = new Image(ClassLoader.getSystemResource(i.getWantURL()).toString(),60,60, false, false);
+				Image drawing = new Image(i.getWantURL(),60,60, false, false);
 				gc.drawImage(drawing, i.getPosX(), 15);
 			}
 		}

@@ -42,7 +42,7 @@ public class SushiTrainGUI extends Canvas {
 		drawSushiTrain(gc);
 		
 		for(FoodList dish : TrainDraw) {
-			Image drawing = new Image(ClassLoader.getSystemResource(dish.getUrl()).toString(),60,60, false, false);
+			Image drawing = new Image(dish.getUrl(),60,60, false, false);
 			gc.drawImage(drawing, dish.getPosX(), dish.getPosY() + 20);
 		}
 	}
