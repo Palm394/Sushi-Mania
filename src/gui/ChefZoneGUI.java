@@ -12,6 +12,8 @@ import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import model.ClearButton;
+import model.RollButton;
 
 public class ChefZoneGUI extends HBox {
 		

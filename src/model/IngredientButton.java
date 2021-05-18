@@ -1,16 +1,15 @@
-package gui;
+package model;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import logic.ChefZoneController;
-import model.Ingredient;
 
 public class IngredientButton extends Button{
 	public Ingredient ingredient;
 	
-	IngredientButton(Ingredient ingredient){
+	public IngredientButton(Ingredient ingredient){
 		this.ingredient = ingredient;
 		this.setPrefHeight(60);
 		this.setPrefWidth(85);

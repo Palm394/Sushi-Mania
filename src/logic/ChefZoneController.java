@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 import application.Database;
 import gui.ChefZoneGUI;
-import gui.IngredientButton;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import model.Ingredient;
+import model.IngredientButton;
 import model.SushiTrain;
 import model.Food;
 import model.FoodList;

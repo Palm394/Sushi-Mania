@@ -1,5 +1,6 @@
-package gui;
+package model;
 
+import gui.ChefZoneGUI;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;

@@ -1,4 +1,4 @@
-package gui;
+package model;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -10,7 +10,7 @@ import logic.ChefZoneController;
 
 public class RollButton extends Button{
 	
-	RollButton(){
+	public RollButton(){
 		this.setPrefHeight(75);
 		this.setPrefWidth(200);
 		this.setText("Roll!!");

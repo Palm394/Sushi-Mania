@@ -8,6 +8,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
 import model.Ingredient;
+import model.IngredientButton;
 
 public class ingredientPane extends GridPane{
 	private ArrayList<IngredientButton> supply = new ArrayList<IngredientButton>();
