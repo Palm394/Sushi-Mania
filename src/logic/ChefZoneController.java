@@ -16,18 +16,43 @@ import model.FoodList;
 
 public class ChefZoneController {
 	private static ArrayList<Ingredient> wrapper = new ArrayList<Ingredient>();
-	
+	private static boolean isVeggiBoost = false;
+	private static boolean isFishBoost = false;
+	//extra score when boost
+	private static int extraScore = 0;
 	
 	public static ArrayList<Ingredient> getWrapper() {
 		return wrapper;
 	}
 
-	
 	public static void setWrapper(ArrayList<Ingredient> wrapper) {
 		ChefZoneController.wrapper = wrapper;
 	}
 
-	
+	public static boolean isVeggiBoost() {
+		return isVeggiBoost;
+	}
+
+	public static void setVeggiBoost(boolean isVeggiBoost) {
+		ChefZoneController.isVeggiBoost = isVeggiBoost;
+	}
+
+	public static boolean isFishBoost() {
+		return isFishBoost;
+	}
+
+	public static void setFishBoost(boolean isFishBoost) {
+		ChefZoneController.isFishBoost = isFishBoost;
+	}
+
+	public static int getExtraScore() {
+		return extraScore;
+	}
+
+	public static void setExtraScore(int extraScore) {
+		ChefZoneController.extraScore = extraScore;
+	}
+
 	public static void addIngredient(IngredientButton ingredientbutton) {
 		ingredientbutton.ingredient.setRemain(ingredientbutton.ingredient.getRemain()-1);
 		ingredientbutton.setText(ingredientbutton.ingredient.getRemain()+"");
@@ -50,7 +75,6 @@ public class ChefZoneController {
 		}
 	}
 	
-	
 	public static void updateShopList() {
 		ChefZoneGUI.shopPane.update();
 	}
@@ -59,14 +83,28 @@ public class ChefZoneController {
 		button.setStyle("-fx-background-color: rgba(245,222,179,0.7);");
 	}
 	
-	public static void countdown(int time,Button button) {
-		String name = button.getText();
-		if(!(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton))
-		{
-			button.setText(time+"");
-		}	
+	public static void boostCountdown(int time,Button button) {
 		new Thread(()->{
-			
+			String name = button.getText();
+			if(!(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton))
+			{
+				Platform.runLater(()->button.setText(time+""));
+			}
+			countdown(time, button);
+			Platform.runLater(()->button.setText(name));
+				if(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton)
+				{
+					Platform.runLater(()->goBackNormal(button));
+					if(button instanceof FishIngredientButton) {
+						isFishBoost = false;
+					} else {
+						isVeggiBoost = false;
+					}
+				}
+			}).start();
+	}
+	
+	public static void countdown(int time,Button button) {
 			for(int i=0;i<=time;i++)
 			{
 				try {
@@ -81,14 +119,21 @@ public class ChefZoneController {
 					e.printStackTrace();
 				}
 			}
-			Platform.runLater(()->button.setText(name));
-			if(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton)
-			{
-				Platform.runLater(()->goBackNormal(button));
-			}			
-		}).start();	
 	}
 	
+	public static void showAddedScore(int score) {
+		Platform.runLater(()->gui.ChefZoneGUI.rollButton.setText("+" + score));
+		new Thread(()->{
+			try {
+				TimeUnit.MILLISECONDS.sleep(750);
+				System.out.println("Delayed");
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			Platform.runLater(()->gui.ChefZoneGUI.rollButton.setText("roll!!"));
+		}).start();
+	}
 	
 	public static int wrap(ArrayList<Ingredient> wrapper) {
 		if(wrapper.size()>0 && SushiTrain.canPlaceDish()==true) {
@@ -125,7 +170,14 @@ public class ChefZoneController {
 			
 			Platform.runLater(()->ChefZoneGUI.rollpane.removeIngredient());
 			wrapper.clear();
-		
+			
+			if(check == true && (isVeggiBoost == true || isFishBoost == true)) {
+				showAddedScore(extraScore);
+				Platform.runLater(()->{GameController.addScore(extraScore);extraScore = 0;});
+			} else {
+				extraScore = 0;
+			}
+			
 			return hcode;
 		} else {
 			return -1;

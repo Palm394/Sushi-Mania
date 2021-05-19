@@ -1,16 +1,13 @@
 package gui;
 
-import java.util.concurrent.TimeUnit;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import logic.ChefZoneController;
 import model.FishIngredientButton;
-import model.IngredientButton;
 import model.VeggiIngredientButton;
 
 public class BoostPane extends VBox{
@@ -29,6 +26,9 @@ public class BoostPane extends VBox{
 			@Override
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
+				VeggiBoostButton.setDisable(true);
+				logic.ChefZoneController.setVeggiBoost(true);
+				
 				VeggiIngredientButton veggi;
 				veggi = (VeggiIngredientButton) ChefZoneGUI.ingredientpane.getSupply().get(0);
 				veggi.Boost();
@@ -36,7 +36,7 @@ public class BoostPane extends VBox{
 				veggi.Boost();
 				veggi = (VeggiIngredientButton) ChefZoneGUI.ingredientpane.getSupply().get(11);
 				veggi.Boost();
-				ChefZoneController.countdown(20,VeggiBoostButton);
+				ChefZoneController.boostCountdown(20,VeggiBoostButton);
 			}
 		});
 		
@@ -49,6 +49,7 @@ public class BoostPane extends VBox{
 			@Override
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
+				FishBoostButton.setDisable(true);
 				FishIngredientButton fish;
 				fish = (FishIngredientButton) ChefZoneGUI.ingredientpane.getSupply().get(6);
 				fish.Boost();
@@ -58,7 +59,7 @@ public class BoostPane extends VBox{
 				fish.Boost();
 				fish = (FishIngredientButton) ChefZoneGUI.ingredientpane.getSupply().get(13);
 				fish.Boost();		
-				ChefZoneController.countdown(20,FishBoostButton);
+				ChefZoneController.boostCountdown(20,FishBoostButton);
 			}
 		});
 		
@@ -71,6 +72,7 @@ public class BoostPane extends VBox{
 			@Override
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
+				FreeBoostButton.setDisable(true);
 				ChefZoneController.countdown(10,FreeBoostButton);
 			}
 		});

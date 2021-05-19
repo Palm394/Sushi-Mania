@@ -26,6 +26,7 @@ public class ClearButton extends Button{
 					GameController.addScore(-30);
 					ChefZoneController.getWrapper().clear();
 					ChefZoneGUI.rollpane.removeIngredient();
+					ChefZoneController.setExtraScore(0);
 				}
 			}
 		}

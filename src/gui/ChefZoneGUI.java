@@ -10,7 +10,6 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import model.ClearButton;
 import model.RollButton;
@@ -18,9 +17,11 @@ import model.RollButton;
 public class ChefZoneGUI extends HBox {
 		
 	public static rollPane rollpane;
+	public static RollButton rollButton = new RollButton();
 	public static ingredientPane ingredientpane;
 	public static RecipePane recipePane;
 	public static ShopPane shopPane;
+	
 	
 		ChefZoneGUI(){
 			this.setStyle("-fx-background-image: url(\"tableDesk.jpg\");");
@@ -46,7 +47,7 @@ public class ChefZoneGUI extends HBox {
 			centerZone.getChildren().add(pane);
 			HBox rollAndClear = new HBox();
 			//Roll button
-			RollButton rollButton = new RollButton(); 
+			//declared 
 			//Clear button
 			ClearButton clearButton = new ClearButton();
 			
