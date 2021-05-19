@@ -131,9 +131,8 @@ public class ShopPane extends VBox implements Updatable{
 			{
 				try {
 					TimeUnit.SECONDS.sleep(1);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+				} catch (Exception e) {
+					System.out.println("oops! something went wrong!");
 				}
 				timer -= 1;
 				System.out.println(timer);

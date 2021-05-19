@@ -134,9 +134,8 @@ public class ChefZoneController {
 					}	
 					TimeUnit.SECONDS.sleep(1);
 					
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+				} catch (Exception e) {
+					System.out.println("oops! something went wrong!");
 				}
 			}
 			Platform.runLater(()->button.setText(name));
@@ -148,9 +147,8 @@ public class ChefZoneController {
 			try {
 				TimeUnit.MILLISECONDS.sleep(750);
 				System.out.println("Delayed");
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			} catch (Exception e) {
+				System.out.println("oops! something went wrong!");
 			}
 			Platform.runLater(()->gui.ChefZoneGUI.rollButton.setText("roll!!"));
 		}).start();

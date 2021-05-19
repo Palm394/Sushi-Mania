@@ -4,6 +4,9 @@ package gui;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.VBox;
 import logic.ChefZoneController;
 import model.FishIngredientButton;
@@ -21,6 +24,9 @@ public class BoostPane extends VBox{
 		Button VeggiBoostButton = new Button("V");
 		
 		VeggiBoostButton.setPrefSize(50, 60);
+		Image veggiImage = new Image("Ingredient/cucumber.png",70,80,true,true);
+		BackgroundImage veggiBackground = new BackgroundImage(veggiImage,null,null,null,null);
+		VeggiBoostButton.setBackground(new Background(veggiBackground));
 		
 		VeggiBoostButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
@@ -44,6 +50,9 @@ public class BoostPane extends VBox{
 		Button FishBoostButton = new Button("F");
 		
 		FishBoostButton.setPrefSize(50, 60);
+		Image fishImage = new Image("Ingredient/salmon.png",70,80,true,true);
+		BackgroundImage fishBackground = new BackgroundImage(fishImage,null,null,null,null);
+		FishBoostButton.setBackground(new Background(fishBackground));
 		
 		FishBoostButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
@@ -67,6 +76,9 @@ public class BoostPane extends VBox{
 		FreeBoostButton = new Button("F");
 		
 		FreeBoostButton.setPrefSize(50, 60);
+		Image freeImage = new Image("Ingredient/avocado.png",70,80,true,true);
+		BackgroundImage freeBackground = new BackgroundImage(freeImage,null,null,null,null);
+		FreeBoostButton.setBackground(new Background(freeBackground));
 		
 		FreeBoostButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
@@ -81,7 +93,6 @@ public class BoostPane extends VBox{
 					ChefZoneController.countdown(20,FreeBoostButton,"F");
 					ChefZoneController.setFreeBoost(false);
 				}).start();
-				
 			}
 		});
 		
