@@ -1,9 +1,12 @@
 package logic;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import application.Database;
 import gui.ChefZoneGUI;
+import javafx.application.Platform;
+import javafx.scene.control.Button;
 import model.Ingredient;
 import model.IngredientButton;
 import model.SushiTrain;
@@ -12,14 +15,17 @@ import model.FoodList;
 public class ChefZoneController {
 	private static ArrayList<Ingredient> wrapper = new ArrayList<Ingredient>();
 	
+	
 	public static ArrayList<Ingredient> getWrapper() {
 		return wrapper;
 	}
 
+	
 	public static void setWrapper(ArrayList<Ingredient> wrapper) {
 		ChefZoneController.wrapper = wrapper;
 	}
 
+	
 	public static void addIngredient(IngredientButton ingredientbutton) {
 		ingredientbutton.ingredient.setRemain(ingredientbutton.ingredient.getRemain()-1);
 		ingredientbutton.setText(ingredientbutton.ingredient.getRemain()+"");
@@ -28,9 +34,11 @@ public class ChefZoneController {
 		ChefZoneController.updateIngredient();
 	}
 	
+	
 	public static void updateIngredient() {
 		ChefZoneGUI.rollpane.updateIngredient();
 	}
+	
 	
 	public static void updateIngredientButton() {
 		int ingredientSize = Database.getHasIngredient().size();
@@ -40,9 +48,31 @@ public class ChefZoneController {
 		}
 	}
 	
+	
 	public static void updateShopList() {
 		ChefZoneGUI.shopPane.update();
 	}
+	
+	
+	public static void countdown(int time,Button button) {
+		String name = button.getText();
+		button.setText(time+"");
+		new Thread(()->{
+			for(int i=0;i<=time;i++)
+			{
+				try {
+					TimeUnit.SECONDS.sleep(1);
+					int timeRemaining = time-i;
+					Platform.runLater(()->button.setText(timeRemaining+""));
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			Platform.runLater(()->button.setText(name));
+		}).start();	
+	}
+	
 	
 	public static int wrap(ArrayList<Ingredient> wrapper) {
 		if(wrapper.size()>0 && SushiTrain.canPlaceDish()==true) {

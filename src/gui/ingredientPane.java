@@ -18,7 +18,7 @@ public class ingredientPane extends GridPane{
 			if(i==0||i==1||i==11) {
 				//set veggi ingredient
 				this.supply.add(new VeggiIngredientButton(new Ingredient(i)));
-			} else if(i==6||i==7||i==9) {
+			} else if(i==6||i==7||i==9||i==13) {
 				//set fish ingredient
 				this.supply.add(new FishIngredientButton(new Ingredient(i)));
 			}

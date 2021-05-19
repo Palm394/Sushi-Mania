@@ -11,10 +11,10 @@ import logic.ChefZoneController;
 public class RollButton extends Button{
 	
 	public RollButton(){
-		this.setPrefHeight(75);
+		this.setPrefHeight(65);
 		this.setPrefWidth(200);
 		this.setText("Roll!!");
-		Image image = new Image("rollButton.jpg",200,73,false,false);
+		Image image = new Image("rollButton.jpg",200,63,false,false);
 		BackgroundImage rollBut = new BackgroundImage(image,null,null,null,null);
 		this.setBackground(new Background(rollBut));
 		this.setOnAction(new EventHandler<ActionEvent>(){

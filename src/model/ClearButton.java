@@ -13,10 +13,10 @@ import logic.GameController;
 public class ClearButton extends Button{
 	
 	public ClearButton() {
-		this.setPrefHeight(75);
+		this.setPrefHeight(65);
 		this.setPrefWidth(75);
 		this.setText("Clear");
-		Image image = new Image("clearButton.jpg",75,73,false,false);
+		Image image = new Image("clearButton.jpg",75,63,false,false);
 		BackgroundImage clearBut = new BackgroundImage(image,null,null,null,null);
 		this.setBackground(new Background(clearBut));
 		this.setOnAction(new EventHandler<ActionEvent>(){

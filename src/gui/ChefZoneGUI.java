@@ -31,12 +31,18 @@ public class ChefZoneGUI extends HBox {
 			
 			//center zone
 			VBox centerZone = new VBox();
+			centerZone.setSpacing(10);
 			centerZone.setPadding(new Insets(10,10,10,10));
 			rollpane = new rollPane();
-			Pane pane = new Pane();
+			HBox pane = new HBox();
+			pane.setSpacing(10);
 			pane.setPrefHeight(200);
 			pane.setPrefWidth(300);
+			BoostPane boostpane = new BoostPane();
+			
 			pane.getChildren().add(rollpane);
+			pane.getChildren().add(boostpane);
+			
 			centerZone.getChildren().add(pane);
 			HBox rollAndClear = new HBox();
 			//Roll button
@@ -50,7 +56,9 @@ public class ChefZoneGUI extends HBox {
 			rollAndClear.getChildren().add(blank);
 			rollAndClear.getChildren().add(clearButton); 
 			centerZone.getChildren().add(rollAndClear);
+			
 			this.getChildren().add(centerZone);
+			
 			centerZone.setAlignment(Pos.CENTER);
 			
 			//right zone
