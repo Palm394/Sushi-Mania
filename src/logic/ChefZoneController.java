@@ -96,18 +96,25 @@ public class ChefZoneController {
 	}
 	
 	public static void boostCountdown(int time,Button button) {
-		String returnText = button.getText();
+		String returnText;
+		returnText = button.getText();
+		if(returnText == "99") {
+			IngredientButton ingredientbutton = (IngredientButton) button;
+			returnText = ingredientbutton.ingredient.getRemain() + "";
+		}
+		String realText = returnText;
+		
 		new Thread(()->{
 			if(!(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton))
 			{
 				Platform.runLater(()->button.setText(time+""));
 			}
-			countdown(time, button, returnText);
-				if(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton)
+			countdown(time, button, realText);
+			if(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton)
 				{
-					Platform.runLater(()->goBackNormal(button));
-					if(button instanceof FishIngredientButton) {
-						isFishBoost = false;
+				Platform.runLater(()->goBackNormal(button));
+				if(button instanceof FishIngredientButton) {
+					isFishBoost = false;
 					} else {
 						isVeggiBoost = false;
 					}

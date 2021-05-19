@@ -18,7 +18,7 @@ public class FishIngredientButton extends IngredientButton implements Boostable 
 			public void handle(ActionEvent event) {
 				if(ingredient.getRemain()>0 && ChefZoneController.getWrapper().size() < 12) {
 					ChefZoneController.addIngredient(button);
-					if(ChefZoneController.isVeggiBoost() == true)
+					if(ChefZoneController.isFishBoost() == true)
 					{
 						ChefZoneController.setExtraScore(ChefZoneController.getExtraScore()+10);
 						System.out.println("added 10 point for extra score");
