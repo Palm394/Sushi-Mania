@@ -122,8 +122,8 @@ public class ChefZoneController {
 				SushiTrain.addNewDish(sushi);
 			}
 			///////////////////////////////////
-		
-			ChefZoneGUI.rollpane.removeIngredient();
+			
+			Platform.runLater(()->ChefZoneGUI.rollpane.removeIngredient());
 			wrapper.clear();
 		
 			return hcode;
