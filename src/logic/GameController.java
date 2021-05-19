@@ -68,7 +68,7 @@ public class GameController {
 	
 	private static void newLevel() {
 		Level += 1;
-		Target += 100;
+		Target += 250;
 		StatusBar.getTargetLabel().update();
 		StatusBar.getLevelLabel().update();
 		
