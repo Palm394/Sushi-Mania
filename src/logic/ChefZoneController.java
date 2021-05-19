@@ -18,6 +18,8 @@ public class ChefZoneController {
 	private static ArrayList<Ingredient> wrapper = new ArrayList<Ingredient>();
 	private static boolean isVeggiBoost = false;
 	private static boolean isFishBoost = false;
+	private static boolean isFreeBoost = false;
+	
 	//extra score when boost
 	private static int extraScore = 0;
 	
@@ -29,6 +31,14 @@ public class ChefZoneController {
 		ChefZoneController.wrapper = wrapper;
 	}
 
+	public static boolean isFreeBoost() {
+		return isFreeBoost;
+	}
+
+	public static void setFreeBoost(boolean isFreeBoost) {
+		ChefZoneController.isFreeBoost = isFreeBoost;
+	}	
+	
 	public static boolean isVeggiBoost() {
 		return isVeggiBoost;
 	}
@@ -54,8 +64,10 @@ public class ChefZoneController {
 	}
 
 	public static void addIngredient(IngredientButton ingredientbutton) {
-		ingredientbutton.ingredient.setRemain(ingredientbutton.ingredient.getRemain()-1);
-		ingredientbutton.setText(ingredientbutton.ingredient.getRemain()+"");
+		if(isFreeBoost == false) {
+			ingredientbutton.ingredient.setRemain(ingredientbutton.ingredient.getRemain()-1);
+			ingredientbutton.setText(ingredientbutton.ingredient.getRemain()+"");
+		} 
 		System.out.println(ingredientbutton.ingredient.getName());
 		ChefZoneController.wrapper.add(ingredientbutton.ingredient);		
 		ChefZoneController.updateIngredient();
@@ -84,14 +96,13 @@ public class ChefZoneController {
 	}
 	
 	public static void boostCountdown(int time,Button button) {
+		String returnText = button.getText();
 		new Thread(()->{
-			String name = button.getText();
 			if(!(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton))
 			{
 				Platform.runLater(()->button.setText(time+""));
 			}
-			countdown(time, button);
-			Platform.runLater(()->button.setText(name));
+			countdown(time, button, returnText);
 				if(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton)
 				{
 					Platform.runLater(()->goBackNormal(button));
@@ -104,21 +115,24 @@ public class ChefZoneController {
 			}).start();
 	}
 	
-	public static void countdown(int time,Button button) {
+	public static void countdown(int time,Button button,String returnText) {
+			String name = returnText;
 			for(int i=0;i<=time;i++)
 			{
 				try {
-					TimeUnit.SECONDS.sleep(1);
 					int timeRemaining = time-i;
 					if(!(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton))
 					{
 						Platform.runLater(()->button.setText(timeRemaining+""));
 					}	
+					TimeUnit.SECONDS.sleep(1);
+					
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
+			Platform.runLater(()->button.setText(name));
 	}
 	
 	public static void showAddedScore(int score) {

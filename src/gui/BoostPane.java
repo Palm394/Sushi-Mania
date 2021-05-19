@@ -1,7 +1,6 @@
 package gui;
 
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -11,6 +10,7 @@ import model.FishIngredientButton;
 import model.VeggiIngredientButton;
 
 public class BoostPane extends VBox{
+	public Button FreeBoostButton;
 	
 	public BoostPane(){
 		
@@ -64,7 +64,7 @@ public class BoostPane extends VBox{
 		});
 		
 		// modify free boost button
-		Button FreeBoostButton = new Button("F");
+		FreeBoostButton = new Button("F");
 		
 		FreeBoostButton.setPrefSize(50, 60);
 		
@@ -73,7 +73,15 @@ public class BoostPane extends VBox{
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				FreeBoostButton.setDisable(true);
-				ChefZoneController.countdown(10,FreeBoostButton);
+				ChefZoneController.setFreeBoost(true);
+				for(int i=0;i<=15;i++) {
+					ChefZoneGUI.ingredientpane.getSupply().get(i).freeBoost();
+				}
+				new Thread(()->{
+					ChefZoneController.countdown(20,FreeBoostButton,"F");
+					ChefZoneController.setFreeBoost(false);
+				}).start();
+				
 			}
 		});
 		

@@ -21,7 +21,7 @@ public class ChefZoneGUI extends HBox {
 	public static ingredientPane ingredientpane;
 	public static RecipePane recipePane;
 	public static ShopPane shopPane;
-	
+	public static BoostPane boostpane;
 	
 		ChefZoneGUI(){
 			this.setStyle("-fx-background-image: url(\"tableDesk.jpg\");");
@@ -39,7 +39,7 @@ public class ChefZoneGUI extends HBox {
 			pane.setSpacing(10);
 			pane.setPrefHeight(200);
 			pane.setPrefWidth(300);
-			BoostPane boostpane = new BoostPane();
+			boostpane = new BoostPane();
 			
 			pane.getChildren().add(rollpane);
 			pane.getChildren().add(boostpane);

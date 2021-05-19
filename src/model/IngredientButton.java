@@ -1,5 +1,7 @@
 package model;
 
+import gui.ChefZoneGUI;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -47,5 +49,13 @@ public class IngredientButton extends Button{
 	public void unlock() {
 		this.setDisable(false);
 	} 
+	
+	public void freeBoost() {
+		this.setText("99");
+		new Thread(()->{
+			ChefZoneController.countdown(20, ChefZoneGUI.boostpane.FreeBoostButton, "F");
+			Platform.runLater(()->this.setText(this.ingredient.getRemain()+""));
+		}).start();
+	}
 	
 }
