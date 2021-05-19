@@ -42,12 +42,6 @@ public class Customer {
 		this.want = want;
 	}
 
-	public void drawWant() {
-		//Test
-		//Must Random menu from database
-		//CustomerGUI.drawWant(number,wantURL,PosX);
-	}
-
 	public int getWaitTime() {
 		return waitTime;
 	}
