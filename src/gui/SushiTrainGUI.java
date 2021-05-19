@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import application.Utility;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
 import model.FoodList;
 import model.SushiTrain;
 
@@ -42,8 +41,7 @@ public class SushiTrainGUI extends Canvas {
 		drawSushiTrain(gc);
 		
 		for(FoodList dish : TrainDraw) {
-			Image drawing = new Image(dish.getUrl(),60,60, false, false);
-			gc.drawImage(drawing, dish.getPosX(), dish.getPosY() + 20);
+			gc.drawImage(dish.getImage(), dish.getPosX(), dish.getPosY() + 20);
 		}
 	}
 	

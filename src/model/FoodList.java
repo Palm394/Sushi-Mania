@@ -1,10 +1,12 @@
 package model;
 
+import javafx.scene.image.Image;
 
 public class FoodList extends Food {
 
 	private int hcode;
 	private String url;
+	private Image image;
 	
 	public FoodList(int id){
 		switch(id) {
@@ -44,6 +46,7 @@ public class FoodList extends Food {
 			
 		}
 		url = ClassLoader.getSystemResource(url).toString();
+		image = new Image(url,60,60, false, false);
 	}
 
 	public int getHcode() {
@@ -62,6 +65,10 @@ public class FoodList extends Food {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public Image getImage() {
+		return image;
 	}
 	
 }
