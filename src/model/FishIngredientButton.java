@@ -1,5 +1,7 @@
 package model;
 
+import javafx.application.Platform;
+import logic.ChefZoneController;
 import model.base.Boostable;
 
 public class FishIngredientButton extends IngredientButton implements Boostable {
@@ -15,6 +17,6 @@ public class FishIngredientButton extends IngredientButton implements Boostable 
 		
 		// TODO Auto-generated method stub
 		this.setStyle("-fx-background-color: yellow;");
-		
+		ChefZoneController.countdown(20, this);
 	}
 }

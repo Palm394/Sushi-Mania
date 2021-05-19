@@ -78,4 +78,5 @@ public class BoostPane extends VBox{
 		// gather all button in boost pane
 		this.getChildren().addAll(VeggiBoostButton,FishBoostButton,FreeBoostButton);
 	}
+	
 }

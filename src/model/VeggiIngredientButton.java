@@ -1,5 +1,6 @@
 package model;
 
+import logic.ChefZoneController;
 import model.base.Boostable;
 
 public class VeggiIngredientButton extends IngredientButton implements Boostable {
@@ -14,7 +15,7 @@ public class VeggiIngredientButton extends IngredientButton implements Boostable
 		
 		// TODO Auto-generated method stub
 		this.setStyle("-fx-background-color: green;");		
-		
+		ChefZoneController.countdown(20, this);
 	}
 
 

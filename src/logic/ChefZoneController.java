@@ -10,6 +10,8 @@ import javafx.scene.control.Button;
 import model.Ingredient;
 import model.IngredientButton;
 import model.SushiTrain;
+import model.VeggiIngredientButton;
+import model.FishIngredientButton;
 import model.FoodList;
 
 public class ChefZoneController {
@@ -53,23 +55,37 @@ public class ChefZoneController {
 		ChefZoneGUI.shopPane.update();
 	}
 	
+	public static void goBackNormal(Button button) {
+		button.setStyle("-fx-background-color: rgba(245,222,179,0.7);");
+	}
 	
 	public static void countdown(int time,Button button) {
 		String name = button.getText();
-		button.setText(time+"");
+		if(!(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton))
+		{
+			button.setText(time+"");
+		}	
 		new Thread(()->{
+			
 			for(int i=0;i<=time;i++)
 			{
 				try {
 					TimeUnit.SECONDS.sleep(1);
 					int timeRemaining = time-i;
-					Platform.runLater(()->button.setText(timeRemaining+""));
+					if(!(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton))
+					{
+						Platform.runLater(()->button.setText(timeRemaining+""));
+					}	
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
 			Platform.runLater(()->button.setText(name));
+			if(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton)
+			{
+				Platform.runLater(()->goBackNormal(button));
+			}			
 		}).start();	
 	}
 	
