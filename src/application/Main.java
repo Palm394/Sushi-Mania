@@ -27,36 +27,23 @@ public class Main extends Application {
 		primaryStage = menu.getMenuStage();
 		primaryStage.show();	
 		
-//		new Thread(()->{
-//			String url = "sound/Night_of_the_Yakuza.mp3";
-//			while(true) {
-//				AudioClip sound = new AudioClip(ClassLoader.getSystemResource(url).toString());
-//				sound.setVolume(Utility.volume);
-//				sound.play();
-//				try {
-//					TimeUnit.SECONDS.sleep(120);
-//				} catch (Exception e) {
-//					System.out.println("oops! something went wrong!");
-//				}
-//			}	
-//		}).start();
-	
-		String url = "\\Night_of_the_Yakuza.mp3";
-		Thread music = new Thread() {
-			public void run() {
-				Clip clip;
+		new Thread(()->{
+			String url = "sound/Night_of_the_Yakuza.mp3";
+			while(true) {
+				AudioClip sound = new AudioClip(ClassLoader.getSystemResource(url).toString());
+				sound.setVolume(Utility.volume);
+				sound.play();
 				try {
-					AudioInputStream input = AudioSystem.getAudioInputStream(new File(url));
-					clip = AudioSystem.getClip();
-					clip.open(input);
-					clip.loop(Clip.LOOP_CONTINUOUSLY);
-					clip.start();
+					TimeUnit.SECONDS.sleep(120);
 				} catch (Exception e) {
 					System.out.println("oops! something went wrong!");
-				} 
-			}
-		};
-		music.start();
-		
+				}
+			}	
+		}).start();	
+	}
+	
+	@Override
+	public void stop() {
+	    System.exit(0);
 	}
 }
