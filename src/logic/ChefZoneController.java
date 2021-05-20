@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import application.Database;
+import application.Utility;
 import gui.ChefZoneGUI;
 import javafx.application.Platform;
 import javafx.scene.control.Button;
+import javafx.scene.media.AudioClip;
 import model.Ingredient;
 import model.IngredientButton;
 import model.SushiTrain;
@@ -62,15 +64,24 @@ public class ChefZoneController {
 	public static void setExtraScore(int extraScore) {
 		ChefZoneController.extraScore = extraScore;
 	}
-
+	
+	public static void soundPlay(String url) {
+		AudioClip sound = new AudioClip(ClassLoader.getSystemResource(url).toString());
+		sound.setVolume(1);
+		sound.play();
+	}
+	
 	public static void addIngredient(IngredientButton ingredientbutton) {
-		if(isFreeBoost == false) {
+		if(ingredientbutton.ingredient.getRemain()>0)
+		{
+			if(isFreeBoost == false) {
 			ingredientbutton.ingredient.setRemain(ingredientbutton.ingredient.getRemain()-1);
 			ingredientbutton.setText(ingredientbutton.ingredient.getRemain()+"");
-		} 
-		System.out.println(ingredientbutton.ingredient.getName());
-		ChefZoneController.wrapper.add(ingredientbutton.ingredient);		
-		ChefZoneController.updateIngredient();
+			} 
+			System.out.println(ingredientbutton.ingredient.getName());
+			ChefZoneController.wrapper.add(ingredientbutton.ingredient);		
+			ChefZoneController.updateIngredient();
+		}
 	}
 	
 	

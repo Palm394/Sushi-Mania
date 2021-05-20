@@ -66,7 +66,7 @@ public class ChefZoneGUI extends HBox {
 			VBox rightZone = new VBox();
 			rightZone.setAlignment(Pos.CENTER);
 			rightZone.setPadding(new Insets(10,0,10,10));
-			Image image = new Image("recipeButton.jpg",250,80,false,false);
+			Image image = new Image("ButtonImage/recipeButton.jpg",250,80,false,false);
 			Button recipeButton = new Button("Secret Recipe");
 			recipeButton.setPrefSize(250, 80);
 			recipeButton.setStyle("-fx-font-size: 20px");

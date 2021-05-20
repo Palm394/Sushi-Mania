@@ -17,8 +17,7 @@ public class Main extends Application {
 		Database.initialize();
 		Utility.setAllVolume(0.5);
 		primaryStage = menu.getMenuStage();
-		primaryStage.show();
+		primaryStage.show();	
 	}
 
-	
 }

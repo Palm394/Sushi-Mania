@@ -13,6 +13,9 @@ public class Database {
 	
 	public static void initialize() {
 		//rice and seaweed
+		for(int i=0;i<=15;i++) {
+			hasIngredient.add(new Ingredient(i));
+		}
 		hasIngredient.add(new Ingredient(1));
 		hasIngredient.add(new Ingredient(15));
 		// 15

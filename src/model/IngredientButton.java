@@ -1,11 +1,13 @@
 package model;
 
+import application.Utility;
 import gui.ChefZoneGUI;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.AudioClip;
 import logic.ChefZoneController;
 
 public class IngredientButton extends Button{
@@ -28,9 +30,10 @@ public class IngredientButton extends Button{
 		IngredientButton button = this;
 		
 		this.setOnAction(new EventHandler<ActionEvent>(){
-			public void handle(ActionEvent event) {
+			public void handle(ActionEvent event) {		
 				if(ingredient.getRemain()>0 && ChefZoneController.getWrapper().size() < 12) {
 					ChefZoneController.addIngredient(button);
+					ChefZoneController.soundPlay("sound/TickSound.wav");
 					}
 				}
 			}
@@ -53,7 +56,7 @@ public class IngredientButton extends Button{
 	public void freeBoost() {
 		this.setText("99");
 		new Thread(()->{
-			ChefZoneController.countdown(20, ChefZoneGUI.boostpane.FreeBoostButton, "F");
+			ChefZoneController.countdown(20, ChefZoneGUI.boostpane.FreeBoostButton, "");
 			Platform.runLater(()->this.setText(this.ingredient.getRemain()+""));
 		}).start();
 	}
