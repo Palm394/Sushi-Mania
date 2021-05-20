@@ -1,11 +1,6 @@
 package application;
 
-import java.io.File;
 import java.util.concurrent.TimeUnit;
-
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
 
 import gui.menuPane;
 import javafx.application.Application;
