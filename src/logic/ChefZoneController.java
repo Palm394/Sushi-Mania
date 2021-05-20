@@ -118,7 +118,10 @@ public class ChefZoneController {
 					} else {
 						isVeggiBoost = false;
 					}
-				}
+				} 
+			if(button instanceof IngredientButton && isFreeBoost) {
+				Platform.runLater(()->button.setText("99"));
+			}
 			}).start();
 	}
 	

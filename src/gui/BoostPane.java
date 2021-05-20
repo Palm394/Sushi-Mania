@@ -21,7 +21,7 @@ public class BoostPane extends VBox{
 		
 		
 		// modify vegetable boost button
-		Button VeggiBoostButton = new Button("V");
+		Button VeggiBoostButton = new Button("");
 		
 		VeggiBoostButton.setPrefSize(50, 60);
 		Image veggiImage = new Image("Ingredient/cucumber.png",70,80,true,true);
@@ -47,7 +47,7 @@ public class BoostPane extends VBox{
 		});
 		
 		// modify fish boost button 
-		Button FishBoostButton = new Button("F");
+		Button FishBoostButton = new Button("");
 		
 		FishBoostButton.setPrefSize(50, 60);
 		Image fishImage = new Image("Ingredient/salmon.png",70,80,true,true);
@@ -73,7 +73,7 @@ public class BoostPane extends VBox{
 		});
 		
 		// modify free boost button
-		FreeBoostButton = new Button("F");
+		FreeBoostButton = new Button("");
 		
 		FreeBoostButton.setPrefSize(50, 60);
 		Image freeImage = new Image("Ingredient/avocado.png",70,80,true,true);
