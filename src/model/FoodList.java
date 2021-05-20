@@ -42,7 +42,7 @@ public class FoodList extends Food {
 			case 30: hcode=43086108; name="temaki3";	price=85; url="MenuImage/Sushi30.png";  break;
 			case 31: hcode=553311; name="Mixed Sashimi";price=35; url="MenuImage/Sushi31.png";  break;
 			case 32: hcode=39366; name="Salmon Sashimi";price=25; url="MenuImage/Sushi32.png";  break;  
-			default: name="unknown"; price=-10; url="MenuImage/Unknown.png"; break;
+			default: name="unknown"; price=-50; url="MenuImage/Unknown.png"; break;
 			
 		}
 		url = ClassLoader.getSystemResource(url).toString();
