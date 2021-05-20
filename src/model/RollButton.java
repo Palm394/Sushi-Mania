@@ -16,7 +16,7 @@ public class RollButton extends Button{
 		this.setPrefWidth(200);
 		this.setText("Roll!!");
 		
-		Image image = new Image("rollButton.jpg",200,63,false,false);
+		Image image = new Image("ButtonImage/rollButton.jpg",200,63,false,false);
 		BackgroundImage rollBut = new BackgroundImage(image,null,null,null,null);
 		this.setBackground(new Background(rollBut));
 		
