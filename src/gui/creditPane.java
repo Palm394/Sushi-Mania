@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.VBox;
+import logic.ChefZoneController;
 
 public class creditPane extends VBox{
 	Scene scene;
@@ -33,6 +34,7 @@ public class creditPane extends VBox{
 
 			@Override
 			public void handle(ActionEvent arg0) {
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				menuPane.backToMenu();
 			}
 			

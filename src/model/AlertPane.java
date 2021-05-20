@@ -15,6 +15,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import logic.ChefZoneController;
 import logic.GameController;
 
 public abstract class AlertPane {
@@ -67,7 +68,7 @@ public abstract class AlertPane {
 	}
 	
 	protected Button closeButton() {
-		Image img = new Image(ClassLoader.getSystemResource("closeButton.png").toString());
+		Image img = new Image(ClassLoader.getSystemResource("ButtonImage/closeButton.png").toString());
 	    ImageView view = new ImageView(img);
 	    view.setFitHeight(50);
 	    view.setFitWidth(50);
@@ -78,6 +79,7 @@ public abstract class AlertPane {
 
 			@Override
 			public void handle(ActionEvent event) {
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				gamePane.backToGame();
 			}
 			
@@ -95,6 +97,7 @@ public abstract class AlertPane {
 
 			@Override
 			public void handle(ActionEvent event) {
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				gamePane.backToGame();
 			}
 			
@@ -109,6 +112,7 @@ public abstract class AlertPane {
 
 			@Override
 			public void handle(ActionEvent event) {
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				gamePane.getGameStage().close();
 				menuPane new_menu = new menuPane();
 				new_menu.getMenuStage().show();

@@ -12,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import logic.ChefZoneController;
 
 public class RecipePane{
 	
@@ -40,6 +41,7 @@ public class RecipePane{
 		toLeft.setStyle("-fx-font-size: 25px; -fx-background-color: rgba(245,222,179,0.8);");
 		toLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				selectedImage = ((selectedImage+6) % 7);
 				recipeImage.setImage(new Image("Recipe/Recipe"+selectedImage+".jpg"));
 			}
@@ -49,6 +51,7 @@ public class RecipePane{
 		root.setAlignment(Pos.CENTER);
 		toRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				selectedImage = ((selectedImage+1) % 7);
 				recipeImage.setImage(new Image("Recipe/Recipe"+selectedImage+".jpg"));
 			}
@@ -79,6 +82,7 @@ public class RecipePane{
 
 			@Override
 			public void handle(ActionEvent event) {
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				gamePane.backToGame();
 			}
 			

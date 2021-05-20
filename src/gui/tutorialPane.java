@@ -12,6 +12,7 @@ import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import logic.ChefZoneController;
 
 public class tutorialPane extends VBox{
 	int page;
@@ -54,8 +55,8 @@ public class tutorialPane extends VBox{
 		BackgroundImage background = new BackgroundImage(image,null,null,null,null);
 		this.setBackground(new Background(background));
 		
-		Button toLeft = new Button("<");
 		page = 0;
+		Button toLeft = new Button("<");
 		
 		VBox textBox = new VBox();
 		Label titleText = new Label(title[page]);
@@ -71,31 +72,32 @@ public class tutorialPane extends VBox{
 		description.setWrapText(true);
 		
 		Button toRight = new Button(">");
+		
 		HBox tutorialRow = new HBox();
 		tutorialRow.setAlignment(Pos.CENTER);
 		tutorialRow.setSpacing(25);
 		tutorialRow.getChildren().add(toLeft);
 		tutorialRow.getChildren().add(textBox);
 		tutorialRow.getChildren().add(toRight);
+		
 		toLeft.setOnAction(new EventHandler<ActionEvent>() {
-
 			@Override
 			public void handle(ActionEvent arg0) {
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				page = (page+5)%6;
 				description.setText(text[page]);
 				titleText.setText(title[page]);
 			}
-			
 		});
+		
 		toRight.setOnAction(new EventHandler<ActionEvent>() {
-
 			@Override
 			public void handle(ActionEvent arg0) {
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				page = (page+1)%6;
 				description.setText(text[page]);
 				titleText.setText(title[page]);				
 			}
-			
 		});
 		
 		this.getChildren().add(tutorialRow);
@@ -109,6 +111,7 @@ public class tutorialPane extends VBox{
 
 			@Override
 			public void handle(ActionEvent arg0) {
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				menuPane.backToMenu();
 			}
 			

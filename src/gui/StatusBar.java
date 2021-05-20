@@ -12,6 +12,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import logic.ChefZoneController;
 import model.AlertPane;
 import model.LabelStatusBar.LevelLabel;
 import model.LabelStatusBar.ScoreLabel;
@@ -56,6 +57,7 @@ public class StatusBar extends HBox {
 
 			@Override
 			public void handle(ActionEvent event) {
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				AlertPane settings = new SettingPane("Settings",gamePane.getWidthScreen(),gamePane.getHeightScreen());
 				gamePane.getGameStage().setScene(settings.getScene());
 			}

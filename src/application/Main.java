@@ -1,7 +1,15 @@
 package application;
 
+import java.io.File;
+import java.util.concurrent.TimeUnit;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
 import gui.menuPane;
 import javafx.application.Application;
+import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -18,6 +26,20 @@ public class Main extends Application {
 		Utility.setAllVolume(0.5);
 		primaryStage = menu.getMenuStage();
 		primaryStage.show();	
+		
+		new Thread(()->{
+			String url = "sound/Night_of_the_Yakuza.mp3";
+			while(true) {
+				AudioClip sound = new AudioClip(ClassLoader.getSystemResource(url).toString());
+				sound.setVolume(Utility.volume);
+				sound.play();
+				try {
+					TimeUnit.SECONDS.sleep(120);
+				} catch (Exception e) {
+					System.out.println("oops! something went wrong!");
+				}
+			}	
+		}).start();
 	}
 
 }

@@ -25,7 +25,6 @@ public class RollButton extends Button{
 				new Thread(()->{
 					ChefZoneController.wrap(ChefZoneController.getWrapper());
 				}).start();
-				
 			}
 		}
 	);

@@ -11,6 +11,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import logic.ChefZoneController;
 import model.ClearButton;
 import model.RollButton;
 
@@ -75,6 +76,7 @@ public class ChefZoneGUI extends HBox {
 			recipeButton.setOnAction(new EventHandler<ActionEvent>() {
 				@Override
 				public void handle(ActionEvent event) {
+					ChefZoneController.soundPlay("sound/ClickSound.wav");
 					RecipePane recipePane = new RecipePane();
 					gamePane.getGameStage().setScene(recipePane.getScene());
 				}

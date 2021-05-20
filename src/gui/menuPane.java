@@ -10,6 +10,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import logic.ChefZoneController;
 
 public class menuPane extends VBox {
 	
@@ -45,6 +46,7 @@ public class menuPane extends VBox {
 
 			@Override
 			public void handle(ActionEvent arg0) {
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				gamePane game = new gamePane();
 				game.createNewGame(menuStage);
 			}
@@ -62,6 +64,7 @@ public class menuPane extends VBox {
 
 			@Override
 			public void handle(ActionEvent arg0) {
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				tutorialPane tutorial = new tutorialPane();
 				menuStage.setScene(tutorial.scene);
 				menuStage.setTitle("Sushi Mania - Tutorial");
@@ -80,6 +83,7 @@ public class menuPane extends VBox {
 
 			@Override
 			public void handle(ActionEvent arg0) {
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				creditPane credit = new creditPane();
 				menuStage.setScene(credit.scene);
 				menuStage.setTitle("Sushi Mania - Credit");

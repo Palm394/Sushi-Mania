@@ -23,6 +23,7 @@ public class ClearButton extends Button{
 			public void handle(ActionEvent event) {
 				if(GameController.getScore() >= 30 && ChefZoneController.getWrapper().size()>0)
 				{
+					ChefZoneController.soundPlay("sound/ClearSound.wav");
 					GameController.addScore(-30);
 					ChefZoneController.getWrapper().clear();
 					ChefZoneGUI.rollpane.removeIngredient();

@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
+import logic.ChefZoneController;
 import logic.GameController;
 import model.Ingredient;
 import model.base.Updatable;
@@ -82,6 +83,7 @@ public class ShopPane extends VBox implements Updatable{
 		chooseLeft.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				int ingredientSize = Database.getHasIngredient().size();
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				selectedIngredientID = (selectedIngredientID + ingredientSize - 1) % ingredientSize;
 				changeIngredientOrder();
 			}
@@ -91,6 +93,7 @@ public class ShopPane extends VBox implements Updatable{
 		chooseRight.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				int ingredientSize = Database.getHasIngredient().size();
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				selectedIngredientID = (selectedIngredientID + 1) % ingredientSize;
 				changeIngredientOrder();
 			}
@@ -149,6 +152,7 @@ public class ShopPane extends VBox implements Updatable{
 		if(GameController.getScore() >= price) {	
 			if(!isOrdered())
 			{
+				ChefZoneController.soundPlay("sound/BuySound.wav");
 				//decrease score first
 				GameController.addScore(-price);
 				lockBuy();
@@ -163,10 +167,11 @@ public class ShopPane extends VBox implements Updatable{
 	//but buy speed doesn't wait
 	public void buySpeed(int ID, int price) {
 		if(GameController.getScore() >= price) {
-				//set remaining number
-				ChefZoneGUI.ingredientpane.getSupply().get(ID).buyIngredient();
-				//set new score
-				GameController.addScore(-price);	
+			ChefZoneController.soundPlay("sound/BuySound.wav");
+			//set remaining number
+			ChefZoneGUI.ingredientpane.getSupply().get(ID).buyIngredient();
+			//set new score
+			GameController.addScore(-price);	
 		} 
 						
 	}

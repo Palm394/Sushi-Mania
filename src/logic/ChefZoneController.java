@@ -67,7 +67,7 @@ public class ChefZoneController {
 	
 	public static void soundPlay(String url) {
 		AudioClip sound = new AudioClip(ClassLoader.getSystemResource(url).toString());
-		sound.setVolume(1);
+		sound.setVolume(Utility.volume);
 		sound.play();
 	}
 	
@@ -198,6 +198,12 @@ public class ChefZoneController {
 			//function to send sushi to the road
 			if(SushiTrain.canPlaceDish()) {
 				SushiTrain.addNewDish(sushi);
+				//play sound
+				if(check == true) {
+					soundPlay("sound/SuccessRollSound.wav");
+				} else {
+					soundPlay("sound/FailRollSound.wav");
+				}	
 			}
 			///////////////////////////////////
 			
