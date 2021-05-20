@@ -53,7 +53,9 @@ public abstract class AlertPane {
 		 root.setCenter(center);
 	}
 	
-	protected abstract void addCenter();
+	protected void addCenter() {
+		
+	}
 	
 	private void top() {
 		top = new HBox();
