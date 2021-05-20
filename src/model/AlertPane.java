@@ -67,7 +67,7 @@ public abstract class AlertPane {
 	}
 	
 	protected Button closeButton() {
-		Image img = new Image(ClassLoader.getSystemResource("closeButton.png").toString());
+		Image img = new Image(ClassLoader.getSystemResource("ButtonImage/closeButton.png").toString());
 	    ImageView view = new ImageView(img);
 	    view.setFitHeight(50);
 	    view.setFitWidth(50);
