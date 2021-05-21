@@ -142,7 +142,10 @@ public class ShopPane extends VBox implements Updatable{
 				System.out.println(timer);
 			}
 			Platform.runLater(()->{
-				ChefZoneGUI.ingredientpane.getSupply().get(ID).buyIngredient();
+				if(!ChefZoneController.isExit() || ChefZoneController.getExittedTime() <= 15)
+				{
+					ChefZoneGUI.ingredientpane.getSupply().get(ID).buyIngredient();
+				}
 			});
 			Platform.runLater(()->{unlockBuy();unblockIngredient(ID);});
 			buyStatus[ID] = false;

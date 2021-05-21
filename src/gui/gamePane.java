@@ -1,5 +1,6 @@
 package gui;
 
+import application.Database;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -20,7 +21,7 @@ public class gamePane extends VBox  {
 	public gamePane() {
 		gameScene = new Scene(this,WIDTH_SCREEN,HEIGHT_SCREEN);
 		GameController.initialize();
-		
+		Database.initialize();
 		//--- Status Bar ---
 		
 		status = new StatusBar();

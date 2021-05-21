@@ -2,6 +2,7 @@ package logic;
 
 import application.Database;
 import application.Utility;
+import gui.ChefZoneGUI;
 import gui.GameOverPane;
 import gui.LevelUpPane;
 import gui.StatusBar;
@@ -31,6 +32,15 @@ public class GameController {
 		Level = 1;
 		Target = 500;
 		lastTimeTriggered = -1;
+		//setup for chef zone
+		for(int i=0;i<=15;i++) {
+			if(i!=1 && i!=15) {
+				ChefZoneGUI.ingredientpane.getSupply().get(i).setDisable(true);
+			}
+			ChefZoneGUI.ingredientpane.getSupply().get(i).ingredient.setRemain(10);
+			ChefZoneGUI.ingredientpane.getSupply().get(i).setText("10");
+			ChefZoneController.goBackNormal(ChefZoneGUI.ingredientpane.getSupply().get(i));
+		}
 		
 		animation = new AnimationTimer() {
 			

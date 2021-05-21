@@ -13,11 +13,14 @@ public class Database {
 	
 	public static void initialize() {
 		//rice and seaweed
+		hasIngredient.clear();
 		hasIngredient.add(new Ingredient(1));
 		hasIngredient.add(new Ingredient(15));
 		// 15
+		hasMenu.clear();
 		hasMenu.add(new FoodList(15));	
 		System.out.println("size="+hasIngredient.size());
+		System.out.println("initialzed");
 	}
 	
 	public static void newLV(int level) {

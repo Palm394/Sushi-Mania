@@ -113,6 +113,9 @@ public abstract class AlertPane {
 			@Override
 			public void handle(ActionEvent event) {
 				ChefZoneController.soundPlay("sound/ClickSound.wav");
+				//set exit
+				ChefZoneController.setExitTrue();
+				
 				gamePane.getGameStage().close();
 				menuPane new_menu = new menuPane();
 				new_menu.getMenuStage().show();

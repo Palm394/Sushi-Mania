@@ -21,10 +21,59 @@ public class ChefZoneController {
 	private static boolean isVeggiBoost = false;
 	private static boolean isFishBoost = false;
 	private static boolean isFreeBoost = false;
+	private static boolean isExit = false;
+	//set exit cooldown time
+	private static int exittedTime = 20;
+	private static boolean isStop = false;
 	
 	//extra score when boost
 	private static int extraScore = 0;
 	
+	public static boolean isExit() {
+		return isExit;
+	}
+
+	public static void setExit(boolean isExit) {
+		ChefZoneController.isExit = isExit;
+	}	
+	
+	public static void setExitTrue() {
+		isExit = true;
+		if(exittedTime != 20) {
+			exittedTime = 20;
+			isStop = true;
+		}
+		new Thread(()->{
+			while(exittedTime > 0 && !isStop)
+			{
+				try {
+					TimeUnit.SECONDS.sleep(1);
+					exittedTime -= 1;
+					System.out.println("exit time = " + exittedTime + " " + isExit);
+				} catch (Exception e) {
+					System.out.println("oops! something went wrong!");
+				}
+			}
+			if(exittedTime == 0) {
+				isExit = false;
+				System.out.println("woohoo!");
+			}
+			exittedTime = 20;
+			isStop = false;
+		}).start();	
+	}
+
+	
+	public static int getExittedTime() {
+		return exittedTime;
+	}
+
+
+	public static void setExittedTime(int exittedTime) {
+		ChefZoneController.exittedTime = exittedTime;
+	}
+
+
 	public static ArrayList<Ingredient> getWrapper() {
 		return wrapper;
 	}
@@ -130,7 +179,7 @@ public class ChefZoneController {
 						isVeggiBoost = false;
 					}
 				} 
-			if(button instanceof IngredientButton && isFreeBoost) {
+			if(button instanceof IngredientButton && isFreeBoost && !isExit) {
 				Platform.runLater(()->button.setText("99"));
 			}
 			}).start();
@@ -168,23 +217,29 @@ public class ChefZoneController {
 		}).start();
 	}
 	
-	public static int wrap(ArrayList<Ingredient> wrapper) {
+	public static void wrap(ArrayList<Ingredient> wrapper) {
 		if(wrapper.size()>0 && SushiTrain.canPlaceDish()==true) {
-			int hcode = 0;
+			String hcode = "";
+			int[] ingredientSet = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};  
 		
 			for(int i=0 ;i<wrapper.size() ;i++) {
-				hcode += Math.pow(3, wrapper.get(i).getId());
+				ingredientSet[wrapper.get(i).getId()] += 1;
 			}
 			
 			//show ingredient code
-			System.out.println("hcode : " + hcode);
+			for(int i=0;i<=15;i++)
+			{
+				hcode += ingredientSet[i];
+			}
+			
+			System.out.println(hcode);
 			
 			//find menu which can make
 			FoodList sushi = new FoodList(99);
 			boolean check = false;
 			int menuID = 1;
 			while(check == false) {
-				if(new FoodList(menuID).getHcode() == hcode) {
+				if(hcode.equals(new FoodList(menuID).getHcode()) ) {
 					sushi = new FoodList(menuID);
 					check = true;
 				} else if(menuID > 32) {
@@ -217,9 +272,6 @@ public class ChefZoneController {
 				extraScore = 0;
 			}
 			
-			return hcode;
-		} else {
-			return -1;
-		}
+		} 
 	}
 }
