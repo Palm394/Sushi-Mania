@@ -134,13 +134,12 @@ public class ShopPane extends VBox implements Updatable{
 			while(timer > 0)
 			{
 				try {
+					System.out.println(ID + " " + timer + "     " + selectedIngredientID);
 					TimeUnit.SECONDS.sleep(1);
 				} catch (Exception e) {
 					System.out.println("Oops! something went wrong! :");
-					System.out.println(e.toString());
 				}
 				timer -= 1;
-				System.out.println(timer);
 			}
 			Platform.runLater(()->{
 				if(!ChefZoneController.isExit() || ChefZoneController.getExittedTime() <= 15)
@@ -148,7 +147,13 @@ public class ShopPane extends VBox implements Updatable{
 					ChefZoneGUI.getIngredientpane().getSupply().get(ID).buyIngredient();
 				}
 			});
-			Platform.runLater(()->{unlockBuy();unblockIngredient(ID);});
+			Platform.runLater(()->{
+				int selectedID = ingredientList.get(selectedIngredientID).getId();
+				if(ID == selectedID) {
+					unlockBuy();
+				}
+				unblockIngredient(ID);
+			});
 			buyStatus[ID] = false;
 		}
 	};

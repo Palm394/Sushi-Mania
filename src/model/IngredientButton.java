@@ -37,7 +37,10 @@ public class IngredientButton extends Button{
 	
 	public void buyIngredient() {
 		this.ingredient.setRemain(this.ingredient.getRemain() + 10);
-		this.setText(this.ingredient.getRemain()+"");
+		if(!ChefZoneController.isFreeBoost())
+		{
+			this.setText(this.ingredient.getRemain()+"");
+		}
 	}
 	
 	public void lock() {
