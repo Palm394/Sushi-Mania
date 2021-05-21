@@ -121,14 +121,14 @@ public class ChefZoneController {
 	}
 	
 	public static void addIngredient(IngredientButton ingredientbutton) {
-		if(ingredientbutton.ingredient.getRemain()>0)
+		if(ingredientbutton.getIngredient().getRemain()>0)
 		{
 			if(isFreeBoost == false) {
-			ingredientbutton.ingredient.setRemain(ingredientbutton.ingredient.getRemain()-1);
-			ingredientbutton.setText(ingredientbutton.ingredient.getRemain()+"");
+			ingredientbutton.getIngredient().setRemain(ingredientbutton.getIngredient().getRemain()-1);
+			ingredientbutton.setText(ingredientbutton.getIngredient().getRemain()+"");
 			} 
-			System.out.println(ingredientbutton.ingredient.getName());
-			ChefZoneController.wrapper.add(ingredientbutton.ingredient);		
+			System.out.println(ingredientbutton.getIngredient().getName());
+			ChefZoneController.wrapper.add(ingredientbutton.getIngredient());		
 			ChefZoneController.updateIngredient();
 		}
 	}
@@ -140,13 +140,13 @@ public class ChefZoneController {
 	}
 	
 	public static void updateBoostButton() {
-		ChefZoneGUI.boostpane.FreeBoostButton.setDisable(false);
-		ChefZoneGUI.boostpane.FishBoostButton.setDisable(false);
-		ChefZoneGUI.boostpane.VeggiBoostButton.setDisable(false);
+		ChefZoneGUI.getBoostpane().getFreeBoostButton().setDisable(false);
+		ChefZoneGUI.getBoostpane().getFishBoostButton().setDisable(false);
+		ChefZoneGUI.getBoostpane().getVeggiBoostButton().setDisable(false);
 	}
 	
 	public static void updateIngredient() {
-		ChefZoneGUI.rollpane.updateIngredient();
+		ChefZoneGUI.getRollpane().updateIngredient();
 	}
 	
 	
@@ -154,12 +154,12 @@ public class ChefZoneController {
 		int ingredientSize = Database.getHasIngredient().size();
 		System.out.println(ingredientSize);
 		for(int i=0;i<ingredientSize;i++) {
-			ChefZoneGUI.ingredientpane.getSupply().get(Database.getHasIngredient().get(i).getId()).unlock();
+			ChefZoneGUI.getIngredientpane().getSupply().get(Database.getHasIngredient().get(i).getId()).unlock();
 		}
 	}
 	
 	public static void updateShopList() {
-		ChefZoneGUI.shopPane.update();
+		ChefZoneGUI.getShopPane().update();
 	}
 	
 	public static void goBackNormal(Button button) {
@@ -171,7 +171,7 @@ public class ChefZoneController {
 		returnText = button.getText();
 		if(returnText == "99") {
 			IngredientButton ingredientbutton = (IngredientButton) button;
-			returnText = ingredientbutton.ingredient.getRemain() + "";
+			returnText = ingredientbutton.getIngredient().getRemain() + "";
 		}
 		String realText = returnText;
 		
@@ -219,7 +219,7 @@ public class ChefZoneController {
 	}
 	
 	public static void showAddedScore(int score) {
-		Platform.runLater(()->gui.ChefZoneGUI.rollButton.setText("+" + score));
+		Platform.runLater(()->gui.ChefZoneGUI.getRollButton().setText("+" + score));
 		new Thread(()->{
 			try {
 				TimeUnit.MILLISECONDS.sleep(750);
@@ -227,7 +227,7 @@ public class ChefZoneController {
 			} catch (Exception e) {
 				System.out.println("oops! something went wrong!");
 			}
-			Platform.runLater(()->gui.ChefZoneGUI.rollButton.setText("roll!!"));
+			Platform.runLater(()->gui.ChefZoneGUI.getRollButton().setText("roll!!"));
 		}).start();
 	}
 	
@@ -276,7 +276,7 @@ public class ChefZoneController {
 			}
 			///////////////////////////////////
 			
-			Platform.runLater(()->ChefZoneGUI.rollpane.removeIngredient());
+			Platform.runLater(()->ChefZoneGUI.getRollpane().removeIngredient());
 			wrapper.clear();
 			
 			if(check == true && (isVeggiBoost == true || isFishBoost == true)) {

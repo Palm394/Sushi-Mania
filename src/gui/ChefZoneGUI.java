@@ -17,12 +17,12 @@ import model.RollButton;
 
 public class ChefZoneGUI extends HBox {
 		
-	public static rollPane rollpane;
-	public static RollButton rollButton = new RollButton();
-	public static ingredientPane ingredientpane = new ingredientPane();
-	public static RecipePane recipePane;
-	public static ShopPane shopPane;
-	public static BoostPane boostpane;
+	private static rollPane rollpane;
+	private static RollButton rollButton = new RollButton();
+	private static ingredientPane ingredientpane = new ingredientPane();
+	private static RecipePane recipePane;
+	private static ShopPane shopPane;
+	private static BoostPane boostpane;
 	
 		ChefZoneGUI(){
 			this.setStyle("-fx-background-image: url(\"tableDesk.jpg\");");
@@ -87,5 +87,52 @@ public class ChefZoneGUI extends HBox {
 			rightZone.getChildren().add(shopPane);
 			this.getChildren().add(rightZone);
 		}
-		
+
+		public static rollPane getRollpane() {
+			return rollpane;
+		}
+
+		public static void setRollpane(rollPane rollpane) {
+			ChefZoneGUI.rollpane = rollpane;
+		}
+
+		public static RollButton getRollButton() {
+			return rollButton;
+		}
+
+		public static void setRollButton(RollButton rollButton) {
+			ChefZoneGUI.rollButton = rollButton;
+		}
+
+		public static ingredientPane getIngredientpane() {
+			return ingredientpane;
+		}
+
+		public static void setIngredientpane(ingredientPane ingredientpane) {
+			ChefZoneGUI.ingredientpane = ingredientpane;
+		}
+
+		public static RecipePane getRecipePane() {
+			return recipePane;
+		}
+
+		public static void setRecipePane(RecipePane recipePane) {
+			ChefZoneGUI.recipePane = recipePane;
+		}
+
+		public static ShopPane getShopPane() {
+			return shopPane;
+		}
+
+		public static void setShopPane(ShopPane shopPane) {
+			ChefZoneGUI.shopPane = shopPane;
+		}
+
+		public static BoostPane getBoostpane() {
+			return boostpane;
+		}
+
+		public static void setBoostpane(BoostPane boostpane) {
+			ChefZoneGUI.boostpane = boostpane;
+		}
 	}

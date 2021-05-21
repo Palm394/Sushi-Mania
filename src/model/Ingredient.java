@@ -1,12 +1,11 @@
 package model;
 
 public class Ingredient {
-	String name;
-	String url;
-	String urlBut;
-	int id;
-	int price;
-	int remain;
+	private String name;
+	private String url;
+	private int id;
+	private int price;
+	private int remain;
 	
 	public Ingredient(int id){
 		this.id=id;

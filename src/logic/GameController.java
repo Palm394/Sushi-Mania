@@ -35,11 +35,11 @@ public class GameController {
 		//setup for chef zone
 		for(int i=0;i<=15;i++) {
 			if(i!=1 && i!=15) {
-				ChefZoneGUI.ingredientpane.getSupply().get(i).setDisable(true);
+				ChefZoneGUI.getIngredientpane().getSupply().get(i).setDisable(true);
 			}
-			ChefZoneGUI.ingredientpane.getSupply().get(i).ingredient.setRemain(10);
-			ChefZoneGUI.ingredientpane.getSupply().get(i).setText("10");
-			ChefZoneController.goBackNormal(ChefZoneGUI.ingredientpane.getSupply().get(i));
+			ChefZoneGUI.getIngredientpane().getSupply().get(i).getIngredient().setRemain(10);
+			ChefZoneGUI.getIngredientpane().getSupply().get(i).setText("10");
+			ChefZoneController.goBackNormal(ChefZoneGUI.getIngredientpane().getSupply().get(i));
 		}
 		ChefZoneController.setExtraScore(0);
 		ChefZoneController.setVeggiBoost(false);

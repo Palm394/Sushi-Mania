@@ -85,7 +85,7 @@ public class menuPane extends VBox {
 			public void handle(ActionEvent arg0) {
 				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				creditPane credit = new creditPane();
-				menuStage.setScene(credit.scene);
+				menuStage.setScene(credit.getScene());
 				menuStage.setTitle("Sushi Mania - Credit");
 			}
 			

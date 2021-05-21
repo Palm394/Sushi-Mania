@@ -15,11 +15,11 @@ import javafx.scene.paint.Color;
 import logic.ChefZoneController;
 
 public class tutorialPane extends VBox{
-	int page;
-	Scene scene; 
-	String[] text = new String[10]; 
-	String[] title = new String[10];
-	
+	private int page;
+	private String[] text = new String[10]; 
+	private String[] title = new String[10];
+	public Scene scene; 
+
 	public tutorialPane(){
 		// define tutorial description
 		title[0] = "Objective";
@@ -118,5 +118,4 @@ public class tutorialPane extends VBox{
 		});
 		this.getChildren().add(resumeButton);
 	}
-	
 }

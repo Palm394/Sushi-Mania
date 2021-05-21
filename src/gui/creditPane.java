@@ -13,7 +13,7 @@ import javafx.scene.layout.VBox;
 import logic.ChefZoneController;
 
 public class creditPane extends VBox{
-	Scene scene;
+	private Scene scene;
 	
 	public creditPane() {
 		scene = new Scene(this,400,600);

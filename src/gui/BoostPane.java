@@ -16,9 +16,9 @@ import model.FishIngredientButton;
 import model.VeggiIngredientButton;
 
 public class BoostPane extends VBox{
-	public Button FreeBoostButton;
-	public Button VeggiBoostButton;
-	public Button FishBoostButton;
+	private Button FreeBoostButton;
+	private Button VeggiBoostButton;
+	private Button FishBoostButton;
 	
 	public BoostPane(){
 		
@@ -44,11 +44,11 @@ public class BoostPane extends VBox{
 				logic.ChefZoneController.setVeggiBoost(true);
 				
 				VeggiIngredientButton veggi;
-				veggi = (VeggiIngredientButton) ChefZoneGUI.ingredientpane.getSupply().get(0);
+				veggi = (VeggiIngredientButton) ChefZoneGUI.getIngredientpane().getSupply().get(0);
 				veggi.Boost();
-				veggi = (VeggiIngredientButton) ChefZoneGUI.ingredientpane.getSupply().get(1);
+				veggi = (VeggiIngredientButton) ChefZoneGUI.getIngredientpane().getSupply().get(1);
 				veggi.Boost();
-				veggi = (VeggiIngredientButton) ChefZoneGUI.ingredientpane.getSupply().get(11);
+				veggi = (VeggiIngredientButton) ChefZoneGUI.getIngredientpane().getSupply().get(11);
 				veggi.Boost();
 				ChefZoneController.boostCountdown(20,VeggiBoostButton);
 				ChefZoneController.soundPlay("sound/BoostSound.wav");
@@ -72,13 +72,13 @@ public class BoostPane extends VBox{
 				// TODO Auto-generated method stub
 				FishBoostButton.setDisable(true);
 				FishIngredientButton fish;
-				fish = (FishIngredientButton) ChefZoneGUI.ingredientpane.getSupply().get(6);
+				fish = (FishIngredientButton) ChefZoneGUI.getIngredientpane().getSupply().get(6);
 				fish.Boost();
-				fish = (FishIngredientButton) ChefZoneGUI.ingredientpane.getSupply().get(7);
+				fish = (FishIngredientButton) ChefZoneGUI.getIngredientpane().getSupply().get(7);
 				fish.Boost();
-				fish = (FishIngredientButton) ChefZoneGUI.ingredientpane.getSupply().get(9);
+				fish = (FishIngredientButton) ChefZoneGUI.getIngredientpane().getSupply().get(9);
 				fish.Boost();
-				fish = (FishIngredientButton) ChefZoneGUI.ingredientpane.getSupply().get(13);
+				fish = (FishIngredientButton) ChefZoneGUI.getIngredientpane().getSupply().get(13);
 				fish.Boost();		
 				ChefZoneController.boostCountdown(20,FishBoostButton);
 				ChefZoneController.soundPlay("sound/BoostSound.wav");
@@ -103,7 +103,7 @@ public class BoostPane extends VBox{
 				FreeBoostButton.setDisable(true);
 				ChefZoneController.setFreeBoost(true);
 				for(int i=0;i<=15;i++) {
-					ChefZoneGUI.ingredientpane.getSupply().get(i).freeBoost();
+					ChefZoneGUI.getIngredientpane().getSupply().get(i).freeBoost();
 				}
 				new Thread(()->{
 					ChefZoneController.countdown(20,FreeBoostButton,"");
@@ -115,6 +115,30 @@ public class BoostPane extends VBox{
 		
 		// gather all button in boost pane
 		this.getChildren().addAll(VeggiBoostButton,FishBoostButton,FreeBoostButton);
+	}
+
+	public Button getFreeBoostButton() {
+		return FreeBoostButton;
+	}
+
+	public void setFreeBoostButton(Button freeBoostButton) {
+		FreeBoostButton = freeBoostButton;
+	}
+
+	public Button getVeggiBoostButton() {
+		return VeggiBoostButton;
+	}
+
+	public void setVeggiBoostButton(Button veggiBoostButton) {
+		VeggiBoostButton = veggiBoostButton;
+	}
+
+	public Button getFishBoostButton() {
+		return FishBoostButton;
+	}
+
+	public void setFishBoostButton(Button fishBoostButton) {
+		FishBoostButton = fishBoostButton;
 	}
 	
 }

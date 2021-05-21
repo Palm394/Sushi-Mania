@@ -18,9 +18,9 @@ public class RecipePane{
 	
 	private VBox root;
 	private Scene scene;
-	int selectedImage = 0;
-	ImageView recipeImage;	
-	ArrayList<Image> recipeAlbum = new ArrayList<Image>();	
+	private int selectedImage = 0;
+	private ImageView recipeImage;	
+	private ArrayList<Image> recipeAlbum = new ArrayList<Image>();	
 	
 	RecipePane() {
 		root = new VBox();

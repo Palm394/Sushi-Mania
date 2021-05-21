@@ -6,7 +6,6 @@ import logic.ChefZoneController;
 import model.base.Boostable;
 
 public class FishIngredientButton extends IngredientButton implements Boostable {
-	Boolean isBoost = false;
 	
 	public FishIngredientButton(Ingredient ingredient) {
 		

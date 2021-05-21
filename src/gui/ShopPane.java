@@ -21,17 +21,19 @@ import model.Ingredient;
 import model.base.Updatable;
 
 public class ShopPane extends VBox implements Updatable{
-	int selectedIngredientID = 0;
-	Label shopTitle;
-	Label select;
-	Button chooseLeft;
-	Label ingredientName;
-	Button chooseRight;
-	Button normalPriceBut;
-	Button speedPriceBut;
-	ImageView ingredientImage;
+	private int selectedIngredientID = 0;
+	
+	private Button chooseLeft;
+	private Label ingredientName;
+	private Button chooseRight;
+	private Button normalPriceBut;
+	private Button speedPriceBut;
+	private ImageView ingredientImage;
 	private ArrayList<Ingredient> ingredientList = new ArrayList<Ingredient>();
-
+	
+	private Label shopTitle;
+	private Label select;
+	
 	Boolean[] buyStatus = new Boolean[20];
 	
 	ShopPane(){
@@ -144,7 +146,7 @@ public class ShopPane extends VBox implements Updatable{
 			Platform.runLater(()->{
 				if(!ChefZoneController.isExit() || ChefZoneController.getExittedTime() <= 15)
 				{
-					ChefZoneGUI.ingredientpane.getSupply().get(ID).buyIngredient();
+					ChefZoneGUI.getIngredientpane().getSupply().get(ID).buyIngredient();
 				}
 			});
 			Platform.runLater(()->{unlockBuy();unblockIngredient(ID);});
@@ -173,7 +175,7 @@ public class ShopPane extends VBox implements Updatable{
 		if(GameController.getScore() >= price) {
 			ChefZoneController.soundPlay("sound/BuySound.wav");
 			//set remaining number
-			ChefZoneGUI.ingredientpane.getSupply().get(ID).buyIngredient();
+			ChefZoneGUI.getIngredientpane().getSupply().get(ID).buyIngredient();
 			//set new score
 			GameController.addScore(-price);	
 		} 				
@@ -190,11 +192,11 @@ public class ShopPane extends VBox implements Updatable{
 	}
 	
 	public void blockIngredient(int ID){
-			ChefZoneGUI.ingredientpane.getSupply().get(ID).setDisable(true);
+			ChefZoneGUI.getIngredientpane().getSupply().get(ID).setDisable(true);
 	}
 	
 	public void unblockIngredient(int ID){
-			ChefZoneGUI.ingredientpane.getSupply().get(ID).setDisable(false);
+			ChefZoneGUI.getIngredientpane().getSupply().get(ID).setDisable(false);
 	}
 	
 	public void changeIngredientOrder() {

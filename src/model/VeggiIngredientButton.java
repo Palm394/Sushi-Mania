@@ -33,7 +33,7 @@ public class VeggiIngredientButton extends IngredientButton implements Boostable
 	public void Boost() {
 		
 		// TODO Auto-generated method stub
-		this.setStyle("-fx-background-color: green;");		
+		this.setStyle("-fx-background-color: lime;");		
 		ChefZoneController.boostCountdown(20, this);
 		
 	}

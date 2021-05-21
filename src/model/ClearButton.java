@@ -26,7 +26,7 @@ public class ClearButton extends Button{
 					ChefZoneController.soundPlay("sound/ClearSound.wav");
 					GameController.addScore(-30);
 					ChefZoneController.getWrapper().clear();
-					ChefZoneGUI.rollpane.removeIngredient();
+					ChefZoneGUI.getRollpane().removeIngredient();
 					ChefZoneController.setExtraScore(0);
 				}
 			}
