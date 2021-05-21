@@ -133,6 +133,17 @@ public class ChefZoneController {
 		}
 	}
 	
+	public static void update() {
+		ChefZoneController.updateIngredientButton();
+		ChefZoneController.updateShopList();
+		ChefZoneController.updateBoostButton();
+	}
+	
+	public static void updateBoostButton() {
+		ChefZoneGUI.boostpane.FreeBoostButton.setDisable(false);
+		ChefZoneGUI.boostpane.FishBoostButton.setDisable(false);
+		ChefZoneGUI.boostpane.VeggiBoostButton.setDisable(false);
+	}
 	
 	public static void updateIngredient() {
 		ChefZoneGUI.rollpane.updateIngredient();
@@ -201,7 +212,10 @@ public class ChefZoneController {
 					System.out.println("oops! something went wrong!");
 				}
 			}
-			Platform.runLater(()->button.setText(name));
+			if(!isExit)
+			{
+				Platform.runLater(()->button.setText(name));
+			}
 	}
 	
 	public static void showAddedScore(int score) {

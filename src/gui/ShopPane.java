@@ -176,8 +176,7 @@ public class ShopPane extends VBox implements Updatable{
 			ChefZoneGUI.ingredientpane.getSupply().get(ID).buyIngredient();
 			//set new score
 			GameController.addScore(-price);	
-		} 
-						
+		} 				
 	}
 	
 	public void lockBuy() {
@@ -225,5 +224,9 @@ public class ShopPane extends VBox implements Updatable{
 			ingredientList.add(Database.getHasIngredient().get(i));
 		}
 		ingredientList.sort((Ingredient z1,Ingredient z2) -> (Integer.compare(z1.getId(),z2.getId())));
+		if(GameController.getLevel() > 1) {
+			selectedIngredientID = 0;
+			changeIngredientOrder();
+		}
 	}
 }

@@ -41,6 +41,10 @@ public class GameController {
 			ChefZoneGUI.ingredientpane.getSupply().get(i).setText("10");
 			ChefZoneController.goBackNormal(ChefZoneGUI.ingredientpane.getSupply().get(i));
 		}
+		ChefZoneController.setExtraScore(0);
+		ChefZoneController.setVeggiBoost(false);
+		ChefZoneController.setFishBoost(false);
+		ChefZoneController.setFreeBoost(false);
 		
 		animation = new AnimationTimer() {
 			

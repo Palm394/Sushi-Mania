@@ -17,6 +17,8 @@ import model.VeggiIngredientButton;
 
 public class BoostPane extends VBox{
 	public Button FreeBoostButton;
+	public Button VeggiBoostButton;
+	public Button FishBoostButton;
 	
 	public BoostPane(){
 		
@@ -24,7 +26,7 @@ public class BoostPane extends VBox{
 		
 		
 		// modify vegetable boost button
-		Button VeggiBoostButton = new Button("");
+		VeggiBoostButton = new Button("");
 		
 		VeggiBoostButton.setFont(Font.font ("Tahoma",FontWeight.BOLD, 18));
 		VeggiBoostButton.setTextFill(Color.MAROON);
@@ -54,7 +56,7 @@ public class BoostPane extends VBox{
 		});
 		
 		// modify fish boost button 
-		Button FishBoostButton = new Button("");
+		FishBoostButton = new Button("");
 		
 		FishBoostButton.setFont(Font.font ("Tahoma",FontWeight.BOLD, 18));
 		FishBoostButton.setTextFill(Color.MAROON);		
