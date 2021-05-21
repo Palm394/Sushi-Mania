@@ -121,24 +121,12 @@ public class BoostPane extends VBox{
 		return FreeBoostButton;
 	}
 
-	public void setFreeBoostButton(Button freeBoostButton) {
-		FreeBoostButton = freeBoostButton;
-	}
-
 	public Button getVeggiBoostButton() {
 		return VeggiBoostButton;
 	}
 
-	public void setVeggiBoostButton(Button veggiBoostButton) {
-		VeggiBoostButton = veggiBoostButton;
-	}
-
 	public Button getFishBoostButton() {
 		return FishBoostButton;
-	}
-
-	public void setFishBoostButton(Button fishBoostButton) {
-		FishBoostButton = fishBoostButton;
 	}
 	
 }

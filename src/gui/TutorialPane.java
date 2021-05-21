@@ -14,13 +14,13 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import logic.ChefZoneController;
 
-public class tutorialPane extends VBox{
+public class TutorialPane extends VBox{
 	private int page;
 	private String[] text = new String[10]; 
 	private String[] title = new String[10];
 	public Scene scene; 
 
-	public tutorialPane(){
+	public TutorialPane(){
 		// define tutorial description
 		title[0] = "Objective";
 		text[0] = "This game's objective is to serve customers the sushi as much as you can in provided time. "
@@ -102,10 +102,10 @@ public class tutorialPane extends VBox{
 		
 		this.getChildren().add(tutorialRow);
 		
-		createResumeButton();
+		createBackToMenuButton();
 	}
 	
-	public void createResumeButton() {
+	public void createBackToMenuButton() {
 		Button resumeButton = new Button("Back to menu");
 		resumeButton.setOnAction(new EventHandler<ActionEvent>() {
 

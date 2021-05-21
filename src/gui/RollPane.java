@@ -1,4 +1,4 @@
- package gui;
+package gui;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -12,8 +12,8 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
 import logic.ChefZoneController;
 
-public class rollPane extends GridPane{
-	rollPane(){
+public class RollPane extends GridPane{
+	public RollPane(){
 		
 		this.setPadding(new Insets(20,20,20,20));
 		this.setPrefHeight(180);

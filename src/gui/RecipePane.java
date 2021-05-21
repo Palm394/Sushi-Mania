@@ -67,14 +67,6 @@ public class RecipePane{
 		root.setStyle("-fx-background-image: url(\"recipeBackground.png\");");
 	}
 	
-	public Scene getScene() {
-		return scene;
-	}
-
-	public void setScene(Scene scene) {
-		this.scene = scene;
-	}
-	
 	protected Button closeButton() {
 		Button cont = new Button("Resume");
 		cont.setStyle("-fx-font-size: 30px; -fx-background-color: rgba(245,222,179,0.9);");
@@ -90,4 +82,9 @@ public class RecipePane{
 		cont.setAlignment(Pos.CENTER_RIGHT);
 		return cont;
 	}
+	
+	public Scene getScene() {
+		return scene;
+	}	
+	
 }

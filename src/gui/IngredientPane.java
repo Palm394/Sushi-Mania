@@ -9,10 +9,10 @@ import model.Ingredient;
 import model.IngredientButton;
 import model.VeggiIngredientButton;
 
-public class ingredientPane extends GridPane{
+public class IngredientPane extends GridPane{
 	private ArrayList<IngredientButton> supply = new ArrayList<IngredientButton>();
 	
-	ingredientPane(){
+	IngredientPane(){
 		for(int i=0;i<=15;i++)
 		{	
 			if(i==0||i==1||i==11) {
@@ -41,7 +41,4 @@ public class ingredientPane extends GridPane{
 		return supply;
 	}
 
-	public void setSupply(ArrayList<IngredientButton> supply) {
-		this.supply = supply;
-	}
 }

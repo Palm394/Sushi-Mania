@@ -14,15 +14,13 @@ public class VeggiIngredientButton extends IngredientButton implements Boostable
 		
 		this.setOnAction(new EventHandler<ActionEvent>(){
 			public void handle(ActionEvent event) {
-				if(ingredient.getRemain()>0 && ChefZoneController.getWrapper().size() < 12) {
 					ChefZoneController.addIngredient(button);
-					ChefZoneController.soundPlay("sound/TickSound.wav");
+
 					if(ChefZoneController.isVeggiBoost() == true)
 					{
 						ChefZoneController.setExtraScore(ChefZoneController.getExtraScore()+7);
 						System.out.println("added 7 point for extra score");
 						System.out.println(ChefZoneController.getExtraScore());
-					}
 					}
 				}
 			}

@@ -51,19 +51,9 @@ public class FoodList extends Food {
 	public String getHcode() {
 		return hcode;
 	}
-
-
-	public void setHcode(String hcode) {
-		this.hcode = hcode;
-	}
 	
 	public String getUrl() {
 		return url;
-	}
-
-
-	public void setUrl(String url) {
-		this.url = url;
 	}
 
 	public Image getImage() {

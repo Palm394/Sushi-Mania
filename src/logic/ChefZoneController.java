@@ -27,15 +27,7 @@ public class ChefZoneController {
 	private static boolean isStop = false;
 	
 	//extra score when boost
-	private static int extraScore = 0;
-	
-	public static boolean isExit() {
-		return isExit;
-	}
-
-	public static void setExit(boolean isExit) {
-		ChefZoneController.isExit = isExit;
-	}	
+	private static int extraScore = 0;	
 	
 	public static void setExitTrue() {
 		isExit = true;
@@ -62,57 +54,6 @@ public class ChefZoneController {
 			isStop = false;
 		}).start();	
 	}
-
-	
-	public static int getExittedTime() {
-		return exittedTime;
-	}
-
-
-	public static void setExittedTime(int exittedTime) {
-		ChefZoneController.exittedTime = exittedTime;
-	}
-
-
-	public static ArrayList<Ingredient> getWrapper() {
-		return wrapper;
-	}
-
-	public static void setWrapper(ArrayList<Ingredient> wrapper) {
-		ChefZoneController.wrapper = wrapper;
-	}
-
-	public static boolean isFreeBoost() {
-		return isFreeBoost;
-	}
-
-	public static void setFreeBoost(boolean isFreeBoost) {
-		ChefZoneController.isFreeBoost = isFreeBoost;
-	}	
-	
-	public static boolean isVeggiBoost() {
-		return isVeggiBoost;
-	}
-
-	public static void setVeggiBoost(boolean isVeggiBoost) {
-		ChefZoneController.isVeggiBoost = isVeggiBoost;
-	}
-
-	public static boolean isFishBoost() {
-		return isFishBoost;
-	}
-
-	public static void setFishBoost(boolean isFishBoost) {
-		ChefZoneController.isFishBoost = isFishBoost;
-	}
-
-	public static int getExtraScore() {
-		return extraScore;
-	}
-
-	public static void setExtraScore(int extraScore) {
-		ChefZoneController.extraScore = extraScore;
-	}
 	
 	public static void soundPlay(String url) {
 		AudioClip sound = new AudioClip(ClassLoader.getSystemResource(url).toString());
@@ -121,8 +62,10 @@ public class ChefZoneController {
 	}
 	
 	public static void addIngredient(IngredientButton ingredientbutton) {
-		if(ingredientbutton.getIngredient().getRemain()>0)
+		System.out.println(isFreeBoost);
+		if((ingredientbutton.getIngredient().getRemain()>0 || isFreeBoost) && ChefZoneController.getWrapper().size() < 12 )
 		{
+			ChefZoneController.soundPlay("sound/TickSound.wav");
 			if(isFreeBoost == false) {
 			ingredientbutton.getIngredient().setRemain(ingredientbutton.getIngredient().getRemain()-1);
 			ingredientbutton.setText(ingredientbutton.getIngredient().getRemain()+"");
@@ -287,5 +230,61 @@ public class ChefZoneController {
 			}
 			
 		} 
+	}
+	
+	public static boolean isExit() {
+		return isExit;
+	}
+
+	public static void setExit(boolean isExit) {
+		ChefZoneController.isExit = isExit;
+	}
+	
+	public static int getExittedTime() {
+		return exittedTime;
+	}
+
+	public static void setExittedTime(int exittedTime) {
+		ChefZoneController.exittedTime = exittedTime;
+	}
+
+	public static ArrayList<Ingredient> getWrapper() {
+		return wrapper;
+	}
+
+	public static void setWrapper(ArrayList<Ingredient> wrapper) {
+		ChefZoneController.wrapper = wrapper;
+	}
+
+	public static boolean isFreeBoost() {
+		return isFreeBoost;
+	}
+
+	public static void setFreeBoost(boolean isFreeBoost) {
+		ChefZoneController.isFreeBoost = isFreeBoost;
+	}	
+	
+	public static boolean isVeggiBoost() {
+		return isVeggiBoost;
+	}
+
+	public static void setVeggiBoost(boolean isVeggiBoost) {
+		ChefZoneController.isVeggiBoost = isVeggiBoost;
+	}
+
+	public static boolean isFishBoost() {
+		return isFishBoost;
+	}
+
+	public static void setFishBoost(boolean isFishBoost) {
+		ChefZoneController.isFishBoost = isFishBoost;
+	}
+
+	public static int getExtraScore() {
+		return extraScore;
+	}
+
+	public static void setExtraScore(int extraScore) {
+		ChefZoneController.extraScore = extraScore;
 	}
 }

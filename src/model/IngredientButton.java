@@ -29,10 +29,7 @@ public class IngredientButton extends Button{
 		
 		this.setOnAction(new EventHandler<ActionEvent>(){
 			public void handle(ActionEvent event) {		
-				if(ingredient.getRemain()>0 && ChefZoneController.getWrapper().size() < 12) {
 					ChefZoneController.addIngredient(button);
-					ChefZoneController.soundPlay("sound/TickSound.wav");
-					}
 				}
 			}
 		);	

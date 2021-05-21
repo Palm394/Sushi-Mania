@@ -17,14 +17,14 @@ import model.RollButton;
 
 public class ChefZoneGUI extends HBox {
 		
-	private static rollPane rollpane;
+	private static RollPane rollpane;
 	private static RollButton rollButton = new RollButton();
-	private static ingredientPane ingredientpane = new ingredientPane();
+	private static IngredientPane ingredientpane = new IngredientPane();
 	private static RecipePane recipePane;
 	private static ShopPane shopPane;
 	private static BoostPane boostpane;
 	
-		ChefZoneGUI(){
+	public ChefZoneGUI(){
 			this.setStyle("-fx-background-image: url(\"tableDesk.jpg\");");
 			//left zone
 			this.getChildren().add(ingredientpane);
@@ -34,7 +34,7 @@ public class ChefZoneGUI extends HBox {
 			VBox centerZone = new VBox();
 			centerZone.setSpacing(10);
 			centerZone.setPadding(new Insets(10,10,10,10));
-			rollpane = new rollPane();
+			rollpane = new RollPane();
 			HBox pane = new HBox();
 			pane.setSpacing(10);
 			pane.setPrefHeight(200);
@@ -88,51 +88,28 @@ public class ChefZoneGUI extends HBox {
 			this.getChildren().add(rightZone);
 		}
 
-		public static rollPane getRollpane() {
+		public static RollPane getRollpane() {
 			return rollpane;
-		}
-
-		public static void setRollpane(rollPane rollpane) {
-			ChefZoneGUI.rollpane = rollpane;
 		}
 
 		public static RollButton getRollButton() {
 			return rollButton;
 		}
 
-		public static void setRollButton(RollButton rollButton) {
-			ChefZoneGUI.rollButton = rollButton;
-		}
-
-		public static ingredientPane getIngredientpane() {
+		public static IngredientPane getIngredientpane() {
 			return ingredientpane;
-		}
-
-		public static void setIngredientpane(ingredientPane ingredientpane) {
-			ChefZoneGUI.ingredientpane = ingredientpane;
 		}
 
 		public static RecipePane getRecipePane() {
 			return recipePane;
 		}
 
-		public static void setRecipePane(RecipePane recipePane) {
-			ChefZoneGUI.recipePane = recipePane;
-		}
-
 		public static ShopPane getShopPane() {
 			return shopPane;
-		}
-
-		public static void setShopPane(ShopPane shopPane) {
-			ChefZoneGUI.shopPane = shopPane;
 		}
 
 		public static BoostPane getBoostpane() {
 			return boostpane;
 		}
-
-		public static void setBoostpane(BoostPane boostpane) {
-			ChefZoneGUI.boostpane = boostpane;
-		}
+		
 	}

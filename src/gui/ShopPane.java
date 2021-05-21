@@ -24,19 +24,18 @@ public class ShopPane extends VBox implements Updatable{
 	private int selectedIngredientID = 0;
 	
 	private Button chooseLeft;
-	private Label ingredientName;
 	private Button chooseRight;
 	private Button normalPriceBut;
 	private Button speedPriceBut;
 	private ImageView ingredientImage;
 	private ArrayList<Ingredient> ingredientList = new ArrayList<Ingredient>();
 	
+	private Label ingredientName;
 	private Label shopTitle;
-	private Label select;
 	
 	Boolean[] buyStatus = new Boolean[20];
 	
-	ShopPane(){
+	public ShopPane(){
 		this.setPrefHeight(175);
 		this.setStyle("-fx-background-color: rgba(245,222,179,0.9);");
 		this.setSpacing(5);
@@ -212,14 +211,6 @@ public class ShopPane extends VBox implements Updatable{
 		}
 	}
 
-	public ArrayList<Ingredient> getIngredientList() {
-		return ingredientList;
-	}
-
-	public void setIngredientList(ArrayList<Ingredient> ingredientList) {
-		this.ingredientList = ingredientList;
-	}
-	
 	public void update() {
 		ingredientList.clear();
 		for(int i=0;i<Database.getHasIngredient().size();i++) {
@@ -230,5 +221,9 @@ public class ShopPane extends VBox implements Updatable{
 			selectedIngredientID = 0;
 			changeIngredientOrder();
 		}
+	}
+	
+	public ArrayList<Ingredient> getIngredientList() {
+		return ingredientList;
 	}
 }
