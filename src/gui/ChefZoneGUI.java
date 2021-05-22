@@ -16,100 +16,99 @@ import model.ClearButton;
 import model.RollButton;
 
 public class ChefZoneGUI extends HBox {
-		
+
 	private static RollPane rollpane;
 	private static RollButton rollButton = new RollButton();
 	private static IngredientPane ingredientpane = new IngredientPane();
 	private static RecipePane recipePane;
 	private static ShopPane shopPane;
 	private static BoostPane boostpane;
-	
-	public ChefZoneGUI(){
-			this.setStyle("-fx-background-image: url(\"tableDesk.jpg\");");
-			//left zone
-			this.getChildren().add(ingredientpane);
-			
-			
-			//center zone
-			VBox centerZone = new VBox();
-			centerZone.setSpacing(10);
-			centerZone.setPadding(new Insets(10,10,10,10));
-			rollpane = new RollPane();
-			HBox pane = new HBox();
-			pane.setSpacing(10);
-			pane.setPrefHeight(200);
-			pane.setPrefWidth(300);
-			boostpane = new BoostPane();
-			
-			pane.getChildren().add(rollpane);
-			pane.getChildren().add(boostpane);
-			
-			centerZone.getChildren().add(pane);
-			HBox rollAndClear = new HBox();
-			//Roll button
-			//declared 
-			//Clear button
-			ClearButton clearButton = new ClearButton();
-			
-			Label blank = new Label();
-			blank.setPrefWidth(10);
-			rollAndClear.getChildren().add(rollButton);
-			rollAndClear.getChildren().add(blank);
-			rollAndClear.getChildren().add(clearButton); 
-			centerZone.getChildren().add(rollAndClear);
-			
-			this.getChildren().add(centerZone);
-			
-			centerZone.setAlignment(Pos.CENTER);
-			
-			//right zone
-			VBox rightZone = new VBox();
-			rightZone.setAlignment(Pos.CENTER);
-			rightZone.setPadding(new Insets(10,0,10,10));
-			Image image = new Image("ButtonImage/recipeButton.jpg",250,80,false,false);
-			Button recipeButton = new Button("Secret Recipe");
-			recipeButton.setPrefSize(250, 80);
-			recipeButton.setStyle("-fx-font-size: 20px");
-			BackgroundImage recipeBut = new BackgroundImage(image,null,null,null,null);
-			recipeButton.setBackground(new Background(recipeBut));
-			recipeButton.setOnAction(new EventHandler<ActionEvent>() {
-				@Override
-				public void handle(ActionEvent event) {
-					ChefZoneController.soundPlay("sound/ClickSound.wav");
-					RecipePane recipePane = new RecipePane();
-					gamePane.getGameStage().setScene(recipePane.getScene());
-				}
-			});
-			
-			rightZone.getChildren().add(recipeButton);
-			rightZone.getChildren().add(new Label());
-			shopPane = new ShopPane();
-			rightZone.getChildren().add(shopPane);
-			this.getChildren().add(rightZone);
-		}
 
-		public static RollPane getRollpane() {
-			return rollpane;
-		}
+	public ChefZoneGUI() {
+		this.setStyle("-fx-background-image: url(\"tableDesk.jpg\");");
+		// left zone
+		this.getChildren().add(ingredientpane);
 
-		public static RollButton getRollButton() {
-			return rollButton;
-		}
+		// center zone
+		VBox centerZone = new VBox();
+		centerZone.setSpacing(10);
+		centerZone.setPadding(new Insets(10, 10, 10, 10));
+		rollpane = new RollPane();
+		HBox pane = new HBox();
+		pane.setSpacing(10);
+		pane.setPrefHeight(200);
+		pane.setPrefWidth(300);
+		boostpane = new BoostPane();
 
-		public static IngredientPane getIngredientpane() {
-			return ingredientpane;
-		}
+		pane.getChildren().add(rollpane);
+		pane.getChildren().add(boostpane);
 
-		public static RecipePane getRecipePane() {
-			return recipePane;
-		}
+		centerZone.getChildren().add(pane);
+		HBox rollAndClear = new HBox();
+		// Roll button
+		// declared
+		// Clear button
+		ClearButton clearButton = new ClearButton();
 
-		public static ShopPane getShopPane() {
-			return shopPane;
-		}
+		Label blank = new Label();
+		blank.setPrefWidth(10);
+		rollAndClear.getChildren().add(rollButton);
+		rollAndClear.getChildren().add(blank);
+		rollAndClear.getChildren().add(clearButton);
+		centerZone.getChildren().add(rollAndClear);
 
-		public static BoostPane getBoostpane() {
-			return boostpane;
-		}
-		
+		this.getChildren().add(centerZone);
+
+		centerZone.setAlignment(Pos.CENTER);
+
+		// right zone
+		VBox rightZone = new VBox();
+		rightZone.setAlignment(Pos.CENTER);
+		rightZone.setPadding(new Insets(10, 0, 10, 10));
+		Image image = new Image("ButtonImage/recipeButton.jpg", 250, 80, false, false);
+		Button recipeButton = new Button("Secret Recipe");
+		recipeButton.setPrefSize(250, 80);
+		recipeButton.setStyle("-fx-font-size: 20px");
+		BackgroundImage recipeBut = new BackgroundImage(image, null, null, null, null);
+		recipeButton.setBackground(new Background(recipeBut));
+		recipeButton.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				ChefZoneController.soundPlay("sound/ClickSound.wav");
+				RecipePane recipePane = new RecipePane();
+				gamePane.getGameStage().setScene(recipePane.getScene());
+			}
+		});
+
+		rightZone.getChildren().add(recipeButton);
+		rightZone.getChildren().add(new Label());
+		shopPane = new ShopPane();
+		rightZone.getChildren().add(shopPane);
+		this.getChildren().add(rightZone);
 	}
+
+	public static RollPane getRollpane() {
+		return rollpane;
+	}
+
+	public static RollButton getRollButton() {
+		return rollButton;
+	}
+
+	public static IngredientPane getIngredientpane() {
+		return ingredientpane;
+	}
+
+	public static RecipePane getRecipePane() {
+		return recipePane;
+	}
+
+	public static ShopPane getShopPane() {
+		return shopPane;
+	}
+
+	public static BoostPane getBoostpane() {
+		return boostpane;
+	}
+
+}

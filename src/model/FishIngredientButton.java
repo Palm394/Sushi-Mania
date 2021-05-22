@@ -6,27 +6,16 @@ import logic.ChefZoneController;
 import model.base.Boostable;
 
 public class FishIngredientButton extends IngredientButton implements Boostable {
-	
+
 	public FishIngredientButton(Ingredient ingredient) {
-		
+
 		super(ingredient);
-		
-		FishIngredientButton button = this;
-		
-		this.setOnAction(new EventHandler<ActionEvent>(){
+
+		this.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-					ChefZoneController.addIngredient(button);
-					
-					if(ChefZoneController.isFishBoost() == true)
-					{
-						ChefZoneController.setExtraScore(ChefZoneController.getExtraScore()+10);
-						System.out.println("added 10 point for extra score");
-						System.out.println(ChefZoneController.getExtraScore());
-					}
-					
-				}
+				fishIngredientButtonHandler();
 			}
-		);
+		});
 	}
 
 	@Override
@@ -34,5 +23,16 @@ public class FishIngredientButton extends IngredientButton implements Boostable 
 		// TODO Auto-generated method stub
 		this.setStyle("-fx-background-color: yellow;");
 		ChefZoneController.boostCountdown(20, this);
+	}
+
+	public void fishIngredientButtonHandler() {
+		FishIngredientButton button = this;
+		ChefZoneController.addIngredient(button);
+
+		if (ChefZoneController.isFishBoost() == true) {
+			ChefZoneController.setExtraScore(ChefZoneController.getExtraScore() + 10);
+			System.out.println("added 10 point for extra score");
+			System.out.println(ChefZoneController.getExtraScore());
+		}
 	}
 }

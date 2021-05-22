@@ -13,33 +13,33 @@ import javafx.stage.Stage;
 import logic.ChefZoneController;
 
 public class menuPane extends VBox {
-	
+
 	private static Scene menuScene;
 	private static Stage menuStage;
-	
+
 	private final static int WIDTH_SIZE = 400;
 	private final static int HEIGHT_SIZE = 600;
-	
+
 	public menuPane() {
-		Image image = new Image("FirstPage.jpg",400,600,false,false);
-		BackgroundImage background = new BackgroundImage(image,null,null,null,null);
+		Image image = new Image("FirstPage.jpg", 400, 600, false, false);
+		BackgroundImage background = new BackgroundImage(image, null, null, null, null);
 		this.setBackground(new Background(background));
 		this.setAlignment(Pos.CENTER);
 		this.setSpacing(20);
-		
+
 		createStartButton();
 		tutorialButton();
 		creditButton();
-		
-		menuScene = new Scene(this,WIDTH_SIZE,HEIGHT_SIZE);
+
+		menuScene = new Scene(this, WIDTH_SIZE, HEIGHT_SIZE);
 		menuStage = new Stage();
 		menuStage.setScene(menuScene);
 		menuStage.setTitle("Sushi Mania - Menu");
 		menuStage.getIcons().add(new Image("MenuImage/Sushi3.PNG"));
 		menuStage.setResizable(false);
 	}
-	
-	public void createStartButton() {
+
+	private void createStartButton() {
 		Button startButton = new Button("Start Game");
 		startButton.setPrefWidth(160);
 		startButton.setPrefHeight(40);
@@ -51,16 +51,15 @@ public class menuPane extends VBox {
 				gamePane game = new gamePane();
 				game.createNewGame(menuStage);
 			}
-			
+
 		});
 		this.getChildren().add(startButton);
 	}
-	
-	
-	public void tutorialButton() {
+
+	private void tutorialButton() {
 		Button tutorialButton = new Button("How to play");
 		tutorialButton.setPrefWidth(160);
-		tutorialButton.setPrefHeight(40);		
+		tutorialButton.setPrefHeight(40);
 		tutorialButton.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -70,16 +69,15 @@ public class menuPane extends VBox {
 				menuStage.setScene(tutorial.scene);
 				menuStage.setTitle("Sushi Mania - Tutorial");
 			}
-			
+
 		});
 		this.getChildren().add(tutorialButton);
 	}
-	
-	
-	public void creditButton() {
+
+	private void creditButton() {
 		Button creditButton = new Button("Credit");
 		creditButton.setPrefWidth(160);
-		creditButton.setPrefHeight(40);		
+		creditButton.setPrefHeight(40);
 		creditButton.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -89,16 +87,16 @@ public class menuPane extends VBox {
 				menuStage.setScene(credit.getScene());
 				menuStage.setTitle("Sushi Mania - Credit");
 			}
-			
+
 		});
 		this.getChildren().add(creditButton);
 	}
-	
+
 	public static void backToMenu() {
 		menuStage.setScene(menuScene);
 		menuStage.setTitle("Sushi Mania - Menu");
 	}
-	
+
 	public Stage getMenuStage() {
 		return menuStage;
 	}
@@ -110,6 +108,5 @@ public class menuPane extends VBox {
 	public static int getHEIGHT_SIZE() {
 		return HEIGHT_SIZE;
 	}
-	
-	
+
 }

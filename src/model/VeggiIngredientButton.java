@@ -7,34 +7,35 @@ import model.base.Boostable;
 
 public class VeggiIngredientButton extends IngredientButton implements Boostable {
 	public VeggiIngredientButton(Ingredient ingredient) {
-		
-		super(ingredient);
-		
-		VeggiIngredientButton button = this;
-		
-		this.setOnAction(new EventHandler<ActionEvent>(){
-			public void handle(ActionEvent event) {
-					ChefZoneController.addIngredient(button);
 
-					if(ChefZoneController.isVeggiBoost() == true)
-					{
-						ChefZoneController.setExtraScore(ChefZoneController.getExtraScore()+7);
-						System.out.println("added 7 point for extra score");
-						System.out.println(ChefZoneController.getExtraScore());
-					}
-				}
+		super(ingredient);
+
+		this.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				veggiIgredientButtonHandler();
 			}
-		);
+		});
 	}
 
 	@Override
 	public void Boost() {
-		
+
 		// TODO Auto-generated method stub
-		this.setStyle("-fx-background-color: lime;");		
+		this.setStyle("-fx-background-color: lime;");
 		ChefZoneController.boostCountdown(20, this);
-		
+
 	}
 
+	public void veggiIgredientButtonHandler() {
+		VeggiIngredientButton button = this;
+
+		ChefZoneController.addIngredient(button);
+
+		if (ChefZoneController.isVeggiBoost() == true) {
+			ChefZoneController.setExtraScore(ChefZoneController.getExtraScore() + 7);
+			System.out.println("added 7 point for extra score");
+			System.out.println(ChefZoneController.getExtraScore());
+		}
+	}
 
 }

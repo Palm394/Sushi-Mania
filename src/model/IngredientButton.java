@@ -8,10 +8,10 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import logic.ChefZoneController;
 
-public class IngredientButton extends Button{
+public class IngredientButton extends Button {
 	private Ingredient ingredient;
-	
-	public IngredientButton(Ingredient ingredient){
+
+	public IngredientButton(Ingredient ingredient) {
 		this.ingredient = ingredient;
 		this.setPrefHeight(60);
 		this.setPrefWidth(85);
@@ -21,42 +21,43 @@ public class IngredientButton extends Button{
 		image.setFitHeight(50);
 		image.setFitWidth(50);
 		this.setGraphic(image);
-		this.setText(this.ingredient.getRemain()+"");
-		
+		this.setText(this.ingredient.getRemain() + "");
+
 		this.lock();
-		
-		IngredientButton button = this;
-		
-		this.setOnAction(new EventHandler<ActionEvent>(){
-			public void handle(ActionEvent event) {		
-					ChefZoneController.addIngredient(button);
-				}
+
+		this.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				ingredientButtonHandler();
 			}
-		);	
+		});
 	}
-	
+
 	public void buyIngredient() {
 		this.ingredient.setRemain(this.ingredient.getRemain() + 10);
-		if(!ChefZoneController.isFreeBoost())
-		{
-			this.setText(this.ingredient.getRemain()+"");
+		if (!ChefZoneController.isFreeBoost()) {
+			this.setText(this.ingredient.getRemain() + "");
 		}
 	}
-	
+
 	public void lock() {
 		this.setDisable(true);
 	}
-	
+
 	public void unlock() {
 		this.setDisable(false);
-	} 
-	
+	}
+
 	public void freeBoost() {
 		this.setText("99");
-		new Thread(()->{
+		new Thread(() -> {
 			ChefZoneController.countdown(20, ChefZoneGUI.getBoostpane().getFreeBoostButton(), "");
-			Platform.runLater(()->this.setText(this.ingredient.getRemain()+""));
+			Platform.runLater(() -> this.setText(this.ingredient.getRemain() + ""));
 		}).start();
+	}
+
+	public void ingredientButtonHandler() {
+		IngredientButton button = this;
+		ChefZoneController.addIngredient(button);
 	}
 
 	public Ingredient getIngredient() {
