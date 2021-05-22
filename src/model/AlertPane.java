@@ -117,6 +117,7 @@ public abstract class AlertPane {
 				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				//set exit
 				ChefZoneController.setExitTrue();
+				GameController.pauseGame();
 				
 				gamePane.getGameStage().close();
 				menuPane new_menu = new menuPane();
