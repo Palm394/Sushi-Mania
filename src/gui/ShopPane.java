@@ -121,26 +121,14 @@ public class ShopPane extends VBox implements Updatable{
 	}
 	
 	public boolean isOrdered() {
-		System.out.println("ordered : " + ingredientList.get(selectedIngredientID).getId());
 		return buyStatus[ingredientList.get(selectedIngredientID).getId()];
 	}
 	
 	//buy normal has to wait for time to delivery
 	private Runnable buyNormal = new Runnable() {
 		public void run() {
-			int timer = 5;
 			int ID = ingredientList.get(selectedIngredientID).getId();
-			//then delivery
-			while(timer > 0)
-			{
-				try {
-					System.out.println(ID + " " + timer + "     " + selectedIngredientID);
-					TimeUnit.SECONDS.sleep(1);
-				} catch (Exception e) {
-					System.out.println("Oops! something went wrong! :" + e.toString());
-				}
-				timer -= 1;
-			}
+			countdownBuy();
 			Platform.runLater(()->{
 				if(!ChefZoneController.isExit() || ChefZoneController.getExittedTime() <= 15)
 				{
@@ -157,6 +145,20 @@ public class ShopPane extends VBox implements Updatable{
 			buyStatus[ID] = false;
 		}
 	};
+	
+	public void countdownBuy() {
+		int timer = 5;
+		//then delivery
+		while(timer > 0)
+		{
+			try {
+				TimeUnit.SECONDS.sleep(1);
+			} catch (Exception e) {
+				System.out.println("Oops! something went wrong! :" + e.toString());
+			}
+			timer -= 1;
+		}
+	}
 	
 	public void buyNormalTo(int ID, int price) {
 		if(GameController.getScore() >= price) {	

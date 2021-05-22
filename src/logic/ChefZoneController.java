@@ -38,6 +38,7 @@ public class ChefZoneController {
 			while(exittedTime > 0 && !isStop)
 			{
 				try {
+					System.out.println(exittedTime);
 					TimeUnit.SECONDS.sleep(1);
 					exittedTime -= 1;
 				} catch (Exception e) {
@@ -57,7 +58,6 @@ public class ChefZoneController {
 	}
 	
 	public static void addIngredient(IngredientButton ingredientbutton) {
-		System.out.println(isFreeBoost);
 		if((getIngredientRemain(ingredientbutton)>0 || isFreeBoost) && ChefZoneController.getWrapper().size() < 12 )
 		{
 			ChefZoneController.soundPlay("sound/TickSound.wav");
@@ -65,7 +65,6 @@ public class ChefZoneController {
 			ingredientbutton.getIngredient().setRemain(getIngredientRemain(ingredientbutton)-1);
 			ingredientbutton.setText(getIngredientRemain(ingredientbutton)+"");
 			} 
-			System.out.println(ingredientbutton.getIngredient().getName());
 			ChefZoneController.wrapper.add(ingredientbutton.getIngredient());		
 			ChefZoneController.updateIngredient();
 		}
@@ -90,7 +89,6 @@ public class ChefZoneController {
 	
 	public static void updateIngredientButton() {
 		int ingredientSize = Database.getHasIngredient().size();
-		System.out.println(ingredientSize);
 		for(int i=0;i<ingredientSize;i++) {
 			ChefZoneGUI.getIngredientpane().getSupply().get(Database.getHasIngredient().get(i).getId()).unlock();
 		}
@@ -165,33 +163,6 @@ public class ChefZoneController {
 		} else {
 			boostCountdownToBoostButton(time, button);
 		}
-//		String returnText;
-//		returnText = button.getText();
-//		if(returnText == "99") {
-//			IngredientButton ingredientbutton = (IngredientButton) button;
-//			returnText = getIngredientRemain(ingredientbutton) + "";
-//		}
-//		String realText = returnText;
-//		
-//		new Thread(()->{
-//			if(!(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton))
-//			{
-//				Platform.runLater(()->button.setText(time+""));
-//			}
-//			countdown(time, button, realText);
-//			if(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton)
-//				{
-//				Platform.runLater(()->goBackNormal(button));
-//				if(button instanceof FishIngredientButton) {
-//					isFishBoost = false;
-//					} else {
-//						isVeggiBoost = false;
-//					}
-//				} 
-//			if(button instanceof IngredientButton && isFreeBoost && !isExit) {
-//				Platform.runLater(()->button.setText("99"));
-//			}
-//			}).start();
 	}
 	
 	public static void countdown(int time,Button button,String returnText) {
