@@ -71,6 +71,8 @@ public class BoostPane extends VBox{
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				FishBoostButton.setDisable(true);
+				logic.ChefZoneController.setFishBoost(true);
+				
 				FishIngredientButton fish;
 				fish = (FishIngredientButton) ChefZoneGUI.getIngredientpane().getSupply().get(6);
 				fish.Boost();

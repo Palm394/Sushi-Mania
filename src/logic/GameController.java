@@ -41,6 +41,7 @@ public class GameController {
 			ChefZoneGUI.getIngredientpane().getSupply().get(i).setText("10");
 			ChefZoneController.goBackNormal(ChefZoneGUI.getIngredientpane().getSupply().get(i));
 		}
+		ChefZoneController.getWrapper().clear();
 		ChefZoneController.setExtraScore(0);
 		ChefZoneController.setVeggiBoost(false);
 		ChefZoneController.setFishBoost(false);
