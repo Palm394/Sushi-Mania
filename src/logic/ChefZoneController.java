@@ -32,26 +32,22 @@ public class ChefZoneController {
 	public static void setExitTrue() {
 		isExit = true;
 		if(exittedTime != 20) {
-			exittedTime = 20;
-			isStop = true;
+			exittedTime = 20; isStop = true;
 		}
 		new Thread(()->{
 			while(exittedTime > 0 && !isStop)
 			{
 				try {
+					System.out.println(exittedTime);
 					TimeUnit.SECONDS.sleep(1);
 					exittedTime -= 1;
-					System.out.println("exit time = " + exittedTime + " " + isExit);
 				} catch (Exception e) {
-					System.out.println("oops! something went wrong!");
 				}
 			}
 			if(exittedTime == 0) {
 				isExit = false;
-				System.out.println("woohoo!");
 			}
-			exittedTime = 20;
-			isStop = false;
+			exittedTime = 20; isStop = false;
 		}).start();	
 	}
 	
@@ -62,15 +58,13 @@ public class ChefZoneController {
 	}
 	
 	public static void addIngredient(IngredientButton ingredientbutton) {
-		System.out.println(isFreeBoost);
-		if((ingredientbutton.getIngredient().getRemain()>0 || isFreeBoost) && ChefZoneController.getWrapper().size() < 12 )
+		if((getIngredientRemain(ingredientbutton)>0 || isFreeBoost) && ChefZoneController.getWrapper().size() < 12 )
 		{
 			ChefZoneController.soundPlay("sound/TickSound.wav");
-			if(isFreeBoost == false) {
-			ingredientbutton.getIngredient().setRemain(ingredientbutton.getIngredient().getRemain()-1);
-			ingredientbutton.setText(ingredientbutton.getIngredient().getRemain()+"");
+			if(!isFreeBoost) {
+			ingredientbutton.getIngredient().setRemain(getIngredientRemain(ingredientbutton)-1);
+			ingredientbutton.setText(getIngredientRemain(ingredientbutton)+"");
 			} 
-			System.out.println(ingredientbutton.getIngredient().getName());
 			ChefZoneController.wrapper.add(ingredientbutton.getIngredient());		
 			ChefZoneController.updateIngredient();
 		}
@@ -95,7 +89,6 @@ public class ChefZoneController {
 	
 	public static void updateIngredientButton() {
 		int ingredientSize = Database.getHasIngredient().size();
-		System.out.println(ingredientSize);
 		for(int i=0;i<ingredientSize;i++) {
 			ChefZoneGUI.getIngredientpane().getSupply().get(Database.getHasIngredient().get(i).getId()).unlock();
 		}
@@ -109,34 +102,67 @@ public class ChefZoneController {
 		button.setStyle("-fx-background-color: rgba(245,222,179,0.7);");
 	}
 	
-	public static void boostCountdown(int time,Button button) {
+	public static void boostCountdownToIngredientButton(int time,Button button) {
 		String returnText;
 		returnText = button.getText();
 		if(returnText == "99") {
 			IngredientButton ingredientbutton = (IngredientButton) button;
-			returnText = ingredientbutton.getIngredient().getRemain() + "";
+			returnText = getIngredientRemain(ingredientbutton) + "";
 		}
 		String realText = returnText;
 		
 		new Thread(()->{
-			if(!(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton))
-			{
-				Platform.runLater(()->button.setText(time+""));
-			}
+			Platform.runLater(()->button.setText(time+""));
 			countdown(time, button, realText);
-			if(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton)
-				{
-				Platform.runLater(()->goBackNormal(button));
-				if(button instanceof FishIngredientButton) {
-					isFishBoost = false;
-					} else {
-						isVeggiBoost = false;
-					}
-				} 
-			if(button instanceof IngredientButton && isFreeBoost && !isExit) {
+			if(isFreeBoost && !isExit) {
 				Platform.runLater(()->button.setText("99"));
 			}
 			}).start();
+	}
+	
+	public static void boostCountdownToSpecialIngredientButton(int time,Button button) {
+		String returnText;
+		returnText = button.getText();
+		if(returnText == "99") {
+			IngredientButton ingredientbutton = (IngredientButton) button;
+			returnText = getIngredientRemain(ingredientbutton) + "";
+		}
+		String realText = returnText;
+		new Thread(()->{
+			countdown(time, button, realText);
+			Platform.runLater(()->goBackNormal(button));
+			if(button instanceof FishIngredientButton) {
+				isFishBoost = false;
+				} else {
+					isVeggiBoost = false;
+				}
+			if(isFreeBoost && !isExit) {
+				Platform.runLater(()->button.setText("99"));
+			}
+			}).start();
+	}
+	
+	public static void boostCountdownToBoostButton(int time,Button button) {
+		String returnText;
+		returnText = button.getText();
+		String realText = returnText;
+
+		new Thread(()->{
+			Platform.runLater(()->button.setText(time+""));
+			countdown(time, button, realText);
+			}).start();
+	}
+	
+	public static void boostCountdown(int time,Button button) {
+		if(button instanceof IngredientButton) {
+			if(button instanceof FishIngredientButton || button instanceof VeggiIngredientButton) {
+				boostCountdownToSpecialIngredientButton(time, button);
+			} else {
+				boostCountdownToIngredientButton(time, button);
+			}
+		} else {
+			boostCountdownToBoostButton(time, button);
+		}
 	}
 	
 	public static void countdown(int time,Button button,String returnText) {
@@ -161,7 +187,7 @@ public class ChefZoneController {
 			}
 	}
 	
-	public static void showAddedScore(int score) {
+	public static void addedScore(int score) {
 		Platform.runLater(()->gui.ChefZoneGUI.getRollButton().setText("+" + score));
 		new Thread(()->{
 			try {
@@ -171,65 +197,76 @@ public class ChefZoneController {
 				System.out.println("oops! something went wrong!");
 			}
 			Platform.runLater(()->gui.ChefZoneGUI.getRollButton().setText("roll!!"));
+			Platform.runLater(()->{GameController.addScore(extraScore);extraScore = 0;});
 		}).start();
 	}
 	
-	public static void wrap(ArrayList<Ingredient> wrapper) {
-		if(wrapper.size()>0 && SushiTrain.canPlaceDish()==true) {
-			String hcode = "";
-			int[] ingredientSet = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};  
+	public static String makeIngredientHcode() {
+		String hcode = "";
+		int[] ingredientSet = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};  
 		
-			for(int i=0 ;i<wrapper.size() ;i++) {
-				ingredientSet[wrapper.get(i).getId()] += 1;
-			}
-			
-			//show ingredient code
-			for(int i=0;i<=15;i++)
-			{
-				hcode += ingredientSet[i];
-			}
-			
-			System.out.println(hcode);
-			
-			//find menu which can make
-			FoodList sushi = new FoodList(99);
-			boolean check = false;
-			int menuID = 1;
-			while(check == false) {
-				if(hcode.equals(new FoodList(menuID).getHcode()) ) {
-					sushi = new FoodList(menuID);
-					check = true;
-				} else if(menuID > 32) {
-					break;
-				}
-				menuID += 1;
-			}
-			
-			System.out.println("food found : " + sushi.getName() + " price=" + sushi.getPrice());
+		//summary ingredient to array
+		for(int i=0 ;i<wrapper.size() ;i++) {
+			ingredientSet[wrapper.get(i).getId()] += 1;
+		}
 		
-			//function to send sushi to the road
-			if(SushiTrain.canPlaceDish()) {
-				SushiTrain.addNewDish(sushi);
-				//play sound
-				if(check == true) {
-					soundPlay("sound/SuccessRollSound.wav");
-				} else {
-					soundPlay("sound/FailRollSound.wav");
-				}	
+		//set ingredient code to string
+		for(int i=0;i<=15;i++)
+		{
+			hcode += ingredientSet[i];
+		}
+		return hcode;
+	}
+	
+	public static FoodList matchSushi(String hcode) {
+		//find menu which can make
+		FoodList matchSushi = new FoodList(99);
+		boolean isFound = false;
+		int menuID = 1;
+		while(!isFound) {
+			if(hcode.equals(new FoodList(menuID).getHcode()) ) {
+				matchSushi = new FoodList(menuID);
+				isFound = true;
+			} else if(menuID > 32) {
+				break;
 			}
-			///////////////////////////////////
+			menuID += 1;
+		}
+		return matchSushi;
+	}
+	
+	//function to send sushi to the road
+	public static void sendSushi(FoodList matchSushi) {
+		if(SushiTrain.canPlaceDish()) {
+			SushiTrain.addNewDish(matchSushi);
+			//play sound
+			if(!matchSushi.getName().equals("unknown")) {
+				soundPlay("sound/SuccessRollSound.wav");
+			} else {
+				soundPlay("sound/FailRollSound.wav");
+			}	
+		}
+	}
+	
+	public static void wrap() {
+		if(wrapper.size()>0 && SushiTrain.canPlaceDish()) {
+			
+			String hcode = makeIngredientHcode();
+			FoodList matchSushi = matchSushi(hcode);
+			sendSushi(matchSushi);
 			
 			Platform.runLater(()->ChefZoneGUI.getRollpane().removeIngredient());
 			wrapper.clear();
-			
-			if(check == true && (isVeggiBoost == true || isFishBoost == true)) {
-				showAddedScore(extraScore);
-				Platform.runLater(()->{GameController.addScore(extraScore);extraScore = 0;});
+			if(!matchSushi.getName().equals("unknown") && (isVeggiBoost || isFishBoost)) {
+				addedScore(extraScore);
 			} else {
 				extraScore = 0;
 			}
-			
 		} 
+	}
+	
+	public static int getIngredientRemain(IngredientButton ingredientbutton) {
+		return ingredientbutton.getIngredient().getRemain();
 	}
 	
 	public static boolean isExit() {
