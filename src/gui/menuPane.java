@@ -35,6 +35,7 @@ public class menuPane extends VBox {
 		menuStage = new Stage();
 		menuStage.setScene(menuScene);
 		menuStage.setTitle("Sushi Mania - Menu");
+		menuStage.getIcons().add(new Image("MenuImage/Sushi3.PNG"));
 		menuStage.setResizable(false);
 	}
 	

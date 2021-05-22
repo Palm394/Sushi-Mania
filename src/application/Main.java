@@ -20,7 +20,6 @@ public class Main extends Application {
 		Database.initialize();
 		Utility.setAllVolume(0.5);
 		primaryStage = menu.getMenuStage();
-		primaryStage.getIcons().add(new Image("MenuImage/Sushi3.PNG"));
 		primaryStage.show();	
 		
 		//play music loop
