@@ -57,7 +57,7 @@ public abstract class AlertPane {
 	}
 	
 	protected void addCenter() {
-		
+		// Add elements for center position in this method.
 	}
 	
 	private void top() {
