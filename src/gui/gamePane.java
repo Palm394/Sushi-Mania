@@ -16,9 +16,7 @@ public class gamePane extends VBox  {
 	
 	public static final int WIDTH_SCREEN = 1000;
 	public static final int HEIGHT_SCREEN = 600;
-	
-	private Stage menuStage;
-	
+
 	public gamePane() {
 		gameScene = new Scene(this,WIDTH_SCREEN,HEIGHT_SCREEN);
 		GameController.initialize();
@@ -53,8 +51,7 @@ public class gamePane extends VBox  {
 	}
 	
 	public void createNewGame(Stage menuStage) {
-		this.menuStage = menuStage; 
-		this.menuStage.close();
+		menuStage.close();
 		gameStage.show();
 	}
 	
