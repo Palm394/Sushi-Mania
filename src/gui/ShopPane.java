@@ -137,7 +137,7 @@ public class ShopPane extends VBox implements Updatable{
 					System.out.println(ID + " " + timer + "     " + selectedIngredientID);
 					TimeUnit.SECONDS.sleep(1);
 				} catch (Exception e) {
-					System.out.println("Oops! something went wrong! :");
+					System.out.println("Oops! something went wrong! :" + e.toString());
 				}
 				timer -= 1;
 			}
