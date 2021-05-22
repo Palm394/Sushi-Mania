@@ -134,7 +134,10 @@ public class ChefZoneController {
 				countdown(time, ChefZoneGUI.getBoostpane().getVeggiBoostButton(), "");
 				isVeggiBoost = false;
 			}
-			Platform.runLater(() -> goBackNormal(button));
+			if(!isExit)
+			{
+				Platform.runLater(() -> goBackNormal(button));
+			}
 			if (isFreeBoost && !isExit) {
 				Platform.runLater(() -> button.setText("99"));
 			}
