@@ -28,9 +28,9 @@ public class GameController {
 	private static long lastTimeTriggered;
 	
 	public static void initialize() {
-		Score = 200;
+		Score = 500;
 		Level = 1;
-		Target = 500;
+		Target = 1000;
 		lastTimeTriggered = -1;
 		//setup for chef zone
 		for(int i=0;i<=15;i++) {
@@ -83,7 +83,7 @@ public class GameController {
 	
 	private static void newLevel() {
 		Level += 1;
-		Target += 250;
+		Target += 500;
 		StatusBar.getTargetLabel().update();
 		StatusBar.getLevelLabel().update();
 		

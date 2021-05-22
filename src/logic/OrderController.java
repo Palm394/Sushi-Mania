@@ -13,7 +13,7 @@ import model.FoodList;
 import model.SetTime;
 
 public class OrderController extends SetTime {
-		private final int waitTime = 3;
+		private final int waitTime = 5;
 		
 		private Random rand = new Random();
 
@@ -27,7 +27,6 @@ public class OrderController extends SetTime {
 				        	
 				        	for(Customer customer : CustomerGUI.getCustomerList()) {
 				        		if(customer.getWant() == null) {
-				        			customer.setWaitTime(waitTime);
 				        			CustomerBlankList.add(customer);
 				        		}else {
 				        			customer.setWaitTime(customer.getWaitTime() - 1);
@@ -36,12 +35,15 @@ public class OrderController extends SetTime {
 				        			}
 				        		}
 				        	}
-				        	Customer isSelected = CustomerBlankList.get(rand.nextInt(CustomerBlankList.size()));
-				            FoodList isWant = Database.getHasMenu().get(rand.nextInt(Database.getHasMenu().size()));
-				        	isSelected.setWantURL(isWant.getUrl());
-				        	isSelected.setWant(isWant.getName());
-				        	
-				        	CustomerGUI.drawWant();
+				        	if(CustomerBlankList.size() > 0) {
+					        	Customer isSelected = CustomerBlankList.get(rand.nextInt(CustomerBlankList.size()));
+					        	isSelected.setWaitTime(waitTime);
+					            FoodList isWant = Database.getHasMenu().get(rand.nextInt(Database.getHasMenu().size()));
+					        	isSelected.setWantURL(isWant.getUrl());
+					        	isSelected.setWant(isWant.getName());
+					        	
+					        	CustomerGUI.drawWant();
+				        	}
 				        }
 				    )
 			);
