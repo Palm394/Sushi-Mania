@@ -9,8 +9,8 @@ import model.AlertPane;
 
 public class GameOverPane extends AlertPane{
 
-	public GameOverPane(String title,double W, double H) {
-		super(title,W, H);
+	public GameOverPane(String title,double W, double H, boolean pause) {
+		super(title,W, H, pause);
 		top.getChildren().remove(0);
 		
 		AudioClip sound = new AudioClip(ClassLoader.getSystemResource("sound/GameOver.mp3").toString());

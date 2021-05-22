@@ -7,8 +7,8 @@ import model.AlertPane;
 
 public class LevelUpPane extends AlertPane{
 
-	public LevelUpPane(String title, double W, double H) {
-		super(title, W, H);
+	public LevelUpPane(String title, double W, double H, boolean pause) {
+		super(title, W, H, pause);
 		top.getChildren().remove(0);
 	}
 

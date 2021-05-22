@@ -58,7 +58,7 @@ public class StatusBar extends HBox {
 			@Override
 			public void handle(ActionEvent event) {
 				ChefZoneController.soundPlay("sound/ClickSound.wav");
-				AlertPane settings = new SettingPane("Settings",gamePane.getWidthScreen(),gamePane.getHeightScreen());
+				AlertPane settings = new SettingPane("Settings",gamePane.getWidthScreen(),gamePane.getHeightScreen(),false);
 				gamePane.getGameStage().setScene(settings.getScene());
 			}
 			

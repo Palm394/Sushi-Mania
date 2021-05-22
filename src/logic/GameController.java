@@ -65,7 +65,7 @@ public class GameController {
 							newLevel();
 						}else {
 							//GameOver
-							AlertPane gameOver = new GameOverPane("Game Over",gamePane.getWidthScreen(),gamePane.getHeightScreen());
+							AlertPane gameOver = new GameOverPane("Game Over",gamePane.getWidthScreen(),gamePane.getHeightScreen(),true);
 							gamePane.getGameStage().setScene(gameOver.getScene());
 						}
 					}
@@ -89,7 +89,7 @@ public class GameController {
 		
 		System.out.println("pass : " + Level);
 		Database.newLV(Level);
-		LevelUpPane levelup = new LevelUpPane("Level UP!",gamePane.WIDTH_SCREEN,gamePane.HEIGHT_SCREEN);
+		LevelUpPane levelup = new LevelUpPane("Level UP!",gamePane.WIDTH_SCREEN,gamePane.HEIGHT_SCREEN,true);
 		gamePane.getGameStage().setScene(levelup.getScene());
 
 	}

@@ -26,9 +26,11 @@ public abstract class AlertPane {
 	protected HBox top;
 	protected VBox center;
 
-	public AlertPane(String title,double W,double H) {
-		GameController.pauseGame();
-		
+	public AlertPane(String title,double W,double H,boolean pause) {
+		if(pause) {
+			GameController.pauseGame();
+		}
+
 		root = new BorderPane();
 		scene = new Scene(root,W,H);
 		name = title;

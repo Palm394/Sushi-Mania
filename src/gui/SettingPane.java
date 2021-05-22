@@ -12,8 +12,8 @@ public class SettingPane extends AlertPane {
 
 	private Label Sound_Label;
 	
-	public SettingPane(String title, double W, double H) {
-		super(title, W, H);
+	public SettingPane(String title, double W, double H,boolean pause) {
+		super(title, W, H, pause);
 		setSliderVol();
 	}
 	
