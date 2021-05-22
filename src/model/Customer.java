@@ -27,7 +27,7 @@ public class Customer {
 	}
 	
 	public int isDetect(Food food) {
-		if(food.getPosX() + 25 == PosX ) {//&& food.getName() == want
+		if(food.getPosX() + 15 == PosX ) {
 			return number;
 		}else {
 			return -1;
