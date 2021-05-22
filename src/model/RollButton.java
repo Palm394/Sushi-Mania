@@ -23,7 +23,7 @@ public class RollButton extends Button{
 		this.setOnAction(new EventHandler<ActionEvent>(){
 			public void handle(ActionEvent event) {
 				new Thread(()->{
-					ChefZoneController.wrap(ChefZoneController.getWrapper());
+					ChefZoneController.wrap();
 				}).start();
 			}
 		}
