@@ -41,6 +41,7 @@ public class SushiTrainGUI extends Canvas {
 		drawSushiTrain(gc);
 		
 		for(FoodList dish : TrainDraw) {
+			gc.drawImage(Utility.DISH, dish.getPosX() - 20, dish.getPosY() - 5);
 			gc.drawImage(dish.getImage(), dish.getPosX(), dish.getPosY() + 20);
 		}
 	}
