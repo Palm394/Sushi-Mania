@@ -3,6 +3,7 @@ package application;
 import java.util.concurrent.TimeUnit;
 import gui.menuPane;
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 
@@ -19,6 +20,7 @@ public class Main extends Application {
 		Database.initialize();
 		Utility.setAllVolume(0.5);
 		primaryStage = menu.getMenuStage();
+		primaryStage.getIcons().add(new Image("MenuImage/Sushi3.PNG"));
 		primaryStage.show();	
 		
 		//play music loop

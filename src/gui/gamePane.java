@@ -2,6 +2,7 @@ package gui;
 
 import application.Database;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import logic.ChefZoneController;
@@ -44,6 +45,7 @@ public class gamePane extends VBox  {
 		//--- End ---
 		
 		gameStage = new Stage();
+		gameStage.getIcons().add(new Image("MenuImage/Sushi3.PNG"));
 		gameStage.setTitle("Sushi Mania - Game");
 		gameStage.setScene(gameScene);
 		gameStage.setResizable(false);
