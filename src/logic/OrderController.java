@@ -13,7 +13,7 @@ import model.FoodList;
 import model.SetTime;
 
 public class OrderController extends SetTime {
-		private final int waitTime = 5;
+		private final int waitTime = 10;
 		
 		private Random rand = new Random();
 
