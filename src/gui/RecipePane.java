@@ -19,7 +19,7 @@ public class RecipePane {
 	private VBox root;
 	private Scene scene;
 	private int selectedImage = 0;
-	private ImageView recipeImage = new ImageView("Recipe/Recipe1.jpg");
+	private ImageView recipeImage = new ImageView("Recipe/Recipe1.JPG");
 	private ArrayList<Image> recipeAlbum = new ArrayList<Image>();
 
 	public RecipePane() {
@@ -89,7 +89,7 @@ public class RecipePane {
 			public void handle(ActionEvent event) {
 				ChefZoneController.soundPlay("sound/ClickSound.wav");
 				selectedImage = ((selectedImage + 1) % 7);
-				recipeImage.setImage(new Image("Recipe/Recipe" + selectedImage + ".jpg"));
+				recipeImage.setImage(new Image("Recipe/Recipe" + selectedImage + ".JPG"));
 			}
 		});
 		return toRight;
