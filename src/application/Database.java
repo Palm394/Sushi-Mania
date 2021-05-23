@@ -3,7 +3,6 @@ package application;
 import java.util.ArrayList;
 
 import logic.ChefZoneController;
-import logic.GameController;
 import model.FoodList;
 import model.Ingredient;
 

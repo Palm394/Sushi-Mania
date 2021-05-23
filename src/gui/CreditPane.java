@@ -13,10 +13,9 @@ import javafx.scene.layout.VBox;
 import logic.ChefZoneController;
 
 public class CreditPane extends VBox {
-	private Scene scene;
-
+	
 	public CreditPane() {
-		scene = new Scene(this, 400, 600);
+		new Scene(this, 400, 600);
 		this.setAlignment(Pos.CENTER);
 		Image image = new Image("CreditPage.jpg", 400, 600, false, false);
 		BackgroundImage background = new BackgroundImage(image, null, null, null, null);
