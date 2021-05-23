@@ -43,13 +43,13 @@ public class RecipePane {
 	}
 
 	private void addRecipeUlbum() {
-		recipeAlbum.add(new Image("Recipe/Recipe0.jpg"));
-		recipeAlbum.add(new Image("Recipe/Recipe1.jpg"));
-		recipeAlbum.add(new Image("Recipe/Recipe2.jpg"));
-		recipeAlbum.add(new Image("Recipe/Recipe3.jpg"));
-		recipeAlbum.add(new Image("Recipe/Recipe4.jpg"));
-		recipeAlbum.add(new Image("Recipe/Recipe5.jpg"));
-		recipeAlbum.add(new Image("Recipe/Recipe6.jpg"));
+		recipeAlbum.add(new Image("Recipe/Recipe0.JPG"));
+		recipeAlbum.add(new Image("Recipe/Recipe1.JPG"));
+		recipeAlbum.add(new Image("Recipe/Recipe2.JPG"));
+		recipeAlbum.add(new Image("Recipe/Recipe3.JPG"));
+		recipeAlbum.add(new Image("Recipe/Recipe4.JPG"));
+		recipeAlbum.add(new Image("Recipe/Recipe5.JPG"));
+		recipeAlbum.add(new Image("Recipe/Recipe6.JPG"));
 	}
 
 	protected Button closeButton() {

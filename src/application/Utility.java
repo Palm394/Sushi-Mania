@@ -27,7 +27,7 @@ public class Utility {
 	}
 	
 	public static void loadResource() {
-		SushiTrainBG = new Image(ClassLoader.getSystemResource("SushiTrain.png").toString());
+		SushiTrainBG = new Image(ClassLoader.getSystemResource("sushiTrain.png").toString());
 		BackgroundImage = new Image(ClassLoader.getSystemResource("customerUP.png").toString());
 		CustomerImage = new Image(ClassLoader.getSystemResource("customerDOWN.png").toString());
 		DISH = new Image(ClassLoader.getSystemResource("dish.png").toString());
