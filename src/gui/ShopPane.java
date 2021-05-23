@@ -43,7 +43,7 @@ public class ShopPane extends VBox implements Updatable {
 		}
 		this.update();
 
-		Label shopTitle = new Label("Ingredient Delivery");
+		shopTitle = new Label("Ingredient Delivery");
 		shopTitle.setStyle("-fx-font-size: 16px;");
 
 		this.getChildren().add(shopTitle);
