@@ -3,7 +3,7 @@
   realizations="true" associations="false" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="application.Database" project="Sushi-Mania" 
     file="/Sushi-Mania/src/application/Database.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="186" y="141"/>    
+    <position height="191" width="244" x="50" y="-2"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="application.Main" project="Sushi-Mania" 
     file="/Sushi-Mania/src/application/Main.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="410" y="105"/>    
+    <position height="137" width="124" x="334" y="-2"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="application.Utility" project="Sushi-Mania" 
     file="/Sushi-Mania/src/application/Utility.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="611" y="177"/>    
+    <position height="263" width="199" x="498" y="-2"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,70 +30,70 @@
   </class>  
   <class id="4" language="java" name="gui.ShopPane" project="Sushi-Mania" file="/Sushi-Mania/src/gui/ShopPane.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1857" y="851"/>    
+    <position height="-1" width="-1" x="2668" y="832"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="gui.CreditPane" project="Sushi-Mania" file="/Sushi-Mania/src/gui/CreditPane.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3089" y="342"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="6" language="java" name="gui.LevelUpPane" project="Sushi-Mania" 
+  <class id="5" language="java" name="gui.LevelUpPane" project="Sushi-Mania" 
     file="/Sushi-Mania/src/gui/LevelUpPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1075" y="383"/>    
+    <position height="-1" width="-1" x="1078" y="992"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="gui.IngredientPane" project="Sushi-Mania" 
-    file="/Sushi-Mania/src/gui/IngredientPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2201" y="685"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="8" language="java" name="gui.RecipePane" project="Sushi-Mania" file="/Sushi-Mania/src/gui/RecipePane.java" 
+  <class id="6" language="java" name="gui.RollPane" project="Sushi-Mania" file="/Sushi-Mania/src/gui/RollPane.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2241" y="408"/>    
+    <position height="-1" width="-1" x="1912" y="381"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="gui.CustomerGUI" project="Sushi-Mania" 
+  <class id="7" language="java" name="gui.RecipePane" project="Sushi-Mania" file="/Sushi-Mania/src/gui/RecipePane.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1560" y="277"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="gui.CustomerGUI" project="Sushi-Mania" 
     file="/Sushi-Mania/src/gui/CustomerGUI.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="209" width="239" x="1840" y="293"/>    
+    <position height="-1" width="-1" x="3770" y="478"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="gui.GameOverPane" project="Sushi-Mania" 
+  <class id="9" language="java" name="gui.GameOverPane" project="Sushi-Mania" 
     file="/Sushi-Mania/src/gui/GameOverPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1350" y="387"/>    
+    <position height="-1" width="-1" x="1074" y="840"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="gui.TutorialPane" project="Sushi-Mania" 
-    file="/Sushi-Mania/src/gui/TutorialPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="173" width="173" x="2390" y="293"/>    
+  <class id="10" language="java" name="gui.CreditPane" project="Sushi-Mania" file="/Sushi-Mania/src/gui/CreditPane.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="173" x="1699" y="144"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="gui.IngredientPane" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/gui/IngredientPane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="119" width="241" x="1912" y="144"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -102,25 +102,25 @@
   </class>  
   <class id="12" language="java" name="gui.gamePane" project="Sushi-Mania" file="/Sushi-Mania/src/gui/gamePane.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="299" width="181" x="2603" y="293"/>    
+    <position height="281" width="181" x="2193" y="144"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="gui.RollPane" project="Sushi-Mania" file="/Sushi-Mania/src/gui/RollPane.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2889" y="346"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="14" language="java" name="gui.SettingPane" project="Sushi-Mania" 
+  <class id="13" language="java" name="gui.SettingPane" project="Sushi-Mania" 
     file="/Sushi-Mania/src/gui/SettingPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1619" y="401"/>    
+    <position height="-1" width="-1" x="1086" y="658"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="gui.BoostPane" project="Sushi-Mania" file="/Sushi-Mania/src/gui/BoostPane.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2536" y="285"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -129,7 +129,7 @@
   </class>  
   <class id="15" language="java" name="gui.StatusBar" project="Sushi-Mania" file="/Sushi-Mania/src/gui/StatusBar.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3336" y="423"/>    
+    <position height="281" width="216" x="2946" y="144"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -138,7 +138,7 @@
   </class>  
   <class id="16" language="java" name="gui.ChefZoneGUI" project="Sushi-Mania" 
     file="/Sushi-Mania/src/gui/ChefZoneGUI.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3580" y="360"/>    
+    <position height="299" width="216" x="3202" y="144"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -147,7 +147,7 @@
   </class>  
   <class id="17" language="java" name="gui.menuPane" project="Sushi-Mania" file="/Sushi-Mania/src/gui/menuPane.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3793" y="423"/>    
+    <position height="281" width="153" x="3458" y="144"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -156,235 +156,314 @@
   </class>  
   <class id="18" language="java" name="gui.SushiTrainGUI" project="Sushi-Mania" 
     file="/Sushi-Mania/src/gui/SushiTrainGUI.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="4026" y="387"/>    
+    <position height="209" width="232" x="3651" y="144"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="19" language="java" name="logic.TimerController" project="Sushi-Mania" 
+  <class id="19" language="java" name="gui.TutorialPane" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/gui/TutorialPane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="263" width="197" x="3923" y="144"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="logic.TimerController" project="Sushi-Mania" 
     file="/Sushi-Mania/src/logic/TimerController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="870" y="705"/>    
+    <position height="-1" width="-1" x="1528" y="1046"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="logic.OrderController" project="Sushi-Mania" 
+  <class id="21" language="java" name="logic.OrderController" project="Sushi-Mania" 
     file="/Sushi-Mania/src/logic/OrderController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1040" y="723"/>    
+    <position height="-1" width="-1" x="1698" y="1064"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="21" language="java" name="logic.GameController" project="Sushi-Mania" 
+  <class id="22" language="java" name="logic.GameController" project="Sushi-Mania" 
     file="/Sushi-Mania/src/logic/GameController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="193" y="702"/>    
+    <position height="-1" width="-1" x="529" y="548"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="logic.ChefZoneController" project="Sushi-Mania" 
+  <class id="23" language="java" name="logic.ChefZoneController" project="Sushi-Mania" 
     file="/Sushi-Mania/src/logic/ChefZoneController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="438" y="573"/>    
+    <position height="-1" width="-1" x="222" y="706"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="23" language="java" name="model.AlertPane" project="Sushi-Mania" 
-    file="/Sushi-Mania/src/model/AlertPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1324" y="124"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="24" language="java" name="model.NavButton" project="Sushi-Mania" 
-    file="/Sushi-Mania/src/model/NavButton.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2662" y="144"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="25" language="java" name="model.Customer" project="Sushi-Mania" file="/Sushi-Mania/src/model/Customer.java" 
+  <class id="24" language="java" name="model.Customer" project="Sushi-Mania" file="/Sushi-Mania/src/model/Customer.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2783" y="966"/>    
+    <position height="-1" width="-1" x="564" y="1440"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="26" language="java" name="model.Food" project="Sushi-Mania" file="/Sushi-Mania/src/model/Food.java" 
+  <class id="25" language="java" name="model.FishIngredientButton" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/model/FishIngredientButton.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2221" y="1550"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="model.FoodList" project="Sushi-Mania" file="/Sushi-Mania/src/model/FoodList.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="677" y="1302"/>    
+    <position height="-1" width="-1" x="2334" y="696"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="27" language="java" name="model.SushiTrain" project="Sushi-Mania" 
-    file="/Sushi-Mania/src/model/SushiTrain.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3020" y="955"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="28" language="java" name="model.LabelStatus" project="Sushi-Mania" 
-    file="/Sushi-Mania/src/model/LabelStatus.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="972" y="864"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="29" language="java" name="model.FoodList" project="Sushi-Mania" file="/Sushi-Mania/src/model/FoodList.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="852" y="1303"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="30" language="java" name="model.Ingredient" project="Sushi-Mania" 
+  <class id="27" language="java" name="model.Ingredient" project="Sushi-Mania" 
     file="/Sushi-Mania/src/model/Ingredient.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2567" y="966"/>    
+    <position height="-1" width="-1" x="749" y="1404"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="31" language="java" name="model.SetTime" project="Sushi-Mania" file="/Sushi-Mania/src/model/SetTime.java" 
+  <class id="28" language="java" name="model.AlertPane" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/model/AlertPane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1616" y="753"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="model.NavButton" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/model/NavButton.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1495" y="1605"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="model.Food" project="Sushi-Mania" file="/Sushi-Mania/src/model/Food.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="947" y="554"/>    
+    <position height="-1" width="-1" x="2084" y="703"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="32" language="java" name="model.LabelStatusBar.ScoreLabel" project="Sushi-Mania" 
-    file="/Sushi-Mania/src/model/LabelStatusBar/ScoreLabel.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="724" y="1014"/>    
+  <class id="31" language="java" name="model.SushiTrain" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/model/SushiTrain.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="951" y="1354"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="33" language="java" name="model.LabelStatusBar.LevelLabel" project="Sushi-Mania" 
-    file="/Sushi-Mania/src/model/LabelStatusBar/LevelLabel.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="891" y="1014"/>    
+  <class id="32" language="java" name="model.LabelStatus" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/model/LabelStatus.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3062" y="1601"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="34" language="java" name="model.LabelStatusBar.TargetLabel" project="Sushi-Mania" 
-    file="/Sushi-Mania/src/model/LabelStatusBar/TargetLabel.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1058" y="1014"/>    
+  <class id="33" language="java" name="model.ClearButton" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/model/ClearButton.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1683" y="1598"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="35" language="java" name="model.LabelStatusBar.TimerLabel" project="Sushi-Mania" 
-    file="/Sushi-Mania/src/model/LabelStatusBar/TimerLabel.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1225" y="1014"/>    
+  <class id="34" language="java" name="model.RollButton" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/model/RollButton.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1881" y="1598"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="36" language="java" name="model.base.Renderable" project="Sushi-Mania" 
+  <class id="35" language="java" name="model.VeggiIngredientButton" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/model/VeggiIngredientButton.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2472" y="1550"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="model.IngredientButton" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/model/IngredientButton.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2324" y="1239"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="model.SetTime" project="Sushi-Mania" file="/Sushi-Mania/src/model/SetTime.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1526" y="1300"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="38" language="java" name="model.base.Boostable" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/model/base/Boostable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1960" y="988"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="39" language="java" name="model.base.Renderable" project="Sushi-Mania" 
     file="/Sushi-Mania/src/model/base/Renderable.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="472" y="1070"/>    
+    <position height="-1" width="-1" x="2114" y="988"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="37" language="java" name="model.base.Updatable" project="Sushi-Mania" 
+  <interface id="40" language="java" name="model.base.Updatable" project="Sushi-Mania" 
     file="/Sushi-Mania/src/model/base/Updatable.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1430" y="836"/>    
+    <position height="-1" width="-1" x="2268" y="988"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <generalization id="38">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="23"/>  
-  </generalization>  
-  <generalization id="39">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="31"/>  
-  </generalization>  
-  <generalization id="40">    
-    <end type="SOURCE" refId="35"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <generalization id="41">    
-    <end type="SOURCE" refId="33"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <generalization id="42">    
-    <end type="SOURCE" refId="34"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <realization id="43">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="36"/>  
-  </realization>  
-  <realization id="44">    
-    <end type="SOURCE" refId="28"/>    
+  <class id="41" language="java" name="model.LabelStatusBar.ScoreLabel" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/model/LabelStatusBar/ScoreLabel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2908" y="1352"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="42" language="java" name="model.LabelStatusBar.LevelLabel" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/model/LabelStatusBar/LevelLabel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3057" y="1352"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="43" language="java" name="model.LabelStatusBar.TargetLabel" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/model/LabelStatusBar/TargetLabel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3206" y="1352"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="44" language="java" name="model.LabelStatusBar.TimerLabel" project="Sushi-Mania" 
+    file="/Sushi-Mania/src/model/LabelStatusBar/TimerLabel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3355" y="1352"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="45">    
+    <end type="SOURCE" refId="20"/>    
     <end type="TARGET" refId="37"/>  
-  </realization>  
-  <realization id="45">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="37"/>  
-  </realization>  
+  </generalization>  
   <generalization id="46">    
-    <end type="SOURCE" refId="32"/>    
-    <end type="TARGET" refId="28"/>  
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="32"/>  
   </generalization>  
   <generalization id="47">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="23"/>  
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="32"/>  
   </generalization>  
   <generalization id="48">    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="26"/>  
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="30"/>  
   </generalization>  
-  <generalization id="49">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="23"/>  
+  <realization id="49">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="40"/>  
+  </realization>  
+  <realization id="50">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="39"/>  
+  </realization>  
+  <generalization id="51">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="28"/>  
   </generalization>  
-  <generalization id="50">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="31"/>  
+  <generalization id="52">    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="32"/>  
+  </generalization>  
+  <realization id="53">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="38"/>  
+  </realization>  
+  <realization id="54">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="40"/>  
+  </realization>  
+  <generalization id="55">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="36"/>  
+  </generalization>  
+  <generalization id="56">    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="32"/>  
+  </generalization>  
+  <generalization id="57">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="37"/>  
+  </generalization>  
+  <generalization id="58">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="36"/>  
+  </generalization>  
+  <generalization id="59">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <realization id="60">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="38"/>  
+  </realization>  
+  <generalization id="61">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="28"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
