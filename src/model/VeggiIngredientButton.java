@@ -33,8 +33,6 @@ public class VeggiIngredientButton extends IngredientButton implements Boostable
 
 		if (ChefZoneController.isVeggiBoost() == true) {
 			ChefZoneController.setExtraScore(ChefZoneController.getExtraScore() + 7);
-			System.out.println("added 7 point for extra score");
-			System.out.println(ChefZoneController.getExtraScore());
 		}
 	}
 

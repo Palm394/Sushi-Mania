@@ -20,8 +20,6 @@ public class Database {
 		// 15
 		hasMenu.clear();
 		hasMenu.add(new FoodList(15));	
-		System.out.println("size="+hasIngredient.size());
-		System.out.println("initialzed");
 	}
 	
 	public static void newLV(int level) {

@@ -38,7 +38,6 @@ public class ChefZoneController {
 		new Thread(() -> {
 			while (exittedTime > 0 && !isStop) {
 				try {
-					System.out.println(exittedTime);
 					TimeUnit.SECONDS.sleep(1);
 					exittedTime -= 1;
 				} catch (Exception e) {
@@ -191,7 +190,6 @@ public class ChefZoneController {
 		new Thread(() -> {
 			try {
 				TimeUnit.MILLISECONDS.sleep(750);
-				System.out.println("Delayed");
 			} catch (Exception e) {
 				System.out.println("oops! something went wrong!");
 			}
@@ -256,10 +254,8 @@ public class ChefZoneController {
 			wrapper.clear();
 			if (!matchSushi.getName().equals("unknown") && (isVeggiBoost || isFishBoost)) {
 				addedScore(extraScore);
-				System.out.println("added");
 			} else {
 				extraScore = 0;
-				System.out.println("nope");
 			}
 		}
 	}

@@ -87,7 +87,6 @@ public class GameController {
 		StatusBar.getTargetLabel().update();
 		StatusBar.getLevelLabel().update();
 		
-		System.out.println("pass : " + Level);
 		Database.newLV(Level);
 		LevelUpPane levelup = new LevelUpPane("Level UP!",gamePane.WIDTH_SCREEN,gamePane.HEIGHT_SCREEN,true);
 		gamePane.getGameStage().setScene(levelup.getScene());

@@ -31,8 +31,6 @@ public class FishIngredientButton extends IngredientButton implements Boostable 
 
 		if (ChefZoneController.isFishBoost() == true) {
 			ChefZoneController.setExtraScore(ChefZoneController.getExtraScore() + 10);
-			System.out.println("added 10 point for extra score");
-			System.out.println(ChefZoneController.getExtraScore());
 		}
 	}
 }
