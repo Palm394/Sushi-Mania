@@ -1,7 +1,7 @@
 # Sushi Mania
 ~~เฉาก๊วยชากังราว~~ ซูชิ มาให้บริการทุกท่านอีกแล้วนะครับ
 
-## Speacial Thanks
+## Special Thanks
 
 ### Picture
 timer.png from https://image.flaticon.com/icons/png/128/992/992700.png <br>
